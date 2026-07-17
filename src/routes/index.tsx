@@ -372,16 +372,21 @@ function Contact() {
           <div className="reveal space-y-8">
             <div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">Email</div>
-              <a href="mailto:archit@example.com" className="mt-2 block font-display text-xl text-navy hover:text-gold">
-                archit@example.com
+              <a href="mailto:ArchitAggarwal97@gmail.com" className="mt-2 block font-display text-xl text-navy hover:text-gold">
+                ArchitAggarwal97@gmail.com
               </a>
             </div>
             <div className="hairline" />
             <div>
               <div className="text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">Phone</div>
-              <a href="tel:+911234567890" className="mt-2 block font-display text-xl text-navy hover:text-gold">
-                +91 12345 67890
-              </a>
+              <div className="mt-2 flex flex-col gap-1">
+                <a href="tel:+919818661308" className="block font-display text-xl text-navy hover:text-gold">
+                  +91 9818661308
+                </a>
+                <a href="tel:+918800446635" className="block font-display text-xl text-navy hover:text-gold">
+                  +91 8800446635
+                </a>
+              </div>
             </div>
             <div className="hairline" />
             <div>
@@ -438,7 +443,7 @@ function Footer({ onNav }: { onNav: (id: string) => void }) {
           Archit <span className="text-gold">Aggarwal</span>
         </div>
         <div className="flex gap-6">
-          <a href="mailto:archit@example.com" className="hover:text-gold">Email</a>
+          <a href="mailto:ArchitAggarwal97@gmail.com" className="hover:text-gold">Email</a>
           <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gold">LinkedIn</a>
           <button onClick={() => onNav("top")} className="hover:text-gold uppercase tracking-[0.2em]">Top ↑</button>
         </div>
