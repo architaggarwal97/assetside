@@ -231,6 +231,11 @@ function About() {
               at a leading PR and brand management agency — with a small, focused independent
               practice on the side for founders who want a senior operator, not a deck.
             </p>
+            <blockquote className="reveal my-12 border-l border-gold pl-8">
+              <p className="font-display text-2xl italic leading-snug text-navy md:text-3xl">
+                "At heart, I'm Dhanda-first (business-first). I'm not here to be a line on the liability side of your balance sheet. I'd rather be the asset, the ROI you can point to."
+              </p>
+            </blockquote>
             <div className="hairline mt-10" />
             <div className="grid grid-cols-3 gap-6 pt-6 text-center">
               {[
