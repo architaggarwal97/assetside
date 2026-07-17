@@ -170,8 +170,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
             <span className="italic text-gold">Luxury &amp; D2C</span> Brands.
           </h1>
           <p className="mt-10 max-w-2xl text-base leading-relaxed text-cream/70 md:text-lg">
-            10+ years turning ad spend into store walk-ins, WhatsApp orders, and repeat
-            customers for fashion, jewellery, and lifestyle brands.
+            Dhanda-oriented, always. Built to be the asset on your balance sheet, not the liability.
           </p>
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <button
