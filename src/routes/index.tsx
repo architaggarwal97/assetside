@@ -156,7 +156,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
     <section
       id="top"
       className="relative overflow-hidden text-cream"
-      style={{ background: "linear-gradient(160deg, #3F4A24 0%, #556B2F 55%, #6B7B3D 100%)" }}
+      style={{ background: "linear-gradient(160deg, #0B4F52 0%, #0A7A7E 55%, #00CED1 100%)" }}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -290,7 +290,7 @@ function Services() {
     <section
       id="services"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #3F4A24 0%, #4E5C2B 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0B4F52 0%, #0A7A7E 100%)" }}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
@@ -306,7 +306,7 @@ function Services() {
             <div
               key={s.n}
               className="reveal group p-8 transition-colors hover:bg-navy-deep md:p-10"
-              style={{ backgroundColor: "#455425" }}
+              style={{ backgroundColor: "#0B4F52" }}
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-display text-xs italic text-gold">{s.n}</span>
@@ -372,7 +372,7 @@ function Tools() {
     <section
       id="tools"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #4E5C2B 0%, #3F4A24 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0A7A7E 0%, #0B4F52 100%)" }}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
@@ -403,7 +403,7 @@ function Contact() {
     <section
       id="contact"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #3F4A24 0%, #556B2F 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0B4F52 0%, #00CED1 100%)" }}
     >
       <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
         <SectionLabel n="VI." label="Contact" />
