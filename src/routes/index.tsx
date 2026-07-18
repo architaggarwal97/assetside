@@ -225,10 +225,20 @@ function About() {
       <div className="mx-auto max-w-6xl px-6 md:px-10">
         <SectionLabel n="I." label="About" />
         <div className="grid gap-12 md:grid-cols-12">
-          <h2 className="reveal font-display text-3xl leading-tight text-navy md:col-span-5 md:text-4xl">
-            An <span className="italic text-gold">M-shaped</span> marketer working at the intersection of brand, performance, and growth.
-          </h2>
+          <div className="reveal md:col-span-5">
+            <div className="relative mx-auto max-w-sm md:mx-0">
+              <div className="absolute -inset-3 border border-gold/30" />
+              <img
+                src={architPortrait.url}
+                alt="Archit Aggarwal"
+                className="relative aspect-[4/5] w-full object-cover grayscale"
+              />
+            </div>
+          </div>
           <div className="reveal space-y-6 text-base leading-relaxed text-charcoal md:col-span-7 md:text-lg">
+            <h2 className="font-display text-3xl leading-tight text-navy md:text-4xl">
+              An <span className="italic text-gold">M-shaped</span> marketer working at the intersection of brand, performance, and growth.
+            </h2>
             <p>
               For over a decade, I've operated across D2C, FMCG, luxury, exhibitions, F&amp;B, and
               the non-profit world — spanning performance marketing, brand strategy, and growth
