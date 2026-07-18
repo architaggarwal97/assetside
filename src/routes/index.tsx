@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
+import architPortrait from "@/assets/archit-portrait.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
