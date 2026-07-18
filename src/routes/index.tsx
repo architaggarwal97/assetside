@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -37,6 +37,11 @@ const BRANDS = [
   "Wedding Asia", "Studio Prive", "La Polo", "Self Storage India",
   "Fur Ball Story", "Monture", "Adyaaye", "Maharashtra Jewellers",
   "Nike", "Crocs", "Kaya", "Geetanjali", "W for Women", "Indriya",
+  "Studio Olive Cre", "Aurelia", "24Seven",
+];
+
+const SECTORS = [
+  "D2C", "FMCG", "Luxury", "Exhibitions", "F&B", "NGO + Fundraising",
 ];
 
 const TOOLS = [
@@ -89,11 +94,11 @@ function Nav({
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         <button
           onClick={() => onNav("top")}
-          className={`font-display text-lg tracking-wide transition-colors ${
+          className={`font-display text-2xl tracking-[0.05em] transition-colors ${
             scrolled ? "text-navy" : "text-cream"
           }`}
         >
-          Archit <span className="text-gold">Aggarwal</span>
+          AA<span className="text-gold">.</span>
         </button>
         <nav className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
@@ -147,7 +152,11 @@ function Nav({
 
 function Hero({ onNav }: { onNav: (id: string) => void }) {
   return (
-    <section id="top" className="relative overflow-hidden bg-navy text-cream">
+    <section
+      id="top"
+      className="relative overflow-hidden text-cream"
+      style={{ background: "linear-gradient(160deg, #3F4A24 0%, #556B2F 55%, #6B7B3D 100%)" }}
+    >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
           backgroundImage:
@@ -230,6 +239,16 @@ function About() {
               at a leading PR and brand management agency — with a small, focused independent
               practice on the side for founders who want a senior operator, not a deck.
             </p>
+            <div className="reveal flex flex-wrap gap-2 pt-2">
+              {SECTORS.map((s) => (
+                <span
+                  key={s}
+                  className="border border-gold/40 px-4 py-1.5 text-[11px] uppercase tracking-[0.18em] text-charcoal-soft"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
             <blockquote className="reveal my-12 border-l border-gold pl-8">
               <p className="font-display text-2xl italic leading-snug text-navy md:text-3xl">
                 "At heart, I'm Dhanda-first (business-first). I'm not here to be a line on the liability side of your balance sheet. I'd rather be the asset, the ROI you can point to."
@@ -257,7 +276,11 @@ function About() {
 
 function Services() {
   return (
-    <section id="services" className="bg-navy py-28 text-cream md:py-40">
+    <section
+      id="services"
+      className="py-28 text-cream md:py-40"
+      style={{ background: "linear-gradient(180deg, #3F4A24 0%, #4E5C2B 100%)" }}
+    >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
           <span className="font-display text-sm italic text-gold">II.</span>
@@ -271,7 +294,8 @@ function Services() {
           {SERVICES.map((s) => (
             <div
               key={s.n}
-              className="reveal group bg-navy p-8 transition-colors hover:bg-navy-deep md:p-10"
+              className="reveal group p-8 transition-colors hover:bg-navy-deep md:p-10"
+              style={{ backgroundColor: "#455425" }}
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-display text-xs italic text-gold">{s.n}</span>
@@ -334,7 +358,11 @@ function Brands() {
 
 function Tools() {
   return (
-    <section id="tools" className="bg-navy py-28 text-cream md:py-40">
+    <section
+      id="tools"
+      className="py-28 text-cream md:py-40"
+      style={{ background: "linear-gradient(180deg, #4E5C2B 0%, #3F4A24 100%)" }}
+    >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
           <span className="font-display text-sm italic text-gold">V.</span>
@@ -360,82 +388,49 @@ function Tools() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSent(true);
-  };
   return (
-    <section id="contact" className="bg-cream py-28 md:py-40">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
+    <section
+      id="contact"
+      className="py-28 text-cream md:py-40"
+      style={{ background: "linear-gradient(180deg, #3F4A24 0%, #556B2F 100%)" }}
+    >
+      <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
         <SectionLabel n="VI." label="Contact" />
-        <h2 className="reveal max-w-3xl font-display text-3xl leading-tight text-navy md:text-5xl">
+        <h2 className="reveal mx-auto max-w-3xl font-display text-3xl leading-tight text-cream md:text-5xl">
           Let's talk about your <span className="italic text-gold">next quarter.</span>
         </h2>
-        <div className="mt-16 grid gap-16 md:grid-cols-2">
-          <div className="reveal space-y-8">
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">Email</div>
-              <a href="mailto:ArchitAggarwal97@gmail.com" className="mt-2 block font-display text-xl text-navy hover:text-gold">
-                ArchitAggarwal97@gmail.com
-              </a>
-            </div>
-            <div className="hairline" />
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">Phone</div>
-              <div className="mt-2 flex flex-col gap-1">
-                <a href="tel:+919818661308" className="block font-display text-xl text-navy hover:text-gold">
-                  +91 9818661308
-                </a>
-                <a href="tel:+918800446635" className="block font-display text-xl text-navy hover:text-gold">
-                  +91 8800446635
-                </a>
-              </div>
-            </div>
-            <div className="hairline" />
-            <div>
-              <div className="text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">LinkedIn</div>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="mt-2 block font-display text-xl text-navy hover:text-gold">
-                /in/architaggarwal
-              </a>
-            </div>
-            <div className="hairline" />
-            <p className="pt-4 font-display text-sm italic text-charcoal-soft">
-              Selective engagements. Currently accepting a small number of Q1 projects.
-            </p>
-          </div>
-
-          <form onSubmit={onSubmit} className="reveal space-y-6 border border-gold/30 bg-cream p-8 md:p-10">
-            <Field label="Name" name="name" required />
-            <Field label="Email" name="email" type="email" required />
-            <Field label="Message" name="message" required textarea />
-            <button
-              type="submit"
-              className="w-full bg-navy px-6 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-colors hover:bg-gold hover:text-navy"
-            >
-              {sent ? "Message Sent ✓" : "Send Message →"}
-            </button>
-          </form>
+        <div className="reveal mx-auto mt-10 h-px w-16 bg-gold" />
+        <p className="reveal mx-auto mt-10 max-w-xl font-display text-lg italic text-cream/75">
+          Selective engagements. Direct line, no gatekeepers.
+        </p>
+        <div className="reveal mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+          <a
+            href="tel:+919818661308"
+            className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
+          >
+            Call
+          </a>
+          <a
+            href="https://wa.me/919818661308"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex min-w-[180px] items-center justify-center gap-3 bg-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-navy-deep transition-all hover:bg-gold-soft"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="mailto:ArchitAggarwal97@gmail.com"
+            className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-cream/40 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:border-gold hover:text-gold"
+          >
+            Email
+          </a>
+        </div>
+        <div className="reveal mt-12 space-y-1 text-xs uppercase tracking-[0.22em] text-cream/60">
+          <div>+91 98186 61308</div>
+          <div className="normal-case tracking-normal text-cream/70">ArchitAggarwal97@gmail.com</div>
         </div>
       </div>
     </section>
-  );
-}
-
-function Field({
-  label, name, type = "text", required, textarea,
-}: { label: string; name: string; type?: string; required?: boolean; textarea?: boolean }) {
-  const cls =
-    "w-full border-b border-gold/40 bg-transparent py-3 text-charcoal placeholder-charcoal-soft/50 focus:border-gold focus:outline-none transition-colors";
-  return (
-    <label className="block">
-      <span className="mb-2 block text-[10px] uppercase tracking-[0.25em] text-charcoal-soft">{label}</span>
-      {textarea ? (
-        <textarea name={name} required={required} rows={4} className={cls} />
-      ) : (
-        <input type={type} name={name} required={required} className={cls} />
-      )}
-    </label>
   );
 }
 
