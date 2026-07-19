@@ -209,12 +209,12 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
   );
 }
 
-function SectionLabel({ n, label }: { n: string; label: string }) {
+function SectionLabel({ n, label, dark }: { n: string; label: string; dark?: boolean }) {
   return (
     <div className="reveal mb-14 flex items-center gap-4">
       <span className="font-display text-sm italic text-gold">{n}</span>
       <div className="h-px w-10 bg-gold" />
-      <span className="text-xs uppercase tracking-[0.3em] text-charcoal-soft">{label}</span>
+      <span className={`text-xs uppercase tracking-[0.3em] ${dark ? "text-cream/60" : "text-charcoal-soft"}`}>{label}</span>
     </div>
   );
 }
@@ -406,7 +406,7 @@ function Contact() {
       style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #2F6B4F 100%)" }}
     >
       <div className="mx-auto max-w-5xl px-6 text-center md:px-10">
-        <SectionLabel n="VI." label="Contact" />
+        <SectionLabel n="VI." label="Contact" dark />
         <h2 className="reveal mx-auto max-w-3xl font-display text-3xl leading-tight text-cream md:text-5xl">
           Let's talk about your <span className="italic text-gold">next quarter.</span>
         </h2>
