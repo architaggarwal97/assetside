@@ -156,7 +156,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
     <section
       id="top"
       className="relative overflow-hidden text-cream"
-      style={{ background: "linear-gradient(160deg, #0B4F52 0%, #0A7A7E 55%, #00CED1 100%)" }}
+      style={{ background: "linear-gradient(160deg, #0b2b1e 0%, #1d4a36 55%, #2F6B4F 100%)" }}
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.07]"
         style={{
@@ -209,12 +209,12 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
   );
 }
 
-function SectionLabel({ n, label }: { n: string; label: string }) {
+function SectionLabel({ n, label, dark }: { n: string; label: string; dark?: boolean }) {
   return (
     <div className="reveal mb-14 flex items-center gap-4">
       <span className="font-display text-sm italic text-gold">{n}</span>
       <div className="h-px w-10 bg-gold" />
-      <span className="text-xs uppercase tracking-[0.3em] text-charcoal-soft">{label}</span>
+      <span className={`text-xs uppercase tracking-[0.3em] ${dark ? "text-cream/60" : "text-charcoal-soft"}`}>{label}</span>
     </div>
   );
 }
@@ -290,7 +290,7 @@ function Services() {
     <section
       id="services"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #0B4F52 0%, #0A7A7E 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #1d4a36 100%)" }}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
@@ -306,7 +306,7 @@ function Services() {
             <div
               key={s.n}
               className="reveal group p-8 transition-colors hover:bg-navy-deep md:p-10"
-              style={{ backgroundColor: "#0B4F52" }}
+              style={{ backgroundColor: "#0b2b1e" }}
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-display text-xs italic text-gold">{s.n}</span>
@@ -372,7 +372,7 @@ function Tools() {
     <section
       id="tools"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #0A7A7E 0%, #0B4F52 100%)" }}
+      style={{ background: "linear-gradient(180deg, #1d4a36 0%, #0b2b1e 100%)" }}
     >
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mb-14 flex items-center gap-4">
@@ -403,10 +403,10 @@ function Contact() {
     <section
       id="contact"
       className="py-28 text-cream md:py-40"
-      style={{ background: "linear-gradient(180deg, #0B4F52 0%, #00CED1 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #2F6B4F 100%)" }}
     >
-      <div className="mx-auto max-w-4xl px-6 text-center md:px-10">
-        <SectionLabel n="VI." label="Contact" />
+      <div className="mx-auto max-w-5xl px-6 text-center md:px-10">
+        <SectionLabel n="VI." label="Contact" dark />
         <h2 className="reveal mx-auto max-w-3xl font-display text-3xl leading-tight text-cream md:text-5xl">
           Let's talk about your <span className="italic text-gold">next quarter.</span>
         </h2>
@@ -414,21 +414,47 @@ function Contact() {
         <p className="reveal mx-auto mt-10 max-w-xl font-display text-lg italic text-cream/75">
           Selective engagements. Direct line, no gatekeepers.
         </p>
-        <div className="reveal mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
-          <a
-            href="tel:+919818661308"
-            className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
-          >
-            Call
-          </a>
-          <a
-            href="https://wa.me/919818661308"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex min-w-[180px] items-center justify-center gap-3 bg-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-navy-deep transition-all hover:bg-gold-soft"
-          >
-            WhatsApp
-          </a>
+        <div className="reveal mt-14 grid gap-8 sm:grid-cols-2">
+          <div className="space-y-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-cream/60">+91 98186 61308</div>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="tel:+919818661308"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
+              >
+                Call
+              </a>
+              <a
+                href="https://wa.me/919818661308"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all hover:bg-gold-soft"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-cream/60">+91 88004 46635</div>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <a
+                href="tel:+918800446635"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
+              >
+                Call
+              </a>
+              <a
+                href="https://wa.me/918800446635"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all hover:bg-gold-soft"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="reveal mt-10">
           <a
             href="mailto:ArchitAggarwal97@gmail.com"
             className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-cream/40 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:border-gold hover:text-gold"
@@ -436,8 +462,7 @@ function Contact() {
             Email
           </a>
         </div>
-        <div className="reveal mt-12 space-y-1 text-xs uppercase tracking-[0.22em] text-cream/60">
-          <div>+91 98186 61308</div>
+        <div className="reveal mt-12 text-xs uppercase tracking-[0.22em] text-cream/60">
           <div className="normal-case tracking-normal text-cream/70">ArchitAggarwal97@gmail.com</div>
         </div>
       </div>
