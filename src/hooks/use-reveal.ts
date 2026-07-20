@@ -29,9 +29,23 @@ export function useReveal() {
   }, []);
 }
 
-export function useScrollSpy(ids: string[], offset = 120) {
-  // returns the id of the section currently in view
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const React = require("react");
-  return React;
+import { useState } from "react";
+
+export function useScrollSpy(ids: string[], offset = 140) {
+  const [active, setActive] = useState<string>("");
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY + offset;
+      let current = "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= y) current = id;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [ids, offset]);
+  return active;
 }
