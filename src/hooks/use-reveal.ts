@@ -31,6 +31,7 @@ export function useReveal() {
 
 export function useScrollSpy(ids: string[], offset = 140) {
   const [active, setActive] = useState<string>("");
+  const key = ids.join("|");
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY + offset;
@@ -44,6 +45,7 @@ export function useScrollSpy(ids: string[], offset = 140) {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [ids, offset]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, offset]);
   return active;
 }
