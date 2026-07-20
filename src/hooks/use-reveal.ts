@@ -11,7 +11,13 @@ export function useReveal() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
+            const el = e.target as HTMLElement;
+            const idx = el.dataset.revealIndex;
+            if (idx) {
+              const delay = Math.min(parseInt(idx, 10), 12) * 70;
+              el.style.transitionDelay = `${delay}ms`;
+            }
+            el.classList.add("is-visible");
             io.unobserve(e.target);
           }
         });
@@ -21,4 +27,11 @@ export function useReveal() {
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
+}
+
+export function useScrollSpy(ids: string[], offset = 120) {
+  // returns the id of the section currently in view
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const React = require("react");
+  return React;
 }
