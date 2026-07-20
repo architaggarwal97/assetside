@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function useReveal() {
   useEffect(() => {
@@ -28,8 +28,6 @@ export function useReveal() {
     return () => io.disconnect();
   }, []);
 }
-
-import { useState } from "react";
 
 export function useScrollSpy(ids: string[], offset = 140) {
   const [active, setActive] = useState<string>("");
