@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export function useReveal() {
   useEffect(() => {
@@ -11,7 +11,13 @@ export function useReveal() {
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
+            const el = e.target as HTMLElement;
+            const idx = el.dataset.revealIndex;
+            if (idx) {
+              const delay = Math.min(parseInt(idx, 10), 12) * 70;
+              el.style.transitionDelay = `${delay}ms`;
+            }
+            el.classList.add("is-visible");
             io.unobserve(e.target);
           }
         });
@@ -21,4 +27,25 @@ export function useReveal() {
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
+}
+
+export function useScrollSpy(ids: string[], offset = 140) {
+  const [active, setActive] = useState<string>("");
+  const key = ids.join("|");
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY + offset;
+      let current = "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= y) current = id;
+      }
+      setActive(current);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key, offset]);
+  return active;
 }

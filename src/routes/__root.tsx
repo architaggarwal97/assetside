@@ -83,7 +83,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Archit Aggarwal — Growth Marketing Consultant" },
       { property: "og:description", content: "10+ years turning ad spend into store walk-ins, WhatsApp orders, and repeat customers for luxury and D2C brands." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { property: "og:site_name", content: "Archit Aggarwal" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Archit Aggarwal — Growth Marketing Consultant" },
+      { name: "twitter:description", content: "10+ years turning ad spend into store walk-ins, WhatsApp orders, and repeat customers for luxury and D2C brands." },
+      { name: "twitter:image", content: "/__l5e/assets-v1/931561fc-a35a-4339-b21c-7b6ea2695deb/archit-portrait.webp" },
+      { property: "og:image", content: "/__l5e/assets-v1/931561fc-a35a-4339-b21c-7b6ea2695deb/archit-portrait.webp" },
     ],
     links: [
       {
@@ -91,9 +97,54 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "canonical", href: "/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Person",
+              name: "Archit Aggarwal",
+              jobTitle: "Growth Marketing Consultant",
+              description:
+                "Independent growth and performance marketing consultant for luxury, fashion, jewellery, and lifestyle brands.",
+              email: "mailto:ArchitAggarwal97@gmail.com",
+              telephone: ["+91-9818661308", "+91-8800446635"],
+              address: { "@type": "PostalAddress", addressLocality: "Delhi", addressCountry: "IN" },
+              knowsAbout: [
+                "Performance Marketing",
+                "Brand Positioning",
+                "Go-to-Market Strategy",
+                "D2C Commerce",
+                "WhatsApp Commerce",
+                "Lead Generation",
+                "SEO",
+                "Marketing Analytics",
+              ],
+            },
+            {
+              "@type": "ProfessionalService",
+              name: "Archit Aggarwal — Growth Marketing Consulting",
+              provider: { "@type": "Person", name: "Archit Aggarwal" },
+              areaServed: "Worldwide",
+              serviceType: [
+                "Performance Marketing",
+                "Brand Positioning & GTM Strategy",
+                "D2C & WhatsApp-First Commerce",
+                "Growth & Lead Generation Systems",
+                "SEO & Website Optimization",
+                "Marketing Analytics & Reporting",
+              ],
+            },
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
