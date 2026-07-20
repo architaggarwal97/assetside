@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
-import { useReveal } from "@/hooks/use-reveal";
+import { useEffect, useRef, useState } from "react";
+import { useReveal, useScrollSpy } from "@/hooks/use-reveal";
 import architPortrait from "@/assets/archit-portrait.webp.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -26,12 +26,12 @@ const SERVICES = [
 ];
 
 const STATS = [
-  { v: "₹0 → ₹65M", l: "ARR grown over 5 years" },
-  { v: "30 → 900+", l: "Qualified leads / month within a quarter" },
-  { v: "2.4× → 3.9×", l: "ROAS lift across paid channels" },
-  { v: "2.1×", l: "Order volume via WhatsApp-first D2C" },
-  { v: "34–38%", l: "Increase in qualified store walk-ins" },
-  { v: "−50%", l: "Reduction in cost per lead" },
+  { pre: "₹0 → ₹", to: 65, decimals: 0, suf: "M", l: "ARR grown over 5 years" },
+  { pre: "30 → ", to: 900, decimals: 0, suf: "+", l: "Qualified leads / month within a quarter" },
+  { pre: "2.4× → ", to: 3.9, decimals: 1, suf: "×", l: "ROAS lift across paid channels" },
+  { pre: "", to: 2.1, decimals: 1, suf: "×", l: "Order volume via WhatsApp-first D2C" },
+  { pre: "34–", to: 38, decimals: 0, suf: "%", l: "Increase in qualified store walk-ins" },
+  { pre: "−", to: 50, decimals: 0, suf: "%", l: "Reduction in cost per lead" },
 ];
 
 const BRANDS = [
@@ -54,6 +54,7 @@ function Index() {
   useReveal();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const active = useScrollSpy(NAV.map((n) => n.id));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -70,7 +71,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
-      <Nav scrolled={scrolled} onNav={scrollTo} menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <Nav scrolled={scrolled} onNav={scrollTo} menuOpen={menuOpen} setMenuOpen={setMenuOpen} active={active} />
       <Hero onNav={scrollTo} />
       <About />
       <Services />
@@ -84,8 +85,8 @@ function Index() {
 }
 
 function Nav({
-  scrolled, onNav, menuOpen, setMenuOpen,
-}: { scrolled: boolean; onNav: (id: string) => void; menuOpen: boolean; setMenuOpen: (v: boolean) => void }) {
+  scrolled, onNav, menuOpen, setMenuOpen, active,
+}: { scrolled: boolean; onNav: (id: string) => void; menuOpen: boolean; setMenuOpen: (v: boolean) => void; active: string }) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
@@ -95,6 +96,7 @@ function Nav({
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         <button
           onClick={() => onNav("top")}
+          aria-label="Archit Aggarwal — back to top"
           className={`font-display text-2xl tracking-[0.05em] transition-colors ${
             scrolled ? "text-navy" : "text-cream"
           }`}
@@ -102,20 +104,30 @@ function Nav({
           AA<span className="text-gold">.</span>
         </button>
         <nav className="hidden md:flex items-center gap-8">
-          {NAV.map((n) => (
-            <button
-              key={n.id}
-              onClick={() => onNav(n.id)}
-              className={`text-xs uppercase tracking-[0.18em] transition-colors ${
-                scrolled ? "text-charcoal hover:text-gold" : "text-cream/80 hover:text-gold"
-              }`}
-            >
-              {n.label}
-            </button>
-          ))}
+          {NAV.map((n) => {
+            const isActive = active === n.id;
+            const base = scrolled ? "text-charcoal" : "text-cream/85";
+            return (
+              <button
+                key={n.id}
+                onClick={() => onNav(n.id)}
+                aria-current={isActive ? "true" : undefined}
+                className={`relative text-xs uppercase tracking-[0.18em] transition-colors hover:text-gold ${
+                  isActive ? "text-gold" : base
+                }`}
+              >
+                {n.label}
+                <span
+                  className={`pointer-events-none absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-300 ${
+                    isActive ? "w-full" : "w-0"
+                  }`}
+                />
+              </button>
+            );
+          })}
           <button
             onClick={() => onNav("contact")}
-            className="border border-gold px-5 py-2 text-xs uppercase tracking-[0.18em] text-gold transition-colors hover:bg-gold hover:text-navy"
+            className="border border-gold px-5 py-2 text-xs uppercase tracking-[0.18em] text-gold transition-all duration-300 hover:bg-gold hover:text-navy-deep hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-8px_rgba(196,146,42,0.6)]"
           >
             Book a Call
           </button>
@@ -123,22 +135,30 @@ function Nav({
         <button
           className={`md:hidden text-xs uppercase tracking-[0.2em] ${scrolled ? "text-navy" : "text-cream"}`}
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
         >
           {menuOpen ? "Close" : "Menu"}
         </button>
       </div>
       {menuOpen && (
-        <div className="md:hidden bg-cream border-t border-gold/20 px-6 py-6 space-y-4">
-          {NAV.map((n) => (
-            <button
-              key={n.id}
-              onClick={() => onNav(n.id)}
-              className="block w-full text-left text-sm uppercase tracking-[0.18em] text-charcoal hover:text-gold"
-            >
-              {n.label}
-            </button>
-          ))}
+        <div id="mobile-nav" className="md:hidden bg-cream border-t border-gold/20 px-6 py-6 space-y-4">
+          {NAV.map((n) => {
+            const isActive = active === n.id;
+            return (
+              <button
+                key={n.id}
+                onClick={() => onNav(n.id)}
+                aria-current={isActive ? "true" : undefined}
+                className={`block w-full text-left text-sm uppercase tracking-[0.18em] transition-colors ${
+                  isActive ? "text-gold" : "text-charcoal hover:text-gold"
+                }`}
+              >
+                {n.label}
+              </button>
+            );
+          })}
           <button
             onClick={() => onNav("contact")}
             className="mt-2 w-full border border-gold px-5 py-3 text-xs uppercase tracking-[0.18em] text-gold"
@@ -185,14 +205,14 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
           <div className="mt-12 flex flex-col gap-4 sm:flex-row">
             <button
               onClick={() => onNav("contact")}
-              className="group inline-flex items-center justify-center gap-3 bg-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-navy transition-all hover:bg-gold-soft"
+              className="group inline-flex items-center justify-center gap-3 bg-gold px-8 py-4 text-xs uppercase tracking-[0.22em] text-navy-deep transition-all duration-300 hover:bg-gold-soft hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-12px_rgba(196,146,42,0.7)]"
             >
               Book a Call
               <span className="transition-transform group-hover:translate-x-1">→</span>
             </button>
             <button
               onClick={() => onNav("results")}
-              className="group inline-flex items-center justify-center gap-3 border border-cream/40 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:border-gold hover:text-gold"
+              className="group inline-flex items-center justify-center gap-3 border border-cream/50 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:-translate-y-0.5"
             >
               See the Work
               <span className="transition-transform group-hover:translate-y-1">↓</span>
@@ -200,7 +220,7 @@ function Hero({ onNav }: { onNav: (id: string) => void }) {
           </div>
         </div>
 
-        <div className="reveal mt-24 flex items-end justify-between border-t border-gold/20 pt-6 text-xs uppercase tracking-[0.2em] text-cream/50">
+        <div className="reveal mt-24 flex items-end justify-between border-t border-gold/20 pt-6 text-xs uppercase tracking-[0.2em] text-cream/75">
           <span>Delhi · Working Worldwide</span>
           <span className="hidden md:inline">Scroll ↓</span>
         </div>
@@ -231,6 +251,10 @@ function About() {
               <img
                 src={architPortrait.url}
                 alt="Archit Aggarwal"
+                width={480}
+                height={600}
+                loading="lazy"
+                decoding="async"
                 className="relative aspect-[4/5] w-full object-cover grayscale"
               />
             </div>
@@ -302,10 +326,11 @@ function Services() {
           Six ways I plug into <span className="italic text-gold">your growth engine.</span>
         </h2>
         <div className="grid gap-px bg-gold/20 md:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((s) => (
+          {SERVICES.map((s, i) => (
             <div
               key={s.n}
-              className="reveal group p-8 transition-colors hover:bg-navy-deep md:p-10"
+              data-reveal-index={i}
+              className="reveal group relative p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] md:p-10"
               style={{ backgroundColor: "#0b2b1e" }}
             >
               <div className="mb-6 flex items-center justify-between">
@@ -313,7 +338,7 @@ function Services() {
                 <span className="h-px w-8 bg-gold transition-all group-hover:w-14" />
               </div>
               <h3 className="font-display text-xl leading-snug text-cream md:text-2xl">{s.t}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-cream/60 md:text-[15px]">{s.d}</p>
+              <p className="mt-4 text-sm leading-relaxed text-cream/80 md:text-[15px]">{s.d}</p>
             </div>
           ))}
         </div>
@@ -331,12 +356,16 @@ function TrackRecord() {
           Numbers that closed the <span className="italic text-gold">quarter.</span>
         </h2>
         <div className="grid gap-px bg-gold/25 sm:grid-cols-2 lg:grid-cols-3">
-          {STATS.map((s) => (
-            <div key={s.l} className="reveal bg-cream p-10">
-              <div className="font-display text-4xl leading-none text-navy md:text-5xl">
-                {s.v}
+          {STATS.map((s, i) => (
+            <div
+              key={s.l}
+              data-reveal-index={i}
+              className="reveal group bg-cream p-10 transition-all duration-500 hover:bg-cream hover:shadow-[0_18px_40px_-24px_rgba(11,43,30,0.5)]"
+            >
+              <div className="font-display text-4xl leading-none text-navy-deep md:text-5xl">
+                <CountUp prefix={s.pre} to={s.to} decimals={s.decimals} suffix={s.suf} />
               </div>
-              <div className="mt-6 h-px w-10 bg-gold" />
+              <div className="mt-6 h-px w-10 bg-gold transition-all duration-500 group-hover:w-20" />
               <p className="mt-4 text-sm leading-relaxed text-charcoal-soft">{s.l}</p>
             </div>
           ))}
@@ -352,11 +381,12 @@ function Brands() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="gold-divider mb-20" />
         <SectionLabel n="IV." label="Brands Worked With" />
-        <div className="reveal grid grid-cols-2 gap-x-8 gap-y-10 border-y border-gold/20 py-14 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {BRANDS.map((b) => (
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 border-y border-gold/20 py-14 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {BRANDS.map((b, i) => (
             <div
               key={b}
-              className="text-center font-display text-lg tracking-wide text-navy transition-colors hover:text-gold md:text-xl"
+              data-reveal-index={i}
+              className="reveal text-center font-display text-lg tracking-wide text-navy-deep transition-all duration-300 hover:-translate-y-0.5 hover:text-gold md:text-xl"
             >
               {b}
             </div>
@@ -383,11 +413,12 @@ function Tools() {
         <h2 className="reveal mb-14 max-w-3xl font-display text-3xl leading-tight md:text-5xl">
           The stack behind the <span className="italic text-gold">work.</span>
         </h2>
-        <div className="reveal flex flex-wrap gap-3">
-          {TOOLS.map((t) => (
+        <div className="flex flex-wrap gap-3">
+          {TOOLS.map((t, i) => (
             <span
               key={t}
-              className="border border-gold/40 px-5 py-3 text-sm tracking-wide text-cream/85 transition-all hover:border-gold hover:bg-gold hover:text-navy"
+              data-reveal-index={i}
+              className="reveal border border-gold/50 px-5 py-3 text-sm tracking-wide text-cream/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-14px_rgba(196,146,42,0.7)]"
             >
               {t}
             </span>
@@ -411,16 +442,17 @@ function Contact() {
           Let's talk about your <span className="italic text-gold">next quarter.</span>
         </h2>
         <div className="reveal mx-auto mt-10 h-px w-16 bg-gold" />
-        <p className="reveal mx-auto mt-10 max-w-xl font-display text-lg italic text-cream/75">
+        <p className="reveal mx-auto mt-10 max-w-xl font-display text-lg italic text-cream/85">
           Selective engagements. Direct line, no gatekeepers.
         </p>
         <div className="reveal mt-14 grid gap-8 sm:grid-cols-2">
           <div className="space-y-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-cream/60">+91 98186 61308</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-cream/80">+91 98186 61308</div>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="tel:+919818661308"
-                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
+                aria-label="Call Archit Aggarwal on +91 98186 61308"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:bg-gold hover:text-navy-deep hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
               >
                 Call
               </a>
@@ -428,18 +460,20 @@ function Contact() {
                 href="https://wa.me/919818661308"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all hover:bg-gold-soft"
+                aria-label="Message Archit Aggarwal on WhatsApp at +91 98186 61308"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all duration-300 hover:bg-gold-soft hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
               >
                 WhatsApp
               </a>
             </div>
           </div>
           <div className="space-y-4">
-            <div className="text-xs uppercase tracking-[0.2em] text-cream/60">+91 88004 46635</div>
+            <div className="text-xs uppercase tracking-[0.2em] text-cream/80">+91 88004 46635</div>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="tel:+918800446635"
-                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all hover:bg-gold hover:text-navy-deep"
+                aria-label="Call Archit Aggarwal on +91 88004 46635"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:bg-gold hover:text-navy-deep hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
               >
                 Call
               </a>
@@ -447,7 +481,8 @@ function Contact() {
                 href="https://wa.me/918800446635"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all hover:bg-gold-soft"
+                aria-label="Message Archit Aggarwal on WhatsApp at +91 88004 46635"
+                className="inline-flex min-w-[140px] items-center justify-center gap-3 bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all duration-300 hover:bg-gold-soft hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
               >
                 WhatsApp
               </a>
@@ -457,13 +492,14 @@ function Contact() {
         <div className="reveal mt-10">
           <a
             href="mailto:ArchitAggarwal97@gmail.com"
-            className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-cream/40 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all hover:border-gold hover:text-gold"
+            aria-label="Email Archit Aggarwal at ArchitAggarwal97@gmail.com"
+            className="inline-flex min-w-[180px] items-center justify-center gap-3 border border-cream/50 px-8 py-4 text-xs uppercase tracking-[0.22em] text-cream transition-all duration-300 hover:border-gold hover:text-gold hover:-translate-y-0.5"
           >
             Email
           </a>
         </div>
-        <div className="reveal mt-12 text-xs uppercase tracking-[0.22em] text-cream/60">
-          <div className="normal-case tracking-normal text-cream/70">ArchitAggarwal97@gmail.com</div>
+        <div className="reveal mt-12 text-xs uppercase tracking-[0.22em] text-cream/80">
+          <div className="normal-case tracking-normal text-cream/85">ArchitAggarwal97@gmail.com</div>
         </div>
       </div>
     </section>
@@ -472,18 +508,69 @@ function Contact() {
 
 function Footer({ onNav }: { onNav: (id: string) => void }) {
   return (
-    <footer className="bg-navy-deep py-12 text-cream/60">
+    <footer className="bg-navy-deep py-12 text-cream/80">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-xs uppercase tracking-[0.2em] md:flex-row md:justify-between md:px-10">
         <div className="font-display text-sm normal-case tracking-normal text-cream">
           Archit <span className="text-gold">Aggarwal</span>
         </div>
         <div className="flex gap-6">
-          <a href="mailto:ArchitAggarwal97@gmail.com" className="hover:text-gold">Email</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-gold">LinkedIn</a>
-          <button onClick={() => onNav("top")} className="hover:text-gold uppercase tracking-[0.2em]">Top ↑</button>
+          <a href="mailto:ArchitAggarwal97@gmail.com" aria-label="Email Archit Aggarwal" className="transition-colors hover:text-gold">Email</a>
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="Archit Aggarwal on LinkedIn" className="transition-colors hover:text-gold">LinkedIn</a>
+          <button onClick={() => onNav("top")} aria-label="Back to top of page" className="uppercase tracking-[0.2em] transition-colors hover:text-gold">Top ↑</button>
         </div>
         <div>© {new Date().getFullYear()} Archit Aggarwal</div>
       </div>
     </footer>
+  );
+}
+
+function CountUp({
+  to, decimals = 0, prefix = "", suffix = "", duration = 1400,
+}: { to: number; decimals?: number; prefix?: string; suffix?: string; duration?: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const [value, setValue] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setValue(to);
+      return;
+    }
+    if (!("IntersectionObserver" in window)) {
+      setValue(to);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting && !started.current) {
+            started.current = true;
+            const start = performance.now();
+            const tick = (now: number) => {
+              const t = Math.min(1, (now - start) / duration);
+              const eased = 1 - Math.pow(1 - t, 3);
+              setValue(to * eased);
+              if (t < 1) requestAnimationFrame(tick);
+              else setValue(to);
+            };
+            requestAnimationFrame(tick);
+            io.disconnect();
+          }
+        }
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [to, duration]);
+
+  return (
+    <span ref={ref}>
+      {prefix}
+      {value.toFixed(decimals)}
+      {suffix}
+    </span>
   );
 }
