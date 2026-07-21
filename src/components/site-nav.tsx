@@ -1,0 +1,202 @@
+import { Link } from "@tanstack/react-router";
+import { useEffect, useRef, useState } from "react";
+
+export type NavLink =
+  | { kind: "link"; label: string; href: string }
+  | { kind: "menu"; label: string; href: string; items: { label: string; hash: string }[] };
+
+export const SERVICE_SECTIONS: { n: string; slug: string; title: string }[] = [
+  { n: "01", slug: "performance-marketing", title: "Performance Marketing" },
+  { n: "02", slug: "brand-positioning-gtm", title: "Brand Positioning & GTM Strategy" },
+  { n: "03", slug: "d2c-whatsapp-commerce", title: "D2C & WhatsApp-First Commerce" },
+  { n: "04", slug: "growth-lead-generation", title: "Growth & Lead Generation Systems" },
+  { n: "05", slug: "seo-website-optimization", title: "SEO & Website Optimization" },
+  { n: "06", slug: "marketing-analytics", title: "Marketing Analytics & Reporting" },
+  { n: "07", slug: "pr", title: "PR" },
+  { n: "08", slug: "events", title: "Events" },
+  { n: "09", slug: "mbo-placements", title: "MBO Placements" },
+];
+
+export const NAV_LINKS: NavLink[] = [
+  { kind: "link", label: "Home", href: "/" },
+  { kind: "link", label: "About", href: "/#about" },
+  { kind: "link", label: "Work", href: "/work" },
+  { kind: "link", label: "Case Studies", href: "/case-studies" },
+  {
+    kind: "menu",
+    label: "Services",
+    href: "/services",
+    items: SERVICE_SECTIONS.map((s) => ({ label: s.title, hash: s.slug })),
+  },
+  { kind: "link", label: "Insights", href: "/insights" },
+  { kind: "link", label: "Concierge", href: "/concierge" },
+  { kind: "link", label: "Contact", href: "/#contact" },
+];
+
+export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = scrolled || variant === "light";
+  const linkColor = solid ? "text-charcoal" : "text-cream/85";
+  const logoColor = solid ? "text-navy" : "text-cream";
+
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setServicesOpen(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setServicesOpen(false), 120);
+  };
+
+  return (
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        solid ? "bg-cream/95 backdrop-blur-md border-b border-gold/20" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
+        <Link
+          to="/"
+          aria-label="Archit Aggarwal — home"
+          className={`font-display text-2xl tracking-[0.05em] transition-colors ${logoColor}`}
+        >
+          AA<span className="text-gold">.</span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {NAV_LINKS.map((item) => {
+            if (item.kind === "menu") {
+              return (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={openServices}
+                  onMouseLeave={scheduleClose}
+                >
+                  <Link
+                    to={item.href}
+                    onFocus={openServices}
+                    aria-haspopup="true"
+                    aria-expanded={servicesOpen}
+                    className={`text-xs uppercase tracking-[0.18em] transition-colors hover:text-gold ${linkColor}`}
+                  >
+                    {item.label}
+                    <span aria-hidden className="ml-1 text-gold">▾</span>
+                  </Link>
+                  {servicesOpen && (
+                    <div
+                      role="menu"
+                      onMouseEnter={openServices}
+                      onMouseLeave={scheduleClose}
+                      className="absolute right-0 top-full mt-4 w-80 border border-gold/30 bg-cream shadow-[0_20px_50px_-20px_rgba(11,43,30,0.4)]"
+                    >
+                      <div className="py-2">
+                        {item.items.map((s) => (
+                          <a
+                            key={s.hash}
+                            href={`/services#${s.hash}`}
+                            role="menuitem"
+                            className="block px-5 py-2.5 text-xs uppercase tracking-[0.16em] text-charcoal transition-colors hover:bg-gold/10 hover:text-gold"
+                          >
+                            {s.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+            const isInternal = item.href.startsWith("/") && !item.href.includes("#");
+            const cls = `text-xs uppercase tracking-[0.18em] transition-colors hover:text-gold ${linkColor}`;
+            return isInternal ? (
+              <Link key={item.label} to={item.href} className={cls}>
+                {item.label}
+              </Link>
+            ) : (
+              <a key={item.label} href={item.href} className={cls}>
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          className={`md:hidden text-xs uppercase tracking-[0.2em] transition-colors ${linkColor}`}
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="md:hidden border-t border-gold/20 bg-cream">
+          <div className="mx-auto max-w-7xl px-6 py-6 md:px-10">
+            <ul className="flex flex-col divide-y divide-gold/15">
+              {NAV_LINKS.map((item) => (
+                <li key={item.label} className="py-3">
+                  {item.kind === "menu" ? (
+                    <div>
+                      <button
+                        onClick={() => setServicesOpen((v) => !v)}
+                        aria-expanded={servicesOpen}
+                        className="flex w-full items-center justify-between text-xs uppercase tracking-[0.2em] text-charcoal"
+                      >
+                        <span>{item.label}</span>
+                        <span className="text-gold">{servicesOpen ? "−" : "+"}</span>
+                      </button>
+                      {servicesOpen && (
+                        <ul className="mt-4 space-y-3 border-l border-gold/30 pl-4">
+                          {item.items.map((s) => (
+                            <li key={s.hash}>
+                              <a
+                                href={`/services#${s.hash}`}
+                                onClick={() => setMenuOpen(false)}
+                                className="block text-[11px] uppercase tracking-[0.18em] text-charcoal-soft transition-colors hover:text-gold"
+                              >
+                                {s.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : item.href.startsWith("/") && !item.href.includes("#") ? (
+                    <Link
+                      to={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block text-xs uppercase tracking-[0.2em] text-charcoal transition-colors hover:text-gold"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block text-xs uppercase tracking-[0.2em] text-charcoal transition-colors hover:text-gold"
+                    >
+                      {item.label}
+                    </a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
