@@ -150,14 +150,24 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
                 <li key={item.label} className="py-3">
                   {item.kind === "menu" ? (
                     <div>
-                      <button
-                        onClick={() => setServicesOpen((v) => !v)}
-                        aria-expanded={servicesOpen}
-                        className="flex w-full items-center justify-between text-xs uppercase tracking-[0.2em] text-charcoal"
-                      >
-                        <span>{item.label}</span>
-                        <span className="text-gold">{servicesOpen ? "−" : "+"}</span>
-                      </button>
+                      <div className="flex w-full items-center justify-between">
+                        <Link
+                          to={item.href}
+                          onClick={() => setMenuOpen(false)}
+                          className="flex-1 text-xs uppercase tracking-[0.2em] text-charcoal transition-colors hover:text-gold"
+                        >
+                          {item.label}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setServicesOpen((v) => !v)}
+                          aria-expanded={servicesOpen}
+                          aria-label={servicesOpen ? `Collapse ${item.label} submenu` : `Expand ${item.label} submenu`}
+                          className="ml-4 flex h-8 w-8 items-center justify-center text-gold"
+                        >
+                          <span aria-hidden>{servicesOpen ? "−" : "+"}</span>
+                        </button>
+                      </div>
                       {servicesOpen && (
                         <ul className="mt-4 space-y-3 border-l border-gold/30 pl-4">
                           {item.items.map((s) => (
