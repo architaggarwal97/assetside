@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Store, MessageCircle, Gem, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
+import { SiteFooter } from "@/components/site-footer";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
