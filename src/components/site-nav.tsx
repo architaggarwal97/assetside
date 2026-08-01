@@ -66,13 +66,7 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
-        <Link
-          to="/"
-          aria-label="Archit Aggarwal — home"
-          className={`font-display text-2xl tracking-[0.05em] transition-colors ${logoColor}`}
-        >
-          AA<span className="text-gold">.</span>
-        </Link>
+        <LogoLockup logoColor={logoColor} />
 
         <nav className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((item) => {
