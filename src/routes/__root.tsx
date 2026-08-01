@@ -125,6 +125,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 "Lead Generation",
                 "SEO",
                 "Marketing Analytics",
+                "D2C Growth Strategy",
+                "Luxury Marketing",
+                "Public Relations",
+              ],
+              hasCredential: [
+                { "@type": "EducationalOccupationalCredential", name: "Google Ads Certification" },
+                { "@type": "EducationalOccupationalCredential", name: "SEMRush SEO Toolkit Certification" },
+                { "@type": "EducationalOccupationalCredential", name: "HubSpot Inbound Certification" },
+                { "@type": "EducationalOccupationalCredential", name: "Applied Business Analytics, Indian School of Business" },
               ],
             },
             {
@@ -142,6 +151,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               ],
             },
           ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Asset Side",
+          description: "Growth marketing consultancy for luxury fashion, jewellery, and D2C brands, led by Archit Aggarwal.",
+          founder: {
+            "@type": "Person",
+            name: "Archit Aggarwal",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            telephone: "+91-9818661308",
+            email: "ArchitAggarwal97@gmail.com",
+            contactType: "sales",
+          },
+          areaServed: "IN",
         }),
       },
     ],
