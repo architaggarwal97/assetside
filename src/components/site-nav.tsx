@@ -33,6 +33,60 @@ export const NAV_LINKS: NavLink[] = [
   { kind: "link", label: "Contact", href: "/#contact" },
 ];
 
+function LogoLockup({ logoColor }: { logoColor: string }) {
+  return (
+    <Link
+      to="/"
+      aria-label="Asset Side — home"
+      className="flex items-center gap-2.5 transition-opacity hover:opacity-90"
+    >
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        aria-hidden="true"
+        className="shrink-0"
+      >
+        <circle
+          cx="20"
+          cy="20"
+          r="18"
+          fill="#0b2b1e"
+          stroke="#C4922A"
+          strokeWidth="1.5"
+        />
+        <text
+          x="20"
+          y="17"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="font-display"
+          fontSize="16"
+          fontWeight="600"
+          fill="#C4922A"
+        >
+          AS
+        </text>
+        <line
+          x1="12"
+          y1="26"
+          x2="28"
+          y2="26"
+          stroke="#C4922A"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <circle cx="28" cy="26" r="1.5" fill="#C4922A" />
+      </svg>
+      <span
+        className={`font-display text-2xl tracking-[0.05em] transition-colors ${logoColor}`}
+      >
+        Asset Side
+      </span>
+    </Link>
+  );
+}
+
 export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
