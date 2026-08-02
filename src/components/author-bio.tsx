@@ -44,7 +44,8 @@ export function AuthorBio() {
             ))}
           </div>
           <Link
-            to="/#about"
+            to="/"
+            hash="about"
             className="group inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-soft"
             aria-label="Read more about Archit Aggarwal"
           >
