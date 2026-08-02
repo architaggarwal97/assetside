@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/case-studies' | '/privacy-policy' | '/services'
+  fullPaths:
+    | '/'
+    | '/case-studies'
+    | '/insights'
+    | '/privacy-policy'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/case-studies' | '/privacy-policy' | '/services'
-  id: '__root__' | '/' | '/case-studies' | '/privacy-policy' | '/services'
+  to: '/' | '/case-studies' | '/insights' | '/privacy-policy' | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/case-studies'
+    | '/insights'
+    | '/privacy-policy'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  InsightsRoute: typeof InsightsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -83,6 +104,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  InsightsRoute: InsightsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRoute,
 }
