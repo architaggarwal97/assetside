@@ -21,8 +21,10 @@ export const Route = createFileRoute("/case-studies")({
           "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, and a competing jewellery vertical.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://assetside.lovable.app/case-studies" }],
   }),
   component: CaseStudiesPage,
 });
