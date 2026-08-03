@@ -129,7 +129,9 @@ const SERVICES: Service[] = [
       "CAC and ROAS tracking, with budget shifted toward what's actually working",
     ],
     proof: "Portfolio-wide ROAS improvements from 2.4× up to 3.9×, CAC held steady even as spend scaled 35%+.",
+    proofLink: { to: "/case-studies", hash: "adyaaye", label: "See the Adyaaye case study →" },
   },
+
   {
     n: "02",
     slug: "brand-positioning-gtm",
