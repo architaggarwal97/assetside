@@ -112,7 +112,9 @@ type Service = {
   lead: string;
   included: string[];
   proof?: string;
+  proofLink?: { to: string; hash?: string; label: string };
 };
+
 
 const SERVICES: Service[] = [
   {
