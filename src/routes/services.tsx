@@ -224,7 +224,9 @@ const SERVICES: Service[] = [
       "Influencer programs built to amplify event promotion and drive trust through user-generated content",
     ],
     proof: "Raised net Sales Qualified Lead rate from 25% to 54% for a wedding shopping exhibition business, while cutting cost per SQL by 50%.",
+    proofLink: { to: "/case-studies", hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
   },
+
   {
     n: "09",
     slug: "mbo-placements",
