@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav, SERVICE_SECTIONS } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+
 
 const TITLE = "Services — Asset Side";
 const DESCRIPTION =
@@ -111,7 +112,9 @@ type Service = {
   lead: string;
   included: string[];
   proof?: string;
+  proofLink?: { to: string; hash?: string; label: string };
 };
+
 
 const SERVICES: Service[] = [
   {
@@ -126,7 +129,9 @@ const SERVICES: Service[] = [
       "CAC and ROAS tracking, with budget shifted toward what's actually working",
     ],
     proof: "Portfolio-wide ROAS improvements from 2.4× up to 3.9×, CAC held steady even as spend scaled 35%+.",
+    proofLink: { to: "/case-studies", hash: "adyaaye", label: "See the Adyaaye case study →" },
   },
+
   {
     n: "02",
     slug: "brand-positioning-gtm",
@@ -152,7 +157,9 @@ const SERVICES: Service[] = [
       "Order volume and AOV tracking, without leaning on discounts to move the needle",
     ],
     proof: "2.1× order volume growth for a western wear label via WhatsApp-first selling, AOV held steady the entire time.",
+    proofLink: { to: "/case-studies", hash: "monture", label: "See the Monture case study →" },
   },
+
   {
     n: "04",
     slug: "growth-lead-generation",
@@ -202,7 +209,9 @@ const SERVICES: Service[] = [
       "PR amplification run in parallel with paid campaigns to build credibility and editorial presence",
     ],
     proof: "PR amplification built into a jewellery vertical campaign calendar, reinforcing paid reach with editorial presence during peak bridal and festive seasons.",
+    proofLink: { to: "/case-studies", hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
   },
+
   {
     n: "08",
     slug: "events",
@@ -215,7 +224,9 @@ const SERVICES: Service[] = [
       "Influencer programs built to amplify event promotion and drive trust through user-generated content",
     ],
     proof: "Raised net Sales Qualified Lead rate from 25% to 54% for a wedding shopping exhibition business, while cutting cost per SQL by 50%.",
+    proofLink: { to: "/case-studies", hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
   },
+
   {
     n: "09",
     slug: "mbo-placements",
@@ -373,10 +384,20 @@ function ServiceSection({ service, dark }: { service: Service; dark: boolean }) 
                 <p className={`mt-2 font-display text-base italic leading-relaxed md:text-lg ${
                   dark ? "text-cream" : "text-navy-deep"
                 }`}>
-                  {service.proof}
+                  {service.proof}{" "}
+                  {service.proofLink && (
+                    <Link
+                      to={service.proofLink.to}
+                      hash={service.proofLink.hash}
+                      className="ml-1 inline text-gold underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold"
+                    >
+                      {service.proofLink.label}
+                    </Link>
+                  )}
                 </p>
               </div>
             )}
+
           </div>
         </div>
       </div>
