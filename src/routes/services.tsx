@@ -209,7 +209,9 @@ const SERVICES: Service[] = [
       "PR amplification run in parallel with paid campaigns to build credibility and editorial presence",
     ],
     proof: "PR amplification built into a jewellery vertical campaign calendar, reinforcing paid reach with editorial presence during peak bridal and festive seasons.",
+    proofLink: { to: "/case-studies", hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
   },
+
   {
     n: "08",
     slug: "events",
