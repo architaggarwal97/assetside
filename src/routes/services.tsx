@@ -258,6 +258,7 @@ function ServicesPage() {
           <ServiceSection key={s.slug} service={s} dark={i % 2 === 1} />
         ))}
       </main>
+      <FAQSection />
       <ContactBlock />
       <SiteFooter />
     </div>
