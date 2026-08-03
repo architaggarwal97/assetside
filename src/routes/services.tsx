@@ -384,6 +384,82 @@ function ServiceSection({ service, dark }: { service: Service; dark: boolean }) 
   );
 }
 
+function FAQSection() {
+  return (
+    <section id="faq" className="bg-cream py-24 md:py-32">
+      <div className="mx-auto max-w-4xl px-6 md:px-10">
+        <div className="reveal mb-16 flex items-center gap-4">
+          <span className="font-display text-sm italic text-gold">§</span>
+          <div className="h-px w-10 bg-gold" />
+          <span className="text-xs uppercase tracking-[0.3em] text-charcoal-soft">Questions</span>
+        </div>
+        <h2 className="reveal mb-16 font-display text-3xl leading-tight text-navy-deep md:text-5xl">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-0">
+          {FAQ_ITEMS.map((item, i) => (
+            <div
+              key={i}
+              className="reveal border-b border-gold/30 py-8 first:border-t"
+              data-reveal-index={String(i)}
+            >
+              <h3 className="font-display text-lg italic leading-snug text-navy-deep md:text-xl">
+                {item.question}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-charcoal-soft md:text-base">
+                {item.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const FAQ_ITEMS = [
+  {
+    question: "Are you open to a full-time role, or only freelance work?",
+    answer:
+      "Both, depending on the right fit. I currently balance a full-time role with a small number of independent engagements, so an in-house opportunity or a project-based collaboration are equally worth a conversation.",
+  },
+  {
+    question: "What does a typical engagement look like?",
+    answer:
+      "A short discovery call first, then a focused audit of what's already working and what isn't, followed by a strategy and execution plan. Ongoing work usually settles into a monthly cadence: campaigns running, reporting on a fixed schedule, adjustments based on what the data actually says.",
+  },
+  {
+    question: "How long do engagements usually run?",
+    answer:
+      "Depends on scope. Some are single projects, a campaign shoot, a GTM strategy for a launch, others are ongoing monthly retainers for performance marketing or growth systems. I'll tell you honestly which one your situation calls for rather than defaulting to the longer option.",
+  },
+  {
+    question: "What size or type of brands do you work with?",
+    answer:
+      "Mostly luxury fashion, couture, jewellery, and D2C, though the same growth systems apply to FMCG, F&B, exhibitions, and NGO or fundraising work. If you're unsure whether it's a fit, the fastest way to find out is asking.",
+  },
+  {
+    question: "Do you work with brands outside India?",
+    answer:
+      "Yes. Past work has included brands with US, UK, Canadian, and Gulf or Southeast Asian audiences.",
+  },
+  {
+    question: "Do you handle execution, or just strategy?",
+    answer:
+      "Both, by design. Strategy without execution is a deck nobody acts on. Execution without strategy is just spend without direction.",
+  },
+  {
+    question: "Can we keep things confidential?",
+    answer:
+      "Yes, happy to sign an NDA before any strategy discussion if that's needed on your end.",
+  },
+  {
+    question: "How do we get started?",
+    answer:
+      "Reach out through Call, WhatsApp, or Email. A short call is usually enough to tell if there's a real fit before anything formal gets discussed.",
+  },
+];
+
 function ContactBlock() {
   return (
     <section
