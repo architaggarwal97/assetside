@@ -384,10 +384,20 @@ function ServiceSection({ service, dark }: { service: Service; dark: boolean }) 
                 <p className={`mt-2 font-display text-base italic leading-relaxed md:text-lg ${
                   dark ? "text-cream" : "text-navy-deep"
                 }`}>
-                  {service.proof}
+                  {service.proof}{" "}
+                  {service.proofLink && (
+                    <Link
+                      to={service.proofLink.to}
+                      hash={service.proofLink.hash}
+                      className="ml-1 inline text-gold underline decoration-gold/50 underline-offset-4 transition-colors hover:decoration-gold"
+                    >
+                      {service.proofLink.label}
+                    </Link>
+                  )}
                 </p>
               </div>
             )}
+
           </div>
         </div>
       </div>
