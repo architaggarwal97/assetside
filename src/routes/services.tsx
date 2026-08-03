@@ -157,7 +157,9 @@ const SERVICES: Service[] = [
       "Order volume and AOV tracking, without leaning on discounts to move the needle",
     ],
     proof: "2.1× order volume growth for a western wear label via WhatsApp-first selling, AOV held steady the entire time.",
+    proofLink: { to: "/case-studies", hash: "monture", label: "See the Monture case study →" },
   },
+
   {
     n: "04",
     slug: "growth-lead-generation",
