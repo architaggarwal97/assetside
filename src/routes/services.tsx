@@ -115,6 +115,10 @@ type Service = {
   proofLink?: { to: string; hash?: string; label: string };
 };
 
+const TOOLS = [
+  "Google Ads", "Meta Ads Manager", "Google Analytics 4", "SEMRush",
+  "Ahrefs", "HubSpot CRM", "Zapier", "Figma", "Google Looker Studio", "Power BI",
+];
 
 const SERVICES: Service[] = [
   {
@@ -269,10 +273,43 @@ function ServicesPage() {
           <ServiceSection key={s.slug} service={s} dark={i % 2 === 1} />
         ))}
       </main>
+      <Tools />
       <FAQSection />
       <ContactBlock />
       <SiteFooter />
     </div>
+  );
+}
+
+function Tools() {
+  return (
+    <section
+      id="tools"
+      className="py-28 text-cream md:py-40"
+      style={{ background: "linear-gradient(180deg, #1d4a36 0%, #0b2b1e 100%)" }}
+    >
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
+        <div className="reveal mb-14 flex items-center gap-4">
+          <span className="font-display text-sm italic text-gold">§</span>
+          <div className="h-px w-10 bg-gold" />
+          <span className="text-xs uppercase tracking-[0.3em] text-cream/60">Tools &amp; Expertise</span>
+        </div>
+        <h2 className="reveal mb-14 max-w-3xl font-display text-3xl leading-tight md:text-5xl">
+          The stack behind the <span className="italic text-gold">work.</span>
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {TOOLS.map((t, i) => (
+            <span
+              key={t}
+              data-reveal-index={i}
+              className="reveal border border-gold/50 px-5 py-3 text-sm tracking-wide text-cream/90 transition-all duration-300 hover:-translate-y-0.5 hover:border-gold hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-14px_rgba(196,146,42,0.7)]"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
