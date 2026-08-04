@@ -115,6 +115,10 @@ type Service = {
   proofLink?: { to: string; hash?: string; label: string };
 };
 
+const TOOLS = [
+  "Google Ads", "Meta Ads Manager", "Google Analytics 4", "SEMRush",
+  "Ahrefs", "HubSpot CRM", "Zapier", "Figma", "Google Looker Studio", "Power BI",
+];
 
 const SERVICES: Service[] = [
   {
