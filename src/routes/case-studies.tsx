@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -13,13 +13,13 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Three brands, three growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, and the Jewellery Vertical.",
+          "Four brands, four growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, and Self Storage India.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
         property: "og:description",
         content:
-          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, and a competing jewellery vertical.",
+          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, and a new self-storage category.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
@@ -41,7 +41,7 @@ type Study = {
   strategy: string[];
   results: { value: string; label: string }[];
   insight: string;
-  relatedService: { hash: string; label: string };
+  relatedService?: { hash: string; label: string };
 };
 
 const STUDIES: Study[] = [
@@ -120,6 +120,30 @@ const STUDIES: Study[] = [
       "Managing three competing jewellery brands simultaneously required disciplined audience separation. Each brand grew without pulling from the other's pool.",
     relatedService: { hash: "pr", label: "PR & Brand Amplification" },
   },
+  {
+    slug: "self-storage-india",
+    brand: "Self Storage India",
+    category: "Category Creation · D2C Lead Generation",
+    icon: Warehouse,
+    headlineStat: "50x",
+    headlineLabel: "Ad spend scaled",
+    objective:
+      "This was the first business of its kind entering the Indian market, self-storage as a consumer service simply didn't exist as a known category. Even the owners weren't fully confident it would work. The real first mandate wasn't lead generation, it was proving the model could work at all, starting cautiously rather than betting big on an unproven category.",
+    strategy: [
+      "Began with a deliberately conservative ₹10,000/month ad spend rather than pushing for a large upfront commitment on an unproven category",
+      "Used early results to build internal confidence before scaling investment further, treating each stage of budget increase as something that had to be earned by the last one",
+      "As proof accumulated, spend scaled up to ₹5,00,000/month",
+      "Diversified beyond Google to six channels within two months, built the on-page SEO foundation to rank for 900+ search terms, and layered in retargeting with continuous creative testing",
+    ],
+    results: [
+      { value: "₹10K → ₹5L", label: "Ad spend scaled / month" },
+      { value: "₹45L", label: "Sales / month" },
+      { value: "3", label: "Locations" },
+      { value: "60,000", label: "Sq ft total area" },
+    ],
+    insight:
+      "The hardest conversion in this one wasn't a customer, it was convincing the people signing off on the budget that the category itself was real. Every early rupee had to justify the next one. That discipline is what let spend scale 50x without it ever feeling like a leap of faith.",
+  },
 ];
 
 function CaseStudiesPage() {
@@ -177,11 +201,11 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — three brands, three different growth
+          A closer look at the strategy behind the numbers — four brands, four different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
-        <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-3">
+        <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-4">
           {STUDIES.map((s, i) => (
             <li key={s.slug}>
               <a href={`#${s.slug}`} className="transition-colors hover:text-gold">
@@ -288,16 +312,18 @@ function StudySection({ study, dark, mirrored }: { study: Study; dark: boolean; 
         “{study.insight}”
       </blockquote>
 
-      <div className="reveal mt-10 text-xs uppercase tracking-[0.2em]">
-        <span className={labelColor}>Related service: </span>
-        <Link
-          to="/services"
-          hash={study.relatedService.hash}
-          className="text-gold underline-offset-4 transition-colors hover:underline"
-        >
-          {study.relatedService.label} →
-        </Link>
-      </div>
+      {study.relatedService && (
+        <div className="reveal mt-10 text-xs uppercase tracking-[0.2em]">
+          <span className={labelColor}>Related service: </span>
+          <Link
+            to="/services"
+            hash={study.relatedService.hash}
+            className="text-gold underline-offset-4 transition-colors hover:underline"
+          >
+            {study.relatedService.label} →
+          </Link>
+        </div>
+      )}
     </div>
   );
 
