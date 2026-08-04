@@ -84,92 +84,6 @@ function Index() {
   );
 }
 
-function Nav({
-  scrolled, onNav, menuOpen, setMenuOpen, active,
-}: { scrolled: boolean; onNav: (id: string) => void; menuOpen: boolean; setMenuOpen: (v: boolean) => void; active: string }) {
-  return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-cream/90 backdrop-blur-md border-b border-gold/20" : "bg-transparent"
-      }`}
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
-        <button
-          onClick={() => onNav("top")}
-          aria-label="Archit Aggarwal — back to top"
-          className={`font-display text-2xl tracking-[0.05em] transition-colors ${
-            scrolled ? "text-navy" : "text-cream"
-          }`}
-        >
-          AA<span className="text-gold">.</span>
-        </button>
-        <nav className="hidden md:flex items-center gap-8">
-          {NAV.map((n) => {
-            const isActive = active === n.id;
-            const base = scrolled ? "text-charcoal" : "text-cream/85";
-            return (
-              <button
-                key={n.id}
-                onClick={() => onNav(n.id)}
-                aria-current={isActive ? "true" : undefined}
-                className={`relative text-xs uppercase tracking-[0.18em] transition-colors hover:text-gold ${
-                  isActive ? "text-gold" : base
-                }`}
-              >
-                {n.label}
-                <span
-                  className={`pointer-events-none absolute -bottom-1.5 left-0 h-px bg-gold transition-all duration-300 ${
-                    isActive ? "w-full" : "w-0"
-                  }`}
-                />
-              </button>
-            );
-          })}
-          <button
-            onClick={() => onNav("contact")}
-            className="border border-gold px-5 py-2 text-xs uppercase tracking-[0.18em] text-gold transition-all duration-300 hover:bg-gold hover:text-navy-deep hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-8px_rgba(196,146,42,0.6)]"
-          >
-            Book a Call
-          </button>
-        </nav>
-        <button
-          className={`md:hidden text-xs uppercase tracking-[0.2em] ${scrolled ? "text-navy" : "text-cream"}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-        >
-          {menuOpen ? "Close" : "Menu"}
-        </button>
-      </div>
-      {menuOpen && (
-        <div id="mobile-nav" className="md:hidden bg-cream border-t border-gold/20 px-6 py-6 space-y-4">
-          {NAV.map((n) => {
-            const isActive = active === n.id;
-            return (
-              <button
-                key={n.id}
-                onClick={() => onNav(n.id)}
-                aria-current={isActive ? "true" : undefined}
-                className={`block w-full text-left text-sm uppercase tracking-[0.18em] transition-colors ${
-                  isActive ? "text-gold" : "text-charcoal hover:text-gold"
-                }`}
-              >
-                {n.label}
-              </button>
-            );
-          })}
-          <button
-            onClick={() => onNav("contact")}
-            className="mt-2 w-full border border-gold px-5 py-3 text-xs uppercase tracking-[0.18em] text-gold"
-          >
-            Book a Call
-          </button>
-        </div>
-      )}
-    </header>
-  );
-}
 
 function Hero({ onNav }: { onNav: (id: string) => void }) {
   return (
@@ -506,23 +420,6 @@ function Contact() {
   );
 }
 
-function Footer({ onNav }: { onNav: (id: string) => void }) {
-  return (
-    <footer className="bg-navy-deep py-12 text-cream/80">
-      <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-xs uppercase tracking-[0.2em] md:flex-row md:justify-between md:px-10">
-        <div className="font-display text-sm normal-case tracking-normal text-cream">
-          Archit <span className="text-gold">Aggarwal</span>
-        </div>
-        <div className="flex gap-6">
-          <a href="mailto:ArchitAggarwal97@gmail.com" aria-label="Email Archit Aggarwal" className="transition-colors hover:text-gold">Email</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="Archit Aggarwal on LinkedIn" className="transition-colors hover:text-gold">LinkedIn</a>
-          <button onClick={() => onNav("top")} aria-label="Back to top of page" className="uppercase tracking-[0.2em] transition-colors hover:text-gold">Top ↑</button>
-        </div>
-        <div>© {new Date().getFullYear()} Archit Aggarwal</div>
-      </div>
-    </footer>
-  );
-}
 
 function CountUp({
   to, decimals = 0, prefix = "", suffix = "", duration = 1400,
