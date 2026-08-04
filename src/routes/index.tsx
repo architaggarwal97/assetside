@@ -59,7 +59,6 @@ function Index() {
       <Services />
       <TrackRecord />
       <Brands />
-      <Tools />
       <Contact />
       <SiteFooter />
     </div>
