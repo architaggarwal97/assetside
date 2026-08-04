@@ -1,20 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { useReveal, useScrollSpy } from "@/hooks/use-reveal";
+import { useReveal } from "@/hooks/use-reveal";
+import { SiteNav } from "@/components/site-nav";
+import { SiteFooter } from "@/components/site-footer";
 import architPortrait from "@/assets/archit-portrait.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const NAV = [
-  { id: "about", label: "About" },
-  { id: "services", label: "Services" },
-  { id: "results", label: "Results" },
-  { id: "brands", label: "Brands" },
-  { id: "tools", label: "Tools" },
-  { id: "contact", label: "Contact" },
-];
 
 const SERVICES = [
   { n: "01", t: "Performance Marketing", d: "Google & Meta Ads, full-funnel strategy engineered around revenue, not vanity metrics." },
@@ -38,7 +31,7 @@ const BRANDS = [
   "Wedding Asia", "Studio Prive", "La Polo", "Self Storage India",
   "Fur Ball Story", "Monture", "Adyaaye", "Maharashtra Jewellers",
   "Nike", "Crocs", "Kaya", "Geetanjali", "W for Women", "Indriya",
-  "Studio Olive Cre", "Aurelia", "24Seven",
+  "Studio Olive Cre", "Aurelia", "24Seven", "Ladli Foundation",
 ];
 
 const SECTORS = [
@@ -52,26 +45,15 @@ const TOOLS = [
 
 function Index() {
   useReveal();
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const active = useScrollSpy(NAV.map((n) => n.id));
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const scrollTo = (id: string) => {
-    setMenuOpen(false);
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
-      <Nav scrolled={scrolled} onNav={scrollTo} menuOpen={menuOpen} setMenuOpen={setMenuOpen} active={active} />
+      <SiteNav />
       <Hero onNav={scrollTo} />
       <About />
       <Services />
@@ -79,7 +61,7 @@ function Index() {
       <Brands />
       <Tools />
       <Contact />
-      <Footer onNav={scrollTo} />
+      <SiteFooter />
     </div>
   );
 }
