@@ -38,10 +38,6 @@ const SECTORS = [
   "D2C", "FMCG", "Luxury", "Exhibitions", "F&B", "NGO + Fundraising",
 ];
 
-const TOOLS = [
-  "Google Ads", "Meta Ads Manager", "Google Analytics 4", "SEMRush",
-  "Ahrefs", "HubSpot CRM", "Zapier", "Figma", "Google Looker Studio", "Power BI",
-];
 
 function Index() {
   useReveal();
