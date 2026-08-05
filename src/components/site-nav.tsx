@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export type NavLink =
@@ -178,6 +179,16 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
             );
           })}
         </nav>
+
+        <a
+          href="https://wa.me/919818661308"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:inline-flex items-center gap-1.5 border border-gold px-4 py-2 text-xs uppercase tracking-[0.18em] text-gold transition-colors hover:bg-gold hover:text-navy-deep"
+        >
+          <MessageCircle size={14} strokeWidth={2} aria-hidden="true" />
+          <span>Let&apos;s Talk</span>
+        </a>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
