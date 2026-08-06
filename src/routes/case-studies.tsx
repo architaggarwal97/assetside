@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -13,13 +13,13 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Four brands, four growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, and Self Storage India.",
+          "Five brands, five growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, and Fur Ball Story.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
         property: "og:description",
         content:
-          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, and a new self-storage category.",
+          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, and pet wellness.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
@@ -144,6 +144,30 @@ const STUDIES: Study[] = [
     insight:
       "The hardest conversion in this one wasn't a customer, it was convincing the people signing off on the budget that the category itself was real. Every early rupee had to justify the next one. That discipline is what let spend scale 50x without it ever feeling like a leap of faith.",
   },
+  {
+    slug: "fur-ball-story",
+    brand: "Fur Ball Story",
+    category: "Pet Wellness · D2C Growth & Operations",
+    icon: PawPrint,
+    headlineStat: "3.9x",
+    headlineLabel: "Peak ROAS",
+    objective:
+      "Scale the D2C channel for a homegrown ayurvedic pet nutrition and grooming brand, in a category where consumer trust in \u201cayurvedic\u201d pet care still needed building.",
+    strategy: [
+      "Increased average order value through high-margin bundles and upsell prompts, including live upsells during abandoned-cart recovery calls",
+      "Restructured Meta and Google campaigns with sharper audience segmentation, creative testing, and employee-generated content",
+      "Introduced a dedicated Purchase Help Centre, a calling team focused specifically on cart and checkout abandonment",
+      "Tightened address verification to cut failed COD deliveries, and used prepaid discounts to shift payment mix",
+    ],
+    results: [
+      { value: "+28%", label: "AOV in first quarter" },
+      { value: "−21%", label: "CAC (ROAS 2.4x → 3.9x)" },
+      { value: "18%", label: "Lost sales recovered monthly" },
+      { value: "1.7x", label: "Returning customer rate (11 mo)" },
+    ],
+    insight:
+      "Growth in a trust-building D2C category isn't only an acquisition problem. As much value came from closing the gaps between 'added to cart' and 'money actually collected,' recovered abandonments, fewer failed deliveries, more prepaid orders, as came from the ad account itself.",
+  },
 ];
 
 function CaseStudiesPage() {
@@ -205,7 +229,7 @@ function PageHeader() {
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
-        <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-4">
+        <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-3 lg:grid-cols-5">
           {STUDIES.map((s, i) => (
             <li key={s.slug}>
               <a href={`#${s.slug}`} className="transition-colors hover:text-gold">
@@ -215,6 +239,8 @@ function PageHeader() {
                     ? "Jewellery Vertical"
                     : s.slug === "self-storage-india"
                     ? "Self Storage India"
+                    : s.slug === "fur-ball-story"
+                    ? "Fur Ball Story"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>

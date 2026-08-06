@@ -45,6 +45,7 @@ const FEATURED_RESULTS: FeaturedResult[] = [
     brand: "Fur Ball Story",
     category: "Pet Wellness, D2C",
     stat: "ROAS 2.4x to 3.9x, AOV up 28%",
+    link: { to: "/case-studies", hash: "fur-ball-story" },
   },
   {
     brand: "Wedding Asia",
