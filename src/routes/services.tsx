@@ -187,7 +187,9 @@ const SERVICES: Service[] = [
       "On-page optimization and Core Web Vitals",
       "Mobile-first UX improvements and page speed work",
       "Platform builds and maintenance (WordPress, Shopify, WooCommerce)",
+      "Local SEO and Google Business Profile optimization for location-based and multi-outlet businesses",
     ],
+    proof: "Managed local SEO, digital presence, and online reputation for enterprise multi-location clients including Pizza Hut, Royal Enfield, and Kaya Skin Clinic.",
   },
   {
     n: "06",
