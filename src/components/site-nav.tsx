@@ -30,7 +30,6 @@ export const NAV_LINKS: NavLink[] = [
     items: SERVICE_SECTIONS.map((s) => ({ label: s.title, hash: s.slug })),
   },
   { kind: "link", label: "Insights", href: "/insights" },
-  { kind: "link", label: "Contact", href: "/#contact" },
 ];
 
 function LogoLockup({ logoColor }: { logoColor: string }) {
