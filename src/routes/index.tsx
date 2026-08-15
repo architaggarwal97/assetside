@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
@@ -10,12 +10,12 @@ export const Route = createFileRoute("/")({
 });
 
 const SERVICES = [
-  { n: "01", t: "Performance Marketing", d: "Google & Meta Ads, full-funnel strategy engineered around revenue, not vanity metrics." },
-  { n: "02", t: "Brand Positioning & GTM", d: "Sharpen the story, define the wedge, and take new categories to market with intent." },
-  { n: "03", t: "D2C & WhatsApp-First Commerce", d: "Conversational funnels that turn scroll-stoppers into orders and loyal repeats." },
-  { n: "04", t: "Growth & Lead Generation", d: "Predictable systems for qualified leads — from creative to CRM handoff." },
-  { n: "05", t: "SEO & Website Optimization", d: "Technical, on-page, and CRO work that compounds every quarter." },
-  { n: "06", t: "Analytics & Reporting", d: "GA4, Looker Studio and clean dashboards that make the next decision obvious." },
+  { n: "01", slug: "performance-marketing", t: "Performance Marketing", d: "Google & Meta Ads, full-funnel strategy engineered around revenue, not vanity metrics." },
+  { n: "02", slug: "brand-positioning-gtm", t: "Brand Positioning & GTM", d: "Sharpen the story, define the wedge, and take new categories to market with intent." },
+  { n: "03", slug: "d2c-whatsapp-commerce", t: "D2C & WhatsApp-First Commerce", d: "Conversational funnels that turn scroll-stoppers into orders and loyal repeats." },
+  { n: "04", slug: "growth-lead-generation", t: "Growth & Lead Generation", d: "Predictable systems for qualified leads — from creative to CRM handoff." },
+  { n: "05", slug: "seo-website-optimization", t: "SEO & Website Optimization", d: "Technical, on-page, and CRO work that compounds every quarter." },
+  { n: "06", slug: "marketing-analytics", t: "Analytics & Reporting", d: "GA4, Looker Studio and clean dashboards that make the next decision obvious." },
 ];
 
 const STATS = [
@@ -33,6 +33,14 @@ const BRANDS = [
   "Nike", "Crocs", "Kaya", "Geetanjali", "W for Women", "Indriya",
   "Studio Olive Cre", "Aurelia", "24Seven", "Ladli Foundation",
 ];
+
+const BRAND_CASE_STUDY_LINKS: Record<string, string> = {
+  "Adyaaye": "adyaaye",
+  "Monture": "monture",
+  "Maharashtra Jewellers": "jewellery-vertical",
+  "Self Storage India": "self-storage-india",
+  "Fur Ball Story": "fur-ball-story",
+};
 
 const SECTORS = [
   "D2C", "FMCG", "Luxury", "Exhibitions", "F&B", "NGO + Fundraising",
@@ -218,19 +226,21 @@ function Services() {
         </h2>
         <div className="grid gap-px bg-gold/20 md:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
-            <div
+            <Link
               key={s.n}
+              to="/services"
+              hash={s.slug}
               data-reveal-index={i}
-              className="reveal group relative p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] md:p-10"
+              className="reveal group relative block p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] md:p-10"
               style={{ backgroundColor: "#0b2b1e" }}
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="font-display text-xs italic text-gold">{s.n}</span>
                 <span className="h-px w-8 bg-gold transition-all group-hover:w-14" />
               </div>
-              <h3 className="font-display text-xl leading-snug text-cream md:text-2xl">{s.t}</h3>
+              <h3 className="font-display text-xl leading-snug text-cream transition-colors group-hover:text-gold md:text-2xl">{s.t}</h3>
               <p className="mt-4 text-sm leading-relaxed text-cream/80 md:text-[15px]">{s.d}</p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -261,6 +271,14 @@ function TrackRecord() {
             </div>
           ))}
         </div>
+        <div className="reveal mt-12 text-center">
+          <Link
+            to="/case-studies"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-charcoal-soft transition-colors hover:text-gold"
+          >
+            See the full stories <span aria-hidden>→</span>
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -273,15 +291,19 @@ function Brands() {
         <div className="gold-divider mb-20" />
         <SectionLabel n="IV." label="Brands Worked With" />
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 border-y border-gold/20 py-14 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {BRANDS.map((b, i) => (
-            <div
-              key={b}
-              data-reveal-index={i}
-              className="reveal text-center font-display text-lg tracking-wide text-navy-deep transition-all duration-300 hover:-translate-y-0.5 hover:text-gold md:text-xl"
-            >
-              {b}
-            </div>
-          ))}
+          {BRANDS.map((b, i) => {
+            const slug = BRAND_CASE_STUDY_LINKS[b];
+            const cls = "reveal text-center font-display text-lg tracking-wide text-navy-deep transition-all duration-300 hover:-translate-y-0.5 hover:text-gold md:text-xl";
+            return slug ? (
+              <Link key={b} to="/case-studies" hash={slug} data-reveal-index={i} className={cls}>
+                {b}
+              </Link>
+            ) : (
+              <div key={b} data-reveal-index={i} className={cls}>
+                {b}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
