@@ -260,12 +260,14 @@ function PageHeader() {
               <a href={`#${s.slug}`} className="transition-colors hover:text-gold">
                 <span className="text-gold">{String(i + 1).padStart(2, "0")}</span>
                 <span className="ml-3">
-                  {s.slug === "jewellery-vertical"
+                {s.slug === "jewellery-vertical"
                     ? "Jewellery Vertical"
                     : s.slug === "self-storage-india"
                     ? "Self Storage India"
                     : s.slug === "fur-ball-story"
                     ? "Fur Ball Story"
+                    : s.slug === "wedding-asia"
+                    ? "Wedding Asia"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
