@@ -165,8 +165,9 @@ function About() {
             </h2>
             <p>
               For over a decade, I've operated across D2C, FMCG, luxury, exhibitions, F&amp;B, and
-              the non-profit world — spanning performance marketing, brand strategy, and growth
-              systems, rather than sitting in a single lane.
+              the non-profit world, spanning performance marketing, brand strategy, growth systems,
+              and a curated eye for what a brand should look, sound, and feel like, rather than
+              sitting in a single lane.
             </p>
             <p>
               Today I lead brand positioning and performance marketing for a portfolio of
