@@ -217,7 +217,7 @@ export const SERVICES: Service[] = [
       "Influencer programs built to amplify event promotion and drive trust through user-generated content",
     ],
     proof: "Raised net Sales Qualified Lead rate from 25% to 54% for a wedding shopping exhibition business, while cutting cost per SQL by 50%.",
-    proofLink: { hash: "wedding-asia", label: "See the Wedding Asia case study →" },
+    proofLink: { hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
     metaTitle: "Event & Exhibition Marketing — Asset Side",
     metaDescription:
       "Exhibition and event management covering attendee and exhibitor lead generation, ticketing and check-in experience, co-branding, and influencer amplification.",
