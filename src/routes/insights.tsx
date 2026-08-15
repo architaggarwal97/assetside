@@ -29,7 +29,9 @@ export const Route = createFileRoute("/insights")({
   component: InsightsPage,
 });
 
-type ContextLink = { label: string; to: "/services" | "/case-studies"; hash: string };
+type ContextLink =
+  | { label: string; to: "/case-studies"; hash: string }
+  | { label: string; to: ServicePath; hash?: undefined };
 
 type Article = {
   slug: string;
@@ -56,8 +58,7 @@ const ARTICLES: Article[] = [
     },
     contextLink: {
       label: "D2C & WhatsApp-First Commerce",
-      to: "/services",
-      hash: "d2c-whatsapp-commerce",
+      to: "/services/d2c-whatsapp-commerce",
     },
   },
   {
@@ -119,7 +120,7 @@ const ARTICLES: Article[] = [
       kind: "quote",
       quote: "Reach without credibility is just noise at a higher volume.",
     },
-    contextLink: { label: "PR & Brand Amplification", to: "/services", hash: "pr" },
+    contextLink: { label: "PR & Brand Amplification", to: "/services/pr" },
   },
 ];
 
