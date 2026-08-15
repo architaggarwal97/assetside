@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 const TITLE = "Services — Asset Side";
 const DESCRIPTION =
-  "Nine ways to plug into growth — performance marketing, brand positioning, D2C & WhatsApp commerce, lead generation, SEO, analytics, PR, events, and MBO placements.";
+  "Eleven ways to plug into growth — performance marketing, brand positioning, D2C & WhatsApp commerce, lead generation, SEO, analytics, PR, events, MBO placements, social media marketing, and campaign & brand shoots.";
 const CANONICAL_URL = "https://assetside.lovable.app/services";
 
 const FAQ_SCHEMA = {
@@ -78,6 +78,14 @@ const FAQ_SCHEMA = {
         text: "Reach out through Call, WhatsApp, or Email. A short call is usually enough to tell if there's a real fit before anything formal gets discussed.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Do you handle campaign shoots?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, from moodboard and creative direction through to studio coordination and final delivery. If a strategy calls for it, I'll either run it directly or bring in the right production partners.",
+      },
+    },
   ],
 };
 
@@ -125,12 +133,15 @@ const SERVICES: Service[] = [
     n: "01",
     slug: "performance-marketing",
     title: "Performance Marketing",
-    lead: "Full-funnel paid media across Google and Meta, built around what a rupee of spend actually returns, not impressions or reach for their own sake.",
+    lead: "Full-funnel paid media across Google and Meta, built around unit economics, what a rupee of spend actually returns, not impressions or reach for their own sake.",
     included: [
       "Google Ads (Search, Display, Shopping, Performance Max)",
       "Meta Ads Manager across Facebook and Instagram (Feed, Stories, Reels)",
       "Audience segmentation and ongoing creative testing",
       "CAC and ROAS tracking, with budget shifted toward what's actually working",
+      "Conversion rate optimization: A/B testing, checkout funnel",
+      "Advanced tracking and cross-channel attribution",
+      "Funnel creation and optimization, from first touch to conversion",
     ],
     proof: "Portfolio-wide ROAS improvements from 2.4× up to 3.9×, CAC held steady even as spend scaled 35%+.",
     proofLink: { to: "/case-studies", hash: "adyaaye", label: "See the Adyaaye case study →" },
@@ -146,6 +157,9 @@ const SERVICES: Service[] = [
       "Go-to-market strategy for new products, markets, or categories",
       "Pitch decks and brand narratives tailored to the audience — retail partner, press, or investor",
       "Category entry planning, including timelines and benchmarking for brands entering new markets",
+      "Brand storytelling and narrative development",
+      "Aspiration building that earns attention before it asks for a sale",
+      "Category creation and market education for genuinely new offerings",
     ],
     proof: "Built a phased 12-month entry strategy for a US-based fragrance label entering India, covering positioning, channel sequencing, and import registration timelines.",
   },
@@ -159,6 +173,8 @@ const SERVICES: Service[] = [
       "Structured conversation flows for browsing, asking, and ordering without drop-off",
       "Retargeting based on engagement and DM activity",
       "Order volume and AOV tracking, without leaning on discounts to move the needle",
+      "Customer lifetime value (LTV) tracking and optimization",
+      "Retention marketing and repeat-purchase systems",
     ],
     proof: "2.1× order volume growth for a western wear label via WhatsApp-first selling, AOV held steady the entire time.",
     proofLink: { to: "/case-studies", hash: "monture", label: "See the Monture case study →" },
@@ -168,7 +184,7 @@ const SERVICES: Service[] = [
     n: "04",
     slug: "growth-lead-generation",
     title: "Growth & Lead Generation Systems",
-    lead: "Predictable lead flow, not a lucky month followed by three dry ones. Systems that connect creative, targeting, and CRM handoff so nothing leaks between interested and converted.",
+    lead: "Predictable demand and lead generation, not a lucky month followed by three dry ones. Systems that connect creative, targeting, and CRM handoff so nothing leaks between interested and converted.",
     included: [
       "Multi-channel lead generation across Meta, Google, and beyond",
       "CRM setup and funnel management (HubSpot, MS Dynamics 365)",
@@ -188,6 +204,7 @@ const SERVICES: Service[] = [
       "Mobile-first UX improvements and page speed work",
       "Platform builds and maintenance (WordPress, Shopify, WooCommerce)",
       "Local SEO and Google Business Profile optimization for location-based and multi-outlet businesses",
+      "Global D2C infrastructure: multi-currency, international shipping integrations",
     ],
     proof: "Managed local SEO, digital presence, and online reputation for enterprise multi-location clients including Pizza Hut, Royal Enfield, and Kaya Skin Clinic.",
   },
@@ -207,11 +224,14 @@ const SERVICES: Service[] = [
     n: "07",
     slug: "pr",
     title: "PR",
-    lead: "Media placements and editorial credibility, run alongside paid campaigns rather than instead of them, so a brand's story shows up somewhere other than its own ads.",
+    lead: "Media placements, narrative architecture, and editorial storytelling — run alongside paid campaigns rather than instead of them, so a brand's story shows up somewhere other than its own ads.",
     included: [
       "Media placements and editorial pitching across lifestyle, fashion, and business publications",
       "Press release drafting and story angles tailored to each publication",
       "Celebrity and stylist association opportunities",
+      "Celebrity sourcing and red carpet placements",
+      "Founder interviews and press features",
+      "Inter-brand collaborations for expanded reach",
       "PR amplification run in parallel with paid campaigns to build credibility and editorial presence",
     ],
     proof: "PR amplification built into a jewellery vertical campaign calendar, reinforcing paid reach with editorial presence during peak bridal and festive seasons.",
@@ -245,6 +265,29 @@ const SERVICES: Service[] = [
       "Ongoing account management across a multi-brand roster",
     ],
     proof: "Active placement experience across platforms including Pernia's Pop-Up Shop, Tata CLiQ Luxury, and Ensemble domestically, and Aashni+Co internationally.",
+  },
+  {
+    n: "10",
+    slug: "social-media-marketing",
+    title: "Social Media Marketing",
+    lead: "Strategic content planning and consistent, on-brand execution across platforms, the kind of presence that builds trust before someone ever lands on a website.",
+    included: [
+      "Content calendars and platform-specific strategy",
+      "Content production (photo, video, stories, graphics)",
+      "Community management and engagement",
+      "Monthly performance reporting and optimization",
+    ],
+  },
+  {
+    n: "11",
+    slug: "campaign-brand-shoots",
+    title: "Campaign & Brand Shoots",
+    lead: "From moodboard to final delivery, coordinated production for campaign imagery and video that actually looks like the brand it's representing.",
+    included: [
+      "Moodboard and creative direction",
+      "Studio, model, and vendor coordination",
+      "Full production management, shoot day to final delivery",
+    ],
   },
 ];
 
@@ -340,7 +383,7 @@ function PageHeader() {
           Services
         </h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          Six ways to plug into growth, each one built around what it actually returns.
+          Eleven ways to plug into growth, each one built around what it actually returns.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
         <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-2 md:grid-cols-3">
@@ -517,6 +560,11 @@ const FAQ_ITEMS = [
     question: "How do we get started?",
     answer:
       "Reach out through Call, WhatsApp, or Email. A short call is usually enough to tell if there's a real fit before anything formal gets discussed.",
+  },
+  {
+    question: "Do you handle campaign shoots?",
+    answer:
+      "Yes, from moodboard and creative direction through to studio coordination and final delivery. If a strategy calls for it, I'll either run it directly or bring in the right production partners.",
   },
 ];
 

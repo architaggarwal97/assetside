@@ -16,6 +16,8 @@ export const SERVICE_SECTIONS: { n: string; slug: string; title: string }[] = [
   { n: "07", slug: "pr", title: "PR" },
   { n: "08", slug: "events", title: "Events" },
   { n: "09", slug: "mbo-placements", title: "MBO Placements" },
+  { n: "10", slug: "social-media-marketing", title: "Social Media Marketing" },
+  { n: "11", slug: "campaign-brand-shoots", title: "Campaign & Brand Shoots" },
 ];
 
 export const NAV_LINKS: NavLink[] = [
