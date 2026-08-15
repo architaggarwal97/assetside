@@ -4,6 +4,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import architPortrait from "@/assets/archit-portrait.webp.asset.json";
+import type { ServicePath } from "@/data/services";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -230,8 +231,7 @@ function Services() {
           {SERVICES.map((s, i) => (
             <Link
               key={s.n}
-              to="/services"
-              hash={s.slug}
+              to={s.to}
               data-reveal-index={i}
               className="reveal group relative block p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_40px_-20px_rgba(0,0,0,0.5)] md:p-10"
               style={{ backgroundColor: "#0b2b1e" }}
