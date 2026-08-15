@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -13,13 +13,13 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Five brands, five growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, and Fur Ball Story.",
+          "Six brands, six growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, and Wedding Asia.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
         property: "og:description",
         content:
-          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, and pet wellness.",
+          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, pet wellness, and events.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
@@ -168,6 +168,31 @@ const STUDIES: Study[] = [
     insight:
       "Growth in a trust-building D2C category isn't only an acquisition problem. As much value came from closing the gaps between 'added to cart' and 'money actually collected,' recovered abandonments, fewer failed deliveries, more prepaid orders, as came from the ad account itself.",
   },
+  {
+    slug: "wedding-asia",
+    brand: "Wedding Asia",
+    category: "Events & Exhibitions · Lead Generation",
+    icon: Ticket,
+    headlineStat: "54%",
+    headlineLabel: "Net SQL rate",
+    objective:
+      "Grow the right kind of attendees and exhibitors for high-end wedding shopping exhibitions across India, the Gulf, and Southeast Asia, not just more footfall, but footfall worth having.",
+    strategy: [
+      "Diversified from a single Meta-dependent channel to six lead channels within two months",
+      "Revamped the website with a QR ticketing feature that generated a ticket at the point of lead submission, speeding up entry and improving attendee data capture at the door",
+      "Built co-branding and showroom walk-in campaigns to drive exhibitor cross-sell and retention",
+      "Launched an influencer program to build trust through user-generated content",
+      "Also moved early into Answer Engine and Generative Engine Optimisation, positioning visibility for AI-powered search platforms rather than only traditional search",
+    ],
+    results: [
+      { value: "25% → 54%", label: "Net SQL rate" },
+      { value: "−50%", label: "Cost per SQL" },
+      { value: "QR Ticketing", label: "Faster entry and cleaner data capture" },
+      { value: "Cross-Sell", label: "Improved exhibitor retention" },
+    ],
+    insight:
+      "Being early on AEO and GEO wasn't about chasing a trend, it was about not waiting until AI-powered search became the obvious place to be found before showing up there.",
+  },
 ];
 
 function CaseStudiesPage() {
@@ -225,7 +250,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — four brands, four different growth
+          A closer look at the strategy behind the numbers — six brands, six different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
@@ -235,12 +260,14 @@ function PageHeader() {
               <a href={`#${s.slug}`} className="transition-colors hover:text-gold">
                 <span className="text-gold">{String(i + 1).padStart(2, "0")}</span>
                 <span className="ml-3">
-                  {s.slug === "jewellery-vertical"
+                {s.slug === "jewellery-vertical"
                     ? "Jewellery Vertical"
                     : s.slug === "self-storage-india"
                     ? "Self Storage India"
                     : s.slug === "fur-ball-story"
                     ? "Fur Ball Story"
+                    : s.slug === "wedding-asia"
+                    ? "Wedding Asia"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>

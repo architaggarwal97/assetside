@@ -40,6 +40,7 @@ const BRAND_CASE_STUDY_LINKS: Record<string, string> = {
   "Maharashtra Jewellers": "jewellery-vertical",
   "Self Storage India": "self-storage-india",
   "Fur Ball Story": "fur-ball-story",
+  "Wedding Asia": "wedding-asia",
 };
 
 const SECTORS = [
