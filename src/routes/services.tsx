@@ -78,6 +78,14 @@ const FAQ_SCHEMA = {
         text: "Reach out through Call, WhatsApp, or Email. A short call is usually enough to tell if there's a real fit before anything formal gets discussed.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Do you handle campaign shoots?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, from moodboard and creative direction through to studio coordination and final delivery. If a strategy calls for it, I'll either run it directly or bring in the right production partners.",
+      },
+    },
   ],
 };
 
