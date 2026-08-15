@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 
 const TITLE = "Services — Asset Side";
 const DESCRIPTION =
-  "Nine ways to plug into growth — performance marketing, brand positioning, D2C & WhatsApp commerce, lead generation, SEO, analytics, PR, events, and MBO placements.";
+  "Eleven ways to plug into growth — performance marketing, brand positioning, D2C & WhatsApp commerce, lead generation, SEO, analytics, PR, events, MBO placements, social media marketing, and campaign & brand shoots.";
 const CANONICAL_URL = "https://assetside.lovable.app/services";
 
 const FAQ_SCHEMA = {
