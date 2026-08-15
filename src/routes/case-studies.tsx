@@ -41,7 +41,7 @@ type Study = {
   strategy: string[];
   results: { value: string; label: string }[];
   insight: string;
-  relatedService?: { hash: string; label: string };
+  relatedService?: { slug: string; label: string };
 };
 
 const STUDIES: Study[] = [
@@ -68,7 +68,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "CAC was maintained even as ad spend scaled by 35%, the result of tighter audience segmentation and creative iteration that reduced waste, not just increased budget.",
-    relatedService: { hash: "performance-marketing", label: "Performance Marketing" },
+    relatedService: { slug: "performance-marketing", label: "Performance Marketing" },
   },
   {
     slug: "monture",
@@ -93,7 +93,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "AOV held consistent throughout the entire scaling period. Order volume and reach grew because audience and content quality improved, not because discounts drove volume.",
-    relatedService: { hash: "d2c-whatsapp-commerce", label: "D2C & WhatsApp-First Commerce" },
+    relatedService: { slug: "d2c-whatsapp-commerce", label: "D2C & WhatsApp-First Commerce" },
   },
   {
     slug: "jewellery-vertical",
@@ -118,7 +118,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "Managing three competing jewellery brands simultaneously required disciplined audience separation. Each brand grew without pulling from the other's pool.",
-    relatedService: { hash: "pr", label: "PR & Brand Amplification" },
+    relatedService: { slug: "pr", label: "PR & Brand Amplification" },
   },
   {
     slug: "self-storage-india",
@@ -373,8 +373,7 @@ function StudySection({ study, dark, mirrored }: { study: Study; dark: boolean; 
         <div className="reveal mt-10 text-xs uppercase tracking-[0.2em]">
           <span className={labelColor}>Related service: </span>
           <Link
-            to="/services"
-            hash={study.relatedService.hash}
+            to={SERVICE_BY_SLUG[study.relatedService.slug]!.path}
             className="text-gold underline-offset-4 transition-colors hover:underline"
           >
             {study.relatedService.label} →
