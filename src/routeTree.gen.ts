@@ -14,6 +14,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
 import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
 import { Route as ServicesPrRouteImport } from './routes/services/pr'
@@ -49,6 +50,11 @@ const CaseStudiesRoute = CaseStudiesRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSocialMediaMarketingRoute =
@@ -132,6 +138,7 @@ export interface FileRoutesByFullPath {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,6 +157,7 @@ export interface FileRoutesByTo {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -169,6 +177,7 @@ export interface FileRoutesById {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -189,6 +198,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -207,6 +217,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   ServicesPrRoute: typeof ServicesPrRoute
   ServicesSeoWebsiteOptimizationRoute: typeof ServicesSeoWebsiteOptimizationRoute
   ServicesSocialMediaMarketingRoute: typeof ServicesSocialMediaMarketingRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -281,6 +294,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/social-media-marketing': {
@@ -380,6 +400,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesPrRoute: ServicesPrRoute,
   ServicesSeoWebsiteOptimizationRoute: ServicesSeoWebsiteOptimizationRoute,
   ServicesSocialMediaMarketingRoute: ServicesSocialMediaMarketingRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
