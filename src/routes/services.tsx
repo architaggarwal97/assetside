@@ -254,6 +254,29 @@ const SERVICES: Service[] = [
     ],
     proof: "Active placement experience across platforms including Pernia's Pop-Up Shop, Tata CLiQ Luxury, and Ensemble domestically, and Aashni+Co internationally.",
   },
+  {
+    n: "10",
+    slug: "social-media-marketing",
+    title: "Social Media Marketing",
+    lead: "Strategic content planning and consistent, on-brand execution across platforms, the kind of presence that builds trust before someone ever lands on a website.",
+    included: [
+      "Content calendars and platform-specific strategy",
+      "Content production (photo, video, stories, graphics)",
+      "Community management and engagement",
+      "Monthly performance reporting and optimization",
+    ],
+  },
+  {
+    n: "11",
+    slug: "campaign-brand-shoots",
+    title: "Campaign & Brand Shoots",
+    lead: "From moodboard to final delivery, coordinated production for campaign imagery and video that actually looks like the brand it's representing.",
+    included: [
+      "Moodboard and creative direction",
+      "Studio, model, and vendor coordination",
+      "Full production management, shoot day to final delivery",
+    ],
+  },
 ];
 
 function ServicesPage() {
