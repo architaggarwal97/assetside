@@ -383,7 +383,7 @@ function PageHeader() {
           Services
         </h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          Six ways to plug into growth, each one built around what it actually returns.
+          Eleven ways to plug into growth, each one built around what it actually returns.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
         <ul className="reveal mt-10 grid gap-x-8 gap-y-3 text-xs uppercase tracking-[0.18em] text-cream/75 sm:grid-cols-2 md:grid-cols-3">
