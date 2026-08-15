@@ -9,13 +9,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const SERVICES = [
-  { n: "01", slug: "performance-marketing", t: "Performance Marketing", d: "Google & Meta Ads, full-funnel strategy engineered around revenue, not vanity metrics." },
-  { n: "02", slug: "brand-positioning-gtm", t: "Brand Positioning & GTM", d: "Sharpen the story, define the wedge, and take new categories to market with intent." },
-  { n: "03", slug: "d2c-whatsapp-commerce", t: "D2C & WhatsApp-First Commerce", d: "Conversational funnels that turn scroll-stoppers into orders and loyal repeats." },
-  { n: "04", slug: "growth-lead-generation", t: "Growth & Lead Generation", d: "Predictable systems for qualified leads — from creative to CRM handoff." },
-  { n: "05", slug: "seo-website-optimization", t: "SEO & Website Optimization", d: "Technical, on-page, and CRO work that compounds every quarter." },
-  { n: "06", slug: "marketing-analytics", t: "Analytics & Reporting", d: "GA4, Looker Studio and clean dashboards that make the next decision obvious." },
+const SERVICES: { n: string; to: ServicePath; t: string; d: string }[] = [
+  { n: "01", to: "/services/performance-marketing", t: "Performance Marketing", d: "Google & Meta Ads, full-funnel strategy engineered around revenue, not vanity metrics." },
+  { n: "02", to: "/services/brand-positioning-gtm", t: "Brand Positioning & GTM", d: "Sharpen the story, define the wedge, and take new categories to market with intent." },
+  { n: "03", to: "/services/d2c-whatsapp-commerce", t: "D2C & WhatsApp-First Commerce", d: "Conversational funnels that turn scroll-stoppers into orders and loyal repeats." },
+  { n: "04", to: "/services/growth-lead-generation", t: "Growth & Lead Generation", d: "Predictable systems for qualified leads — from creative to CRM handoff." },
+  { n: "05", to: "/services/seo-website-optimization", t: "SEO & Website Optimization", d: "Technical, on-page, and CRO work that compounds every quarter." },
+  { n: "06", to: "/services/marketing-analytics", t: "Analytics & Reporting", d: "GA4, Looker Studio and clean dashboards that make the next decision obvious." },
 ];
 
 const STATS = [
