@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import type { ServicePath } from "@/data/services";
 import phoneAsset from "@/assets/phone-texting.jpg.asset.json";
 import jewelleryAsset from "@/assets/jewellery-case.jpg.asset.json";
 import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
