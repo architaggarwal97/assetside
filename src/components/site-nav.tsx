@@ -1,24 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { SERVICES } from "@/data/services";
 
 export type NavLink =
   | { kind: "link"; label: string; href: string }
-  | { kind: "menu"; label: string; href: string; items: { label: string; hash: string }[] };
+  | { kind: "menu"; label: string; href: string; items: { label: string; slug: string; to: string }[] };
 
-export const SERVICE_SECTIONS: { n: string; slug: string; title: string }[] = [
-  { n: "01", slug: "performance-marketing", title: "Performance Marketing" },
-  { n: "02", slug: "brand-positioning-gtm", title: "Brand Positioning & GTM Strategy" },
-  { n: "03", slug: "d2c-whatsapp-commerce", title: "D2C & WhatsApp-First Commerce" },
-  { n: "04", slug: "growth-lead-generation", title: "Growth & Lead Generation Systems" },
-  { n: "05", slug: "seo-website-optimization", title: "SEO & Website Optimization" },
-  { n: "06", slug: "marketing-analytics", title: "Marketing Analytics & Reporting" },
-  { n: "07", slug: "pr", title: "PR" },
-  { n: "08", slug: "events", title: "Events" },
-  { n: "09", slug: "mbo-placements", title: "MBO Placements" },
-  { n: "10", slug: "social-media-marketing", title: "Social Media Marketing" },
-  { n: "11", slug: "campaign-brand-shoots", title: "Campaign & Brand Shoots" },
-];
+export const SERVICE_SECTIONS: { n: string; slug: string; title: string; path: string }[] =
+  SERVICES.map((s) => ({ n: s.n, slug: s.slug, title: s.title, path: s.path }));
 
 export const NAV_LINKS: NavLink[] = [
   { kind: "link", label: "Home", href: "/" },
@@ -29,7 +19,7 @@ export const NAV_LINKS: NavLink[] = [
     kind: "menu",
     label: "Services",
     href: "/services",
-    items: SERVICE_SECTIONS.map((s) => ({ label: s.title, hash: s.slug })),
+    items: SERVICES.map((s) => ({ label: s.title, slug: s.slug, to: s.path })),
   },
   { kind: "link", label: "Insights", href: "/insights" },
 ];
@@ -152,14 +142,15 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
                     >
                       <div className="py-2">
                         {item.items.map((s) => (
-                          <a
-                            key={s.hash}
-                            href={`/services#${s.hash}`}
+                          <Link
+                            key={s.slug}
+                            to={s.to}
                             role="menuitem"
+                            onClick={() => setServicesOpen(false)}
                             className="block px-5 py-2.5 text-xs uppercase tracking-[0.16em] text-charcoal transition-colors hover:bg-gold/10 hover:text-gold"
                           >
                             {s.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -230,14 +221,14 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
                       {servicesOpen && (
                         <ul className="mt-4 space-y-3 border-l border-gold/30 pl-4">
                           {item.items.map((s) => (
-                            <li key={s.hash}>
-                              <a
-                                href={`/services#${s.hash}`}
+                            <li key={s.slug}>
+                              <Link
+                                to={s.to}
                                 onClick={() => setMenuOpen(false)}
                                 className="block text-[11px] uppercase tracking-[0.18em] text-charcoal-soft transition-colors hover:text-gold"
                               >
                                 {s.label}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
