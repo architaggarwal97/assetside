@@ -51,6 +51,7 @@ const FEATURED_RESULTS: FeaturedResult[] = [
     brand: "Wedding Asia",
     category: "Events & Exhibitions",
     stat: "SQL rate 25% to 54%, cost per SQL down 50%",
+    link: { to: "/case-studies", hash: "wedding-asia" },
   },
   {
     brand: "Ladli Foundation Trust",
