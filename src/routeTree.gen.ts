@@ -15,6 +15,17 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
+import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
+import { Route as ServicesPrRouteImport } from './routes/services/pr'
+import { Route as ServicesPerformanceMarketingRouteImport } from './routes/services/performance-marketing'
+import { Route as ServicesMboPlacementsRouteImport } from './routes/services/mbo-placements'
+import { Route as ServicesMarketingAnalyticsRouteImport } from './routes/services/marketing-analytics'
+import { Route as ServicesGrowthLeadGenerationRouteImport } from './routes/services/growth-lead-generation'
+import { Route as ServicesEventsRouteImport } from './routes/services/events'
+import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
+import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
+import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -46,22 +57,107 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesSocialMediaMarketingRoute =
+  ServicesSocialMediaMarketingRouteImport.update({
+    id: '/social-media-marketing',
+    path: '/social-media-marketing',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesSeoWebsiteOptimizationRoute =
+  ServicesSeoWebsiteOptimizationRouteImport.update({
+    id: '/seo-website-optimization',
+    path: '/seo-website-optimization',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesPrRoute = ServicesPrRouteImport.update({
+  id: '/pr',
+  path: '/pr',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesPerformanceMarketingRoute =
+  ServicesPerformanceMarketingRouteImport.update({
+    id: '/performance-marketing',
+    path: '/performance-marketing',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesMboPlacementsRoute = ServicesMboPlacementsRouteImport.update({
+  id: '/mbo-placements',
+  path: '/mbo-placements',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesMarketingAnalyticsRoute =
+  ServicesMarketingAnalyticsRouteImport.update({
+    id: '/marketing-analytics',
+    path: '/marketing-analytics',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesGrowthLeadGenerationRoute =
+  ServicesGrowthLeadGenerationRouteImport.update({
+    id: '/growth-lead-generation',
+    path: '/growth-lead-generation',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesEventsRoute = ServicesEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesD2cWhatsappCommerceRoute =
+  ServicesD2cWhatsappCommerceRouteImport.update({
+    id: '/d2c-whatsapp-commerce',
+    path: '/d2c-whatsapp-commerce',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesCampaignBrandShootsRoute =
+  ServicesCampaignBrandShootsRouteImport.update({
+    id: '/campaign-brand-shoots',
+    path: '/campaign-brand-shoots',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesBrandPositioningGtmRoute =
+  ServicesBrandPositioningGtmRouteImport.update({
+    id: '/brand-positioning-gtm',
+    path: '/brand-positioning-gtm',
+    getParentRoute: () => ServicesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/work': typeof WorkRoute
+  '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
+  '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
+  '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
+  '/services/events': typeof ServicesEventsRoute
+  '/services/growth-lead-generation': typeof ServicesGrowthLeadGenerationRoute
+  '/services/marketing-analytics': typeof ServicesMarketingAnalyticsRoute
+  '/services/mbo-placements': typeof ServicesMboPlacementsRoute
+  '/services/performance-marketing': typeof ServicesPerformanceMarketingRoute
+  '/services/pr': typeof ServicesPrRoute
+  '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
+  '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/work': typeof WorkRoute
+  '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
+  '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
+  '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
+  '/services/events': typeof ServicesEventsRoute
+  '/services/growth-lead-generation': typeof ServicesGrowthLeadGenerationRoute
+  '/services/marketing-analytics': typeof ServicesMarketingAnalyticsRoute
+  '/services/mbo-placements': typeof ServicesMboPlacementsRoute
+  '/services/performance-marketing': typeof ServicesPerformanceMarketingRoute
+  '/services/pr': typeof ServicesPrRoute
+  '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
+  '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -69,8 +165,19 @@ export interface FileRoutesById {
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/work': typeof WorkRoute
+  '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
+  '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
+  '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
+  '/services/events': typeof ServicesEventsRoute
+  '/services/growth-lead-generation': typeof ServicesGrowthLeadGenerationRoute
+  '/services/marketing-analytics': typeof ServicesMarketingAnalyticsRoute
+  '/services/mbo-placements': typeof ServicesMboPlacementsRoute
+  '/services/performance-marketing': typeof ServicesPerformanceMarketingRoute
+  '/services/pr': typeof ServicesPrRoute
+  '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
+  '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +188,17 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/services'
     | '/work'
+    | '/services/brand-positioning-gtm'
+    | '/services/campaign-brand-shoots'
+    | '/services/d2c-whatsapp-commerce'
+    | '/services/events'
+    | '/services/growth-lead-generation'
+    | '/services/marketing-analytics'
+    | '/services/mbo-placements'
+    | '/services/performance-marketing'
+    | '/services/pr'
+    | '/services/seo-website-optimization'
+    | '/services/social-media-marketing'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +207,17 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/services'
     | '/work'
+    | '/services/brand-positioning-gtm'
+    | '/services/campaign-brand-shoots'
+    | '/services/d2c-whatsapp-commerce'
+    | '/services/events'
+    | '/services/growth-lead-generation'
+    | '/services/marketing-analytics'
+    | '/services/mbo-placements'
+    | '/services/performance-marketing'
+    | '/services/pr'
+    | '/services/seo-website-optimization'
+    | '/services/social-media-marketing'
   id:
     | '__root__'
     | '/'
@@ -97,6 +226,17 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/services'
     | '/work'
+    | '/services/brand-positioning-gtm'
+    | '/services/campaign-brand-shoots'
+    | '/services/d2c-whatsapp-commerce'
+    | '/services/events'
+    | '/services/growth-lead-generation'
+    | '/services/marketing-analytics'
+    | '/services/mbo-placements'
+    | '/services/performance-marketing'
+    | '/services/pr'
+    | '/services/seo-website-optimization'
+    | '/services/social-media-marketing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,7 +244,7 @@ export interface RootRouteChildren {
   CaseStudiesRoute: typeof CaseStudiesRoute
   InsightsRoute: typeof InsightsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   WorkRoute: typeof WorkRoute
 }
 
@@ -152,15 +292,124 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/social-media-marketing': {
+      id: '/services/social-media-marketing'
+      path: '/social-media-marketing'
+      fullPath: '/services/social-media-marketing'
+      preLoaderRoute: typeof ServicesSocialMediaMarketingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/seo-website-optimization': {
+      id: '/services/seo-website-optimization'
+      path: '/seo-website-optimization'
+      fullPath: '/services/seo-website-optimization'
+      preLoaderRoute: typeof ServicesSeoWebsiteOptimizationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/pr': {
+      id: '/services/pr'
+      path: '/pr'
+      fullPath: '/services/pr'
+      preLoaderRoute: typeof ServicesPrRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/performance-marketing': {
+      id: '/services/performance-marketing'
+      path: '/performance-marketing'
+      fullPath: '/services/performance-marketing'
+      preLoaderRoute: typeof ServicesPerformanceMarketingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/mbo-placements': {
+      id: '/services/mbo-placements'
+      path: '/mbo-placements'
+      fullPath: '/services/mbo-placements'
+      preLoaderRoute: typeof ServicesMboPlacementsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/marketing-analytics': {
+      id: '/services/marketing-analytics'
+      path: '/marketing-analytics'
+      fullPath: '/services/marketing-analytics'
+      preLoaderRoute: typeof ServicesMarketingAnalyticsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/growth-lead-generation': {
+      id: '/services/growth-lead-generation'
+      path: '/growth-lead-generation'
+      fullPath: '/services/growth-lead-generation'
+      preLoaderRoute: typeof ServicesGrowthLeadGenerationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/events': {
+      id: '/services/events'
+      path: '/events'
+      fullPath: '/services/events'
+      preLoaderRoute: typeof ServicesEventsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/d2c-whatsapp-commerce': {
+      id: '/services/d2c-whatsapp-commerce'
+      path: '/d2c-whatsapp-commerce'
+      fullPath: '/services/d2c-whatsapp-commerce'
+      preLoaderRoute: typeof ServicesD2cWhatsappCommerceRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/campaign-brand-shoots': {
+      id: '/services/campaign-brand-shoots'
+      path: '/campaign-brand-shoots'
+      fullPath: '/services/campaign-brand-shoots'
+      preLoaderRoute: typeof ServicesCampaignBrandShootsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/brand-positioning-gtm': {
+      id: '/services/brand-positioning-gtm'
+      path: '/brand-positioning-gtm'
+      fullPath: '/services/brand-positioning-gtm'
+      preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
+
+interface ServicesRouteChildren {
+  ServicesBrandPositioningGtmRoute: typeof ServicesBrandPositioningGtmRoute
+  ServicesCampaignBrandShootsRoute: typeof ServicesCampaignBrandShootsRoute
+  ServicesD2cWhatsappCommerceRoute: typeof ServicesD2cWhatsappCommerceRoute
+  ServicesEventsRoute: typeof ServicesEventsRoute
+  ServicesGrowthLeadGenerationRoute: typeof ServicesGrowthLeadGenerationRoute
+  ServicesMarketingAnalyticsRoute: typeof ServicesMarketingAnalyticsRoute
+  ServicesMboPlacementsRoute: typeof ServicesMboPlacementsRoute
+  ServicesPerformanceMarketingRoute: typeof ServicesPerformanceMarketingRoute
+  ServicesPrRoute: typeof ServicesPrRoute
+  ServicesSeoWebsiteOptimizationRoute: typeof ServicesSeoWebsiteOptimizationRoute
+  ServicesSocialMediaMarketingRoute: typeof ServicesSocialMediaMarketingRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesBrandPositioningGtmRoute: ServicesBrandPositioningGtmRoute,
+  ServicesCampaignBrandShootsRoute: ServicesCampaignBrandShootsRoute,
+  ServicesD2cWhatsappCommerceRoute: ServicesD2cWhatsappCommerceRoute,
+  ServicesEventsRoute: ServicesEventsRoute,
+  ServicesGrowthLeadGenerationRoute: ServicesGrowthLeadGenerationRoute,
+  ServicesMarketingAnalyticsRoute: ServicesMarketingAnalyticsRoute,
+  ServicesMboPlacementsRoute: ServicesMboPlacementsRoute,
+  ServicesPerformanceMarketingRoute: ServicesPerformanceMarketingRoute,
+  ServicesPrRoute: ServicesPrRoute,
+  ServicesSeoWebsiteOptimizationRoute: ServicesSeoWebsiteOptimizationRoute,
+  ServicesSocialMediaMarketingRoute: ServicesSocialMediaMarketingRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   InsightsRoute: InsightsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
