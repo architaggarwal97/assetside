@@ -5,6 +5,7 @@ import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, type LucideIcon
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { SERVICE_BY_SLUG } from "@/data/services";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
