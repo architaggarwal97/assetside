@@ -1,3 +1,4 @@
+import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useReveal } from "@/hooks/use-reveal";
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/privacy-policy")({
       { name: "robots", content: "noindex, follow" },
     ],
     links: [{ rel: "canonical", href: "https://assetside.lovable.app/privacy-policy" }],
+    scripts: [breadcrumbScript([{ name: "Privacy Policy", path: "/privacy-policy" }])],
   }),
   component: PrivacyPolicyPage,
 });
