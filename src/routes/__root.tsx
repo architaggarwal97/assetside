@@ -20,19 +20,45 @@ const SOCIAL_PROFILE_URLS = [
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+    <div
+      className="flex min-h-screen flex-col items-center justify-center px-6 text-cream"
+      style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #2F6B4F 100%)" }}
+    >
+      <div className="max-w-2xl text-center">
+        <div className="mx-auto mb-8 flex items-center justify-center gap-4">
+          <span className="font-display text-sm italic text-gold">§</span>
+          <div className="h-px w-12 bg-gold" />
+        </div>
+        <div
+          className="font-display text-[8rem] font-medium leading-none text-gold md:text-[12rem]"
+          aria-hidden="true"
+        >
+          404
+        </div>
+        <h1 className="mt-8 font-display text-3xl md:text-5xl">
+          Page not found
+        </h1>
+        <p className="mx-auto mt-6 max-w-md text-base text-cream/80 md:text-lg">
+          This page isn't on the balance sheet. Let's get you back to the assets.
         </p>
-        <div className="mt-6">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
           >
-            Go home
+            Home
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
+          >
+            Services
+          </Link>
+          <Link
+            to="/work"
+            className="inline-flex min-w-[140px] items-center justify-center gap-3 border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
+          >
+            Work
           </Link>
         </div>
       </div>
