@@ -116,12 +116,15 @@ export const SERVICES: Service[] = [
     context: [
       "Most lead-gen problems are not top-of-funnel problems. Volume arrives, then sits in an inbox, gets contacted three days late, and is written off as a bad lead.",
       "So the system gets built end to end: channels that produce the right kind of lead, qualification logic that filters early, and automation that puts each lead in front of a human while it is still warm, with cost-per-SQL as the number that matters.",
+      "Once it runs, the reporting is deliberately simple: how many leads, how many were genuinely qualified, what each one cost, and where in the sequence the drop-off happened this month.",
     ],
     included: [
       "Multi-channel lead generation across Meta, Google, and beyond",
       "CRM setup and funnel management (HubSpot, MS Dynamics 365)",
       "Marketing automation (Zapier)",
       "Sales-qualified-lead tracking and cost-per-SQL reduction",
+      "Lead scoring and qualification logic so sales works the right list first",
+      "Follow-up sequencing across email, WhatsApp, and calls",
     ],
     proof: "Scaled one business from 30 to over 900 qualified leads a month within a single quarter.",
     metaTitle: "Growth & Lead Generation Systems — Asset Side",
@@ -162,12 +165,15 @@ export const SERVICES: Service[] = [
     context: [
       "Reporting fails when it answers questions nobody asked. The useful version starts from the decisions a founder actually makes each month, budget, channel mix, inventory, and reports only against those.",
       "Setup covers clean GA4 tracking, a single dashboard everyone shares, and a fixed reporting cadence with a written read on what changed and what to do next.",
+      "Where attribution is already tangled across platforms, that gets untangled first — one source of truth beats four dashboards that disagree with each other.",
     ],
     included: [
       "Google Analytics 4 setup and reporting",
       "Looker Studio and Power BI dashboards",
       "Recurring performance reporting with longitudinal tracking",
       "Clear read on what's working, what isn't, and what to do next",
+      "Conversion and event tracking audits across web and ad platforms",
+      "Cross-channel attribution reconciliation into a single source of truth",
     ],
     metaTitle: "Marketing Analytics & Reporting — Asset Side",
     metaDescription:
@@ -209,12 +215,14 @@ export const SERVICES: Service[] = [
     context: [
       "Footfall is the wrong target on its own. An exhibition succeeds when the people walking in are the ones exhibitors want to meet, and when the door doesn't cost twenty minutes of queueing to get through.",
       "So the work spans both sides: attendee and exhibitor lead generation before the event, and ticketing, check-in, and data capture on the day, so the next edition starts with a cleaner list than the last one.",
+      "Post-event, the captured data feeds straight back into retargeting and CRM, which is where most exhibitions leave the majority of their return on the table.",
     ],
     included: [
       "Exhibition and event management, covering both attendee and exhibitor-side lead generation",
       "On-ground experience improvements: ticketing, check-in, and data collection",
       "Co-branding and showroom walk-in campaigns tied to event promotions",
       "Influencer programs built to amplify event promotion and drive trust through user-generated content",
+      "Post-event retargeting and CRM follow-up from captured visitor data",
     ],
     proof: "Raised net Sales Qualified Lead rate from 25% to 54% for a wedding shopping exhibition business, while cutting cost per SQL by 50%.",
     proofLink: { hash: "jewellery-vertical", label: "See the jewellery vertical case study →" },
@@ -232,12 +240,15 @@ export const SERVICES: Service[] = [
     context: [
       "Being stocked by the right boutique does something advertising can't: it borrows an existing audience's trust and puts the brand in front of buyers already in a purchasing mindset.",
       "The wrong placement does the opposite, so each outreach starts with a positioning audit to match the label to platforms whose customer actually overlaps, followed by ongoing partner management once the placement is live.",
+      "Placement is the start, not the finish: pricing consistency, replenishment, and how the label is merchandised on-platform decide whether a boutique reorders.",
     ],
     included: [
       "MBO placement strategy and outreach across Indian and international platforms",
       "Partner relationship management once placements are secured",
       "Positioning audits to match each brand with the right retail partners",
       "Ongoing account management across a multi-brand roster",
+      "Pricing and margin structuring for retail and marketplace partners",
+      "Catalogue, lookbook, and on-platform merchandising support",
     ],
     proof: "Active placement experience across platforms including Pernia's Pop-Up Shop, Tata CLiQ Luxury, and Ensemble domestically, and Aashni+Co internationally.",
     metaTitle: "MBO Placements for Luxury & Couture Labels — Asset Side",
@@ -254,12 +265,15 @@ export const SERVICES: Service[] = [
     context: [
       "For most luxury and D2C brands, the feed is the first showroom a customer walks into. If it looks inconsistent there, no amount of paid spend fixes the impression.",
       "Work runs on a planned calendar rather than a posting scramble: platform-specific strategy, production, community management, and a monthly read on what the audience actually responded to.",
+      "Organic and paid share the same creative direction, so what performs in the feed can be pushed behind spend instead of being rebuilt from scratch.",
     ],
     included: [
       "Content calendars and platform-specific strategy",
       "Content production (photo, video, stories, graphics)",
       "Community management and engagement",
       "Monthly performance reporting and optimization",
+      "Influencer and creator collaborations, from shortlisting to delivery",
+      "Organic-to-paid creative handoff for high-performing posts",
     ],
     metaTitle: "Social Media Marketing for Luxury & D2C — Asset Side",
     metaDescription:
@@ -275,11 +289,15 @@ export const SERVICES: Service[] = [
     context: [
       "A campaign is only as strong as the assets it runs on. Most underperforming creative isn't a targeting problem, it's a shoot that was briefed loosely and delivered generically.",
       "Each production starts from the positioning and the channels the assets have to work in, then runs through casting, studio, and vendor coordination to a delivered set of usable campaign creative.",
+      "Every shoot is briefed with formats in mind — campaign hero, feed, story, and paid cutdowns — so one production day supplies a season of creative rather than three images.",
     ],
     included: [
       "Moodboard and creative direction",
       "Studio, model, and vendor coordination",
       "Full production management, shoot day to final delivery",
+      "Casting, styling, and location or set sourcing",
+      "Shot lists planned around campaign, social, and paid formats",
+      "Post-production oversight: retouching, edits, and final asset delivery",
     ],
     metaTitle: "Campaign & Brand Shoots — Asset Side",
     metaDescription:
