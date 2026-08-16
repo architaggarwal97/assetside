@@ -33,6 +33,14 @@ export function SiteFooter() {
             LinkedIn
           </a>
           <a
+            href="/rss.xml"
+            aria-label="Subscribe to Asset Side Insights RSS feed"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-gold"
+          >
+            <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+            Subscribe
+          </a>
+          <a
             href="#top"
             aria-label="Back to top of page"
             className="uppercase tracking-[0.2em] transition-colors hover:text-gold"
