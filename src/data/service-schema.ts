@@ -149,6 +149,9 @@ export function serviceCanonical(service: Service) {
   return `${SITE_URL}${service.path}`;
 }
 
+/** Absolute social share image used across all service pages. */
+const OG_IMAGE = `${SITE_URL}/og-asset-side.jpg`;
+
 /** Shared head() config for every service detail route. */
 export function buildServiceHead(service: Service) {
   const url = serviceCanonical(service);
