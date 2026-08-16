@@ -52,6 +52,10 @@ const PUBLISHER = {
   },
 };
 
+function absoluteUrl(src: string) {
+  return src.startsWith("http") ? src : `https://assetside.lovable.app${src}`;
+}
+
 function blogSchema() {
   return {
     "@context": "https://schema.org",
@@ -74,7 +78,7 @@ function blogSchema() {
       inLanguage: "en",
       author: AUTHOR,
       publisher: PUBLISHER,
-      ...(a.header.kind === "photo" ? { image: [a.header.src] } : {}),
+      ...(a.header.kind === "photo" ? { image: [absoluteUrl(a.header.src)] } : {}),
     })),
   };
 }
