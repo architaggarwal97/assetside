@@ -4,6 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactBlock } from "@/components/contact-block";
 import { SERVICES, SERVICE_BY_SLUG, RELATED_SERVICES, type Service } from "@/data/services";
+import { SERVICE_FAQS } from "@/data/service-schema";
 
 export function ServiceDetailPage({ service }: { service: Service }) {
   useReveal();
@@ -13,6 +14,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
   const related = (RELATED_SERVICES[service.slug] ?? [])
     .map((slug) => SERVICE_BY_SLUG[slug])
     .filter((s): s is Service => Boolean(s) && s.slug !== service.slug);
+  const faqs = SERVICE_FAQS[service.slug] ?? [];
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
