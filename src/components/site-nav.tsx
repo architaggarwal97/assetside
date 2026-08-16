@@ -174,16 +174,6 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
 
         <div className="hidden md:flex items-center gap-4">
         <a
-          href="/rss.xml"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Subscribe to the Insights RSS feed"
-          aria-label="Subscribe to the Insights RSS feed"
-          className={`transition-colors hover:text-gold ${linkColor}`}
-        >
-          <Rss size={16} strokeWidth={2} aria-hidden="true" />
-        </a>
-        <a
           href="https://wa.me/919818661308"
           target="_blank"
           rel="noopener noreferrer"
@@ -275,16 +265,6 @@ export function SiteNav({ variant = "dark" }: { variant?: "dark" | "light" }) {
             >
               <MessageCircle size={15} strokeWidth={2} aria-hidden="true" />
               <span>Let&apos;s Talk</span>
-            </a>
-            <a
-              href="/rss.xml"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
-              className="mt-3 flex w-full items-center justify-center gap-2 border border-gold/40 px-4 py-3 text-xs uppercase tracking-[0.18em] text-charcoal transition-colors hover:border-gold hover:text-gold"
-            >
-              <Rss size={14} strokeWidth={2} aria-hidden="true" />
-              <span>Subscribe via RSS</span>
             </a>
           </div>
         </div>
