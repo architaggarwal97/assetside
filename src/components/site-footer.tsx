@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Rss } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -30,6 +31,14 @@ export function SiteFooter() {
             className="transition-colors hover:text-gold"
           >
             LinkedIn
+          </a>
+          <a
+            href="/rss.xml"
+            aria-label="Subscribe to Asset Side Insights RSS feed"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-gold"
+          >
+            <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+            Subscribe
           </a>
           <a
             href="#top"
