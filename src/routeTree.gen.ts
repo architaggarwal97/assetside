@@ -15,6 +15,7 @@ import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as InsightsRouteImport } from './routes/insights'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
@@ -57,6 +58,11 @@ const InsightsRoute = InsightsRouteImport.update({
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtomDotxmlRoute = AtomDotxmlRouteImport.update({
+  id: '/atom.xml',
+  path: '/atom.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -135,6 +141,7 @@ const ServicesBrandPositioningGtmRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -156,6 +163,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -178,6 +186,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
   '/insights': typeof InsightsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -201,6 +210,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/atom.xml'
     | '/case-studies'
     | '/insights'
     | '/privacy-policy'
@@ -222,6 +232,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/atom.xml'
     | '/case-studies'
     | '/insights'
     | '/privacy-policy'
@@ -243,6 +254,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/atom.xml'
     | '/case-studies'
     | '/insights'
     | '/privacy-policy'
@@ -265,6 +277,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AtomDotxmlRoute: typeof AtomDotxmlRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   InsightsRoute: typeof InsightsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -327,6 +340,13 @@ declare module '@tanstack/react-router' {
       path: '/case-studies'
       fullPath: '/case-studies'
       preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atom.xml': {
+      id: '/atom.xml'
+      path: '/atom.xml'
+      fullPath: '/atom.xml'
+      preLoaderRoute: typeof AtomDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -425,6 +445,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AtomDotxmlRoute: AtomDotxmlRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   InsightsRoute: InsightsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,

@@ -38,7 +38,15 @@ export function SiteFooter() {
             className="inline-flex items-center gap-1.5 transition-colors hover:text-gold"
           >
             <Rss className="h-3.5 w-3.5" aria-hidden="true" />
-            Subscribe
+            RSS
+          </a>
+          <a
+            href="/atom.xml"
+            aria-label="Subscribe to Asset Side Insights Atom feed"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-gold"
+          >
+            <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+            Atom
           </a>
           <a
             href="#top"
