@@ -27,10 +27,57 @@ export const Route = createFileRoute("/insights")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: URL }],
-    scripts: [breadcrumbScript([{ name: "Insights", path: "/insights" }])],
+    scripts: [
+      breadcrumbScript([{ name: "Insights", path: "/insights" }]),
+      { type: "application/ld+json", children: JSON.stringify(blogSchema()) },
+    ],
   }),
   component: InsightsPage,
 });
+
+const AUTHOR = {
+  "@type": "Person",
+  name: "Archit Aggarwal",
+  jobTitle: "Growth Marketing Consultant",
+  url: "https://assetside.lovable.app/#about",
+};
+
+const PUBLISHER = {
+  "@type": "Organization",
+  "@id": "https://assetside.lovable.app/#organization",
+  name: "Asset Side",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://assetside.lovable.app/og-asset-side.jpg",
+  },
+};
+
+function blogSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${URL}#blog`,
+    name: "Asset Side Insights",
+    description: DESCRIPTION,
+    url: URL,
+    author: AUTHOR,
+    publisher: PUBLISHER,
+    blogPost: ARTICLES.map((a) => ({
+      "@type": "BlogPosting",
+      "@id": `${URL}#${a.slug}`,
+      mainEntityOfPage: { "@type": "WebPage", "@id": URL },
+      headline: a.title,
+      description: a.excerpt,
+      articleSection: a.category,
+      datePublished: a.datePublished,
+      dateModified: a.datePublished,
+      inLanguage: "en",
+      author: AUTHOR,
+      publisher: PUBLISHER,
+      ...(a.header.kind === "photo" ? { image: [a.header.src] } : {}),
+    })),
+  };
+}
 
 type ContextLink =
   | { label: string; to: "/case-studies"; hash: string }
@@ -40,6 +87,7 @@ type Article = {
   slug: string;
   category: string;
   readTime: string;
+  datePublished: string;
   title: string;
   excerpt: string;
   header: { kind: "photo"; src: string; alt: string } | { kind: "quote"; quote: string };
@@ -51,6 +99,7 @@ const ARTICLES: Article[] = [
     slug: "whatsapp-first-commerce",
     category: "D2C & Commerce",
     readTime: "4 min read",
+    datePublished: "2026-02-11",
     title: "Why WhatsApp-First Commerce Is Winning in Indian D2C",
     excerpt:
       "A website checkout is a wall. A WhatsApp chat is a conversation. For most Indian D2C brands, the second one closes more sales — and it's not close.",
@@ -68,6 +117,7 @@ const ARTICLES: Article[] = [
     slug: "dhanda-first-framework",
     category: "Growth Philosophy",
     readTime: "5 min read",
+    datePublished: "2026-03-04",
     title: "Dhanda-First: A Framework for Marketing That Pays for Itself",
     excerpt:
       "Every rupee of marketing spend should show up somewhere on the balance sheet, as an asset, not a liability. This is the filter I run every campaign through before it gets a budget.",
@@ -80,6 +130,7 @@ const ARTICLES: Article[] = [
     slug: "jewellery-walk-in-campaigns",
     category: "Retail & Jewellery",
     readTime: "6 min read",
+    datePublished: "2026-04-15",
     title: "What Jewellery Brands Get Wrong About Store Walk-in Campaigns",
     excerpt:
       "Running three competing jewellery brands through the same bridal season taught me the one thing most retail campaigns get backwards: audience separation isn't a nice-to-have, it's the entire strategy.",
@@ -98,6 +149,7 @@ const ARTICLES: Article[] = [
     slug: "cost-of-vanity-metrics",
     category: "Performance Marketing",
     readTime: "5 min read",
+    datePublished: "2026-05-20",
     title: "The Real Cost of Chasing Vanity Metrics in Luxury Marketing",
     excerpt:
       "Reach and impressions look great in a slide deck. They don't pay rent. Here's how to tell the difference between a number that means something and a number that just looks like it does.",
@@ -116,6 +168,7 @@ const ARTICLES: Article[] = [
     slug: "performance-marketing-needs-pr",
     category: "Brand Strategy",
     readTime: "4 min read",
+    datePublished: "2026-06-09",
     title: "Why Performance Marketing Needs PR Sitting Right Next to It",
     excerpt:
       "An ad works harder when it's not the only place a customer sees the brand. The campaigns that scaled cleanest were always the ones running alongside a parallel PR push, not after one.",
@@ -126,6 +179,15 @@ const ARTICLES: Article[] = [
     contextLink: { label: "PR & Brand Amplification", to: "/services/pr" },
   },
 ];
+
+function formatDate(iso: string) {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+}
 
 function InsightsPage() {
   useReveal();
@@ -215,6 +277,10 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
           <span className="text-gold">{article.category}</span>
           <span className="h-px w-5 bg-gold/50" aria-hidden />
           <span className="text-charcoal-soft">{article.readTime}</span>
+          <span className="h-px w-5 bg-gold/50" aria-hidden />
+          <time dateTime={article.datePublished} className="text-charcoal-soft">
+            {formatDate(article.datePublished)}
+          </time>
         </div>
 
         <h2 className="mt-5 font-display text-xl leading-snug text-navy-deep md:text-2xl">
