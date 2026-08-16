@@ -88,8 +88,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Asset Side | Growth Marketing for Luxury & D2C Brands" },
       { name: "twitter:description", content: "Asset Side is Archit Aggarwal's growth marketing practice, turning ad spend into measurable ROI for luxury and D2C brands, not overhead" },
-      { name: "twitter:image", content: "/__l5e/assets-v1/931561fc-a35a-4339-b21c-7b6ea2695deb/archit-portrait.webp" },
-      { property: "og:image", content: "/__l5e/assets-v1/931561fc-a35a-4339-b21c-7b6ea2695deb/archit-portrait.webp" },
     ],
     links: [
       {
