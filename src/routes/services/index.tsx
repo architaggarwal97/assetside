@@ -1,3 +1,4 @@
+import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
@@ -82,7 +83,10 @@ export const Route = createFileRoute("/services/")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: CANONICAL_URL }],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) }],
+    scripts: [
+      breadcrumbScript([{ name: "Services", path: "/services" }]),
+      { type: "application/ld+json", children: JSON.stringify(FAQ_SCHEMA) },
+    ],
   }),
   component: ServicesPage,
 });

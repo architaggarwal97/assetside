@@ -1,3 +1,4 @@
+import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/case-studies")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://assetside.lovable.app/case-studies" }],
+    scripts: [breadcrumbScript([{ name: "Case Studies", path: "/case-studies" }])],
   }),
   component: CaseStudiesPage,
 });

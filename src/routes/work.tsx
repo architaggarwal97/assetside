@@ -1,3 +1,4 @@
+import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { useReveal } from "@/hooks/use-reveal";
@@ -95,6 +96,7 @@ export const Route = createFileRoute("/work")({
       { name: "twitter:description", content: DESCRIPTION },
     ],
     links: [{ rel: "canonical", href: URL }],
+    scripts: [breadcrumbScript([{ name: "Work", path: "/work" }])],
   }),
   component: WorkPage,
 });
