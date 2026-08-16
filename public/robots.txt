@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://assetside.lovable.app/sitemap.xml
+
+# RSS feed
+# https://assetside.lovable.app/rss.xml
