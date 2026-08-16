@@ -180,6 +180,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               areaServed: ["Vasant Kunj, New Delhi", "Sarojini Nagar, New Delhi", "IN"],
             },
             {
+              "@type": "WebSite",
+              "@id": "https://assetside.lovable.app/#website",
+              name: "Asset Side",
+              url: "https://assetside.lovable.app",
+              publisher: { "@id": "https://assetside.lovable.app/#organization" },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://assetside.lovable.app/?s={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            },
+            {
               "@type": "ProfessionalService",
               name: "Archit Aggarwal — Growth Marketing Consulting",
               provider: { "@id": "https://assetside.lovable.app/#person" },
