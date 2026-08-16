@@ -12,6 +12,12 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+// Replace these with Archit's actual social profile URLs when available.
+const SOCIAL_PROFILE_URLS = [
+  "https://www.linkedin.com/in/archit-aggarwal",
+  "https://www.instagram.com/architaggarwal",
+];
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
