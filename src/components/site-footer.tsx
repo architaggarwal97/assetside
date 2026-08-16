@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { Rss } from "lucide-react";
 
 export function SiteFooter() {
   return (
