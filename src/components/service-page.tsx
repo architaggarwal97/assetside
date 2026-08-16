@@ -112,6 +112,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
 
         <section
           className="py-16 text-cream md:py-20"
+
           style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #1d4a36 100%)" }}
         >
           {related.length > 0 && (
