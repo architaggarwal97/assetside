@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MessageCircle, Rss } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { SERVICES } from "@/data/services";
 
