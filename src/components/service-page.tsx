@@ -110,9 +110,31 @@ export function ServiceDetailPage({ service }: { service: Service }) {
           </div>
         </section>
 
+        {faqs.length > 0 && (
+          <section id="faq" className="border-t border-gold/20 bg-cream py-20 md:py-28">
+            <div className="mx-auto max-w-4xl px-6 md:px-10">
+              <div className="reveal text-[11px] uppercase tracking-[0.28em] text-gold">
+                Common questions
+              </div>
+              <h2 className="reveal mt-5 font-display text-3xl leading-tight text-navy-deep md:text-4xl">
+                {service.title}, answered
+              </h2>
+              <dl className="mt-12 divide-y divide-gold/25 border-y border-gold/25">
+                {faqs.map((f, i) => (
+                  <div key={i} className="reveal py-7" data-reveal-index={String(i)}>
+                    <dt className="font-display text-lg text-navy-deep md:text-xl">{f.question}</dt>
+                    <dd className="mt-3 text-sm leading-relaxed text-charcoal-soft md:text-base">
+                      {f.answer}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
+
         <section
           className="py-16 text-cream md:py-20"
-
           style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #1d4a36 100%)" }}
         >
           {related.length > 0 && (
