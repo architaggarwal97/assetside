@@ -149,6 +149,9 @@ export function serviceCanonical(service: Service) {
   return `${SITE_URL}${service.path}`;
 }
 
+/** Absolute social share image used across all service pages. */
+const OG_IMAGE = `${SITE_URL}/og-asset-side.jpg`;
+
 /** Shared head() config for every service detail route. */
 export function buildServiceHead(service: Service) {
   const url = serviceCanonical(service);
@@ -221,9 +224,19 @@ export function buildServiceHead(service: Service) {
       { property: "og:description", content: service.metaDescription },
       { property: "og:type", content: "website" },
       { property: "og:url", content: url },
+      { property: "og:site_name", content: "Asset Side" },
+      { property: "og:locale", content: "en_IN" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:secure_url", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:image:alt", content: `Asset Side — ${service.title}` },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: service.metaTitle },
       { name: "twitter:description", content: service.metaDescription },
+      { name: "twitter:image", content: OG_IMAGE },
+      { name: "twitter:image:alt", content: `Asset Side — ${service.title}` },
       { name: "article:section", content: `Service ${position}` },
     ],
     links: [{ rel: "canonical", href: url }],
