@@ -291,6 +291,49 @@ export const SERVICE_BY_SLUG = Object.fromEntries(
   SERVICES.map((s) => [s.slug, s]),
 ) as Record<string, Service>;
 
+/** Editorially chosen sibling services shown at the bottom of each detail page. */
+export const RELATED_SERVICES: Record<string, string[]> = {
+  "performance-marketing": [
+    "growth-lead-generation",
+    "marketing-analytics",
+    "d2c-whatsapp-commerce",
+  ],
+  "brand-positioning-gtm": ["pr", "social-media-marketing", "mbo-placements"],
+  "d2c-whatsapp-commerce": [
+    "performance-marketing",
+    "growth-lead-generation",
+    "seo-website-optimization",
+  ],
+  "growth-lead-generation": [
+    "performance-marketing",
+    "marketing-analytics",
+    "seo-website-optimization",
+  ],
+  "seo-website-optimization": [
+    "marketing-analytics",
+    "performance-marketing",
+    "d2c-whatsapp-commerce",
+  ],
+  "marketing-analytics": [
+    "performance-marketing",
+    "growth-lead-generation",
+    "seo-website-optimization",
+  ],
+  pr: ["brand-positioning-gtm", "events", "campaign-brand-shoots"],
+  events: ["pr", "mbo-placements", "brand-positioning-gtm"],
+  "mbo-placements": ["brand-positioning-gtm", "events", "pr"],
+  "social-media-marketing": [
+    "campaign-brand-shoots",
+    "performance-marketing",
+    "brand-positioning-gtm",
+  ],
+  "campaign-brand-shoots": [
+    "social-media-marketing",
+    "brand-positioning-gtm",
+    "performance-marketing",
+  ],
+};
+
 export const TOOLS = [
   "Google Ads",
   "Meta Ads Manager",
