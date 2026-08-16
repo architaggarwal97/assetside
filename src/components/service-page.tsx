@@ -3,13 +3,16 @@ import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { ContactBlock } from "@/components/contact-block";
-import { SERVICES, type Service } from "@/data/services";
+import { SERVICES, SERVICE_BY_SLUG, RELATED_SERVICES, type Service } from "@/data/services";
 
 export function ServiceDetailPage({ service }: { service: Service }) {
   useReveal();
 
   const index = SERVICES.findIndex((s) => s.slug === service.slug);
   const next = SERVICES[(index + 1) % SERVICES.length];
+  const related = (RELATED_SERVICES[service.slug] ?? [])
+    .map((slug) => SERVICE_BY_SLUG[slug])
+    .filter((s): s is Service => Boolean(s) && s.slug !== service.slug);
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
@@ -109,6 +112,35 @@ export function ServiceDetailPage({ service }: { service: Service }) {
           className="py-16 text-cream md:py-20"
           style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #1d4a36 100%)" }}
         >
+          {related.length > 0 && (
+            <div className="mx-auto mb-14 max-w-6xl px-6 md:px-10">
+              <div className="reveal text-[11px] uppercase tracking-[0.28em] text-gold">
+                Related services
+              </div>
+              <div className="mt-8 grid gap-px bg-cream/15 md:grid-cols-3">
+                {related.map((r, i) => (
+                  <Link
+                    key={r.slug}
+                    to={r.path}
+                    data-reveal-index={String(i)}
+                    className="reveal group block bg-[#0b2b1e] p-6 transition-colors hover:bg-[#123626] md:p-8"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-xs italic text-gold">{r.n}</span>
+                      <span className="h-px w-8 bg-gold transition-all group-hover:w-14" />
+                    </div>
+                    <h3 className="mt-5 font-display text-lg leading-snug text-cream transition-colors group-hover:text-gold md:text-xl">
+                      {r.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-cream/75">{r.blurb}</p>
+                    <span className="mt-5 inline-block text-[11px] uppercase tracking-[0.2em] text-gold">
+                      Learn more →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between md:px-10">
             <Link
               to="/services"
