@@ -36,6 +36,12 @@ export const Route = createFileRoute("/insights")({
         title: "Asset Side Insights RSS Feed",
         href: "https://assetside.lovable.app/rss.xml",
       },
+      {
+        rel: "alternate",
+        type: "application/atom+xml",
+        title: "Asset Side Insights Atom Feed",
+        href: "https://assetside.lovable.app/atom.xml",
+      },
     ],
     scripts: [
       breadcrumbScript([{ name: "Insights", path: "/insights" }]),
