@@ -7,6 +7,28 @@ import architPortrait from "@/assets/archit-portrait.webp.asset.json";
 import type { ServicePath } from "@/data/services";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Asset Side | Growth & Performance Marketing for Luxury & D2C" },
+      {
+        name: "description",
+        content:
+          "Archit Aggarwal is an independent growth and performance marketing consultant for luxury, fashion, D2C and lifestyle brands. Ad spend turned into measurable ROI.",
+      },
+      { property: "og:title", content: "Asset Side | Growth & Performance Marketing for Luxury & D2C" },
+      {
+        property: "og:description",
+        content:
+          "Independent growth and performance marketing consulting for luxury, fashion, D2C and lifestyle brands.",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://assetside.lovable.app/" },
+      { property: "og:image", content: "https://assetside.lovable.app/og-asset-side.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://assetside.lovable.app/og-asset-side.jpg" },
+    ],
+    links: [{ rel: "canonical", href: "https://assetside.lovable.app/" }],
+  }),
   component: Index,
 });
 

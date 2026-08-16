@@ -19,7 +19,11 @@ export const Route = createFileRoute("/privacy-policy")({
         content:
           "Privacy policy for Asset Side, the independent consulting practice of Archit Aggarwal.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://assetside.lovable.app/privacy-policy" },
+      { name: "robots", content: "noindex, follow" },
     ],
+    links: [{ rel: "canonical", href: "https://assetside.lovable.app/privacy-policy" }],
   }),
   component: PrivacyPolicyPage,
 });
