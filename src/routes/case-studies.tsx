@@ -294,6 +294,8 @@ function PageHeader() {
                     ? "Fur Ball Story"
                     : s.slug === "wedding-asia"
                     ? "Wedding Asia"
+                    : s.slug === "bright-rose"
+                    ? "Bright Rose"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
