@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -15,13 +15,13 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Six brands, six growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, and Wedding Asia.",
+          "Seven brands, seven growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, and Bright Rose.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
         property: "og:description",
         content:
-          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, pet wellness, and events.",
+          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, pet wellness, events, and heritage fashion.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
@@ -196,6 +196,29 @@ const STUDIES: Study[] = [
     insight:
       "Being early on AEO and GEO wasn't about chasing a trend, it was about not waiting until AI-powered search became the obvious place to be found before showing up there.",
   },
+  {
+    slug: "bright-rose",
+    brand: "Bright Rose",
+    category: "Heritage Fashion · Social Media & Digital Authority",
+    icon: Pin,
+    headlineStat: "20K+",
+    headlineLabel: "monthly Pinterest views",
+    objective:
+      "Build a storytelling-led digital presence that educated the audience on the heritage of Indian weaves and premium craftsmanship, turning casual scrollers into an engaged, curious community rather than relying on standard aesthetic posting alone.",
+    strategy: [
+      "Identified Pinterest as the strongest platform for the brand's visual storytelling and rebuilt the digital strategy around Pinterest SEO, aligned to how premium audiences actually search",
+      "Built educational content around authentic Indian weaves and the overlooked details of heritage craftsmanship",
+      "Executed keyword optimization to place the content in front of consumers actively searching for heritage fashion",
+    ],
+    results: [
+      { value: "20K+", label: "monthly Pinterest views within 15 days" },
+      { value: "Rapid", label: "organic discoverability surge" },
+      { value: "Niche", label: "authority in heritage fashion search" },
+      { value: "15 Days", label: "time to scale" },
+    ],
+    insight:
+      "Educational storytelling outperformed standard aesthetic posting because it answered a question the audience was already searching for, not just something they might like if they happened to scroll past it.",
+  },
 ];
 
 function CaseStudiesPage() {
@@ -253,7 +276,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — six brands, six different growth
+          A closer look at the strategy behind the numbers — seven brands, seven different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
