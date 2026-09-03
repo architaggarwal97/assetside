@@ -29,6 +29,7 @@ import { Route as ServicesEventsRouteImport } from './routes/services/events'
 import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
+import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -138,16 +139,23 @@ const ServicesBrandPositioningGtmRoute =
     path: '/services/brand-positioning-gtm',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
+  InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
+    id: '/everyone-says-google-ads-is-dead',
+    path: '/everyone-says-google-ads-is-dead',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
-  '/insights': typeof InsightsRoute
+  '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -165,11 +173,12 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
-  '/insights': typeof InsightsRoute
+  '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -188,11 +197,12 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
-  '/insights': typeof InsightsRoute
+  '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -217,6 +227,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -239,6 +250,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -261,6 +273,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -279,7 +292,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtomDotxmlRoute: typeof AtomDotxmlRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
-  InsightsRoute: typeof InsightsRoute
+  InsightsRoute: typeof InsightsRouteWithChildren
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -440,14 +453,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/everyone-says-google-ads-is-dead': {
+      id: '/insights/everyone-says-google-ads-is-dead'
+      path: '/everyone-says-google-ads-is-dead'
+      fullPath: '/insights/everyone-says-google-ads-is-dead'
+      preLoaderRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRouteImport
+      parentRoute: typeof InsightsRoute
+    }
   }
 }
+
+interface InsightsRouteChildren {
+  InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+}
+
+const InsightsRouteChildren: InsightsRouteChildren = {
+  InsightsEveryoneSaysGoogleAdsIsDeadRoute:
+    InsightsEveryoneSaysGoogleAdsIsDeadRoute,
+}
+
+const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
+  InsightsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtomDotxmlRoute: AtomDotxmlRoute,
   CaseStudiesRoute: CaseStudiesRoute,
-  InsightsRoute: InsightsRoute,
+  InsightsRoute: InsightsRouteWithChildren,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RssDotxmlRoute: RssDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
