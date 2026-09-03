@@ -2,6 +2,7 @@ import type { ServicePath } from "@/data/services";
 import phoneAsset from "@/assets/phone-texting.jpg.asset.json";
 import jewelleryAsset from "@/assets/jewellery-case.jpg.asset.json";
 import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
+import googleAdsImg from "@/assets/insights-google-ads.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
@@ -21,6 +22,8 @@ export type Article = {
   excerpt: string;
   header: { kind: "photo"; src: string; alt: string } | { kind: "quote"; quote: string };
   contextLink?: ContextLink;
+  /** When set, the card's "Read More" is an active link to the full article. */
+  articlePath?: string;
 };
 
 export const ARTICLES: Article[] = [
@@ -106,6 +109,21 @@ export const ARTICLES: Article[] = [
       quote: "Reach without credibility is just noise at a higher volume.",
     },
     contextLink: { label: "PR & Brand Amplification", to: "/services/pr" },
+  },
+  {
+    slug: "everyone-says-google-ads-is-dead",
+    category: "Performance Marketing",
+    readTime: "5 min read",
+    datePublished: "2026-09-03",
+    title: "Everyone Says Google Ads Is Dead",
+    excerpt:
+      "Everyone says Google Ads is dead. Rising costs, more automation, more competition. All of that is true. None of it means the platform stopped working.",
+    header: {
+      kind: "photo",
+      src: googleAdsImg,
+      alt: "Person reviewing analytics and ad performance data on a laptop screen",
+    },
+    articlePath: "/insights/everyone-says-google-ads-is-dead",
   },
 ];
 
