@@ -221,15 +221,26 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
         )}
 
         <div className="mt-auto flex items-center justify-between gap-4 pt-8">
-          <span
-            aria-disabled="true"
-            className="cursor-not-allowed select-none border border-charcoal-soft/30 px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] text-charcoal-soft/60"
-          >
-            Read More
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.22em] text-charcoal-soft/70">
-            Coming soon
-          </span>
+          {article.articlePath ? (
+            <Link
+              to={article.articlePath}
+              className="border border-gold px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] text-gold transition-all duration-300 hover:bg-gold hover:text-navy-deep"
+            >
+              Read More →
+            </Link>
+          ) : (
+            <>
+              <span
+                aria-disabled="true"
+                className="cursor-not-allowed select-none border border-charcoal-soft/30 px-5 py-2.5 text-[10px] uppercase tracking-[0.22em] text-charcoal-soft/60"
+              >
+                Read More
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.22em] text-charcoal-soft/70">
+                Coming soon
+              </span>
+            </>
+          )}
         </div>
       </div>
     </article>
