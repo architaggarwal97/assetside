@@ -18,6 +18,7 @@ import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
 import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
 import { Route as ServicesPrRouteImport } from './routes/services/pr'
@@ -75,6 +76,11 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InsightsRoute,
 } as any)
 const ServicesSocialMediaMarketingRoute =
   ServicesSocialMediaMarketingRouteImport.update({
@@ -167,13 +173,13 @@ export interface FileRoutesByFullPath {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
-  '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -190,6 +196,7 @@ export interface FileRoutesByTo {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -214,6 +221,7 @@ export interface FileRoutesById {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -239,13 +247,13 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/insights/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/atom.xml'
     | '/case-studies'
-    | '/insights'
     | '/privacy-policy'
     | '/rss.xml'
     | '/sitemap.xml'
@@ -262,6 +270,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/insights'
     | '/services'
   id:
     | '__root__'
@@ -285,6 +294,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/insights/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
@@ -376,6 +386,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/': {
+      id: '/insights/'
+      path: '/'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/services/social-media-marketing': {
       id: '/services/social-media-marketing'
       path: '/services/social-media-marketing'
@@ -465,11 +482,13 @@ declare module '@tanstack/react-router' {
 
 interface InsightsRouteChildren {
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 const InsightsRouteChildren: InsightsRouteChildren = {
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
 }
 
 const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
