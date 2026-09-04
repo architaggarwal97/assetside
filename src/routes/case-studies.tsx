@@ -146,6 +146,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "The hardest conversion in this one wasn't a customer, it was convincing the people signing off on the budget that the category itself was real. Every early rupee had to justify the next one. That discipline is what let spend scale 50x without it ever feeling like a leap of faith.",
+    relatedService: { slug: "growth-lead-generation", label: "Growth & Lead Generation Systems" },
   },
   {
     slug: "fur-ball-story",
@@ -170,6 +171,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "Growth in a trust-building D2C category isn't only an acquisition problem. As much value came from closing the gaps between 'added to cart' and 'money actually collected,' recovered abandonments, fewer failed deliveries, more prepaid orders, as came from the ad account itself.",
+    relatedService: { slug: "performance-marketing", label: "Performance Marketing" },
   },
   {
     slug: "wedding-asia",
@@ -195,6 +197,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "Being early on AEO and GEO wasn't about chasing a trend, it was about not waiting until AI-powered search became the obvious place to be found before showing up there.",
+    relatedService: { slug: "events", label: "Events" },
   },
   {
     slug: "bright-rose",
@@ -218,6 +221,7 @@ const STUDIES: Study[] = [
     ],
     insight:
       "Educational storytelling outperformed standard aesthetic posting because it answered a question the audience was already searching for, not just something they might like if they happened to scroll past it.",
+    relatedService: { slug: "social-media-marketing", label: "Social Media Marketing" },
   },
 ];
 
