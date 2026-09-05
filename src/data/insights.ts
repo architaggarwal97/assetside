@@ -125,5 +125,19 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/everyone-says-google-ads-is-dead",
   },
+  {
+    slug: "boutique-vs-conglomerate-pr-agency",
+    category: "Brand Strategy",
+    readTime: "6 min read",
+    datePublished: "2026-09-05",
+    title: "Boutique vs. Conglomerate PR Agency for Personalized Growth",
+    excerpt:
+      "Once your brand is creating art, not just inventory, the standard industry PR model completely breaks down. Here's why a limited client roster beats a factory approach.",
+    header: {
+      kind: "quote",
+      quote: "Standard PR is about being seen by everyone. Boutique PR is about being revered by the elite.",
+    },
+    articlePath: "/insights/boutique-vs-conglomerate-pr-agency",
+  },
 ];
 
