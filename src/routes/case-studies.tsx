@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -14,14 +14,14 @@ export const Route = createFileRoute("/case-studies")({
       { title: "Case Studies — Archit Aggarwal" },
       {
         name: "description",
-        content:
-          "Seven brands, seven growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, and Bright Rose.",
+      content:
+        "Eight brands, eight growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, and Maharashtra Jewellers.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
         property: "og:description",
         content:
-          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, pet wellness, events, and heritage fashion.",
+          "A closer look at the strategy behind the numbers across luxury couture, D2C western wear, jewellery retail, a new self-storage category, pet wellness, events, heritage fashion, and organic social growth.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://assetside.lovable.app/case-studies" },
@@ -280,7 +280,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — seven brands, seven different growth
+          A closer look at the strategy behind the numbers — eight brands, eight different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
@@ -300,6 +300,8 @@ function PageHeader() {
                     ? "Wedding Asia"
                     : s.slug === "bright-rose"
                     ? "Bright Rose"
+                    : s.slug === "maharashtra-jewellers-organic"
+                    ? "Maharashtra Jewellers (Social)"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
