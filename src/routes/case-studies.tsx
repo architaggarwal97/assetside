@@ -223,6 +223,29 @@ const STUDIES: Study[] = [
       "Educational storytelling outperformed standard aesthetic posting because it answered a question the audience was already searching for, not just something they might like if they happened to scroll past it.",
     relatedService: { slug: "social-media-marketing", label: "Social Media Marketing" },
   },
+  {
+    slug: "maharashtra-jewellers-organic",
+    brand: "Maharashtra Jewellers: Organic Growth",
+    category: "Fine Jewellery · Social Media & Digital Authority",
+    icon: Users,
+    headlineStat: "150%",
+    headlineLabel: "organic audience growth",
+    objective:
+      "Build a formidable digital presence while staying rooted in the brand's traditional identity, cultivating authentic connection across bridal, everyday luxury, and festive collections through culturally relevant storytelling, rather than chasing generic trends.",
+    strategy: [
+      "Conducted audience behavior analysis and detailed hashtag research to understand exactly what high-intent consumers were engaging with",
+      "Identified which specific jewellery categories performed best and built content pillars around them",
+      "Crafted intentional product positioning and trend adaptation to stand out in a competitive fine jewellery market",
+    ],
+    results: [
+      { value: "150%", label: "organic audience growth" },
+      { value: "20K → 50K", label: "followers, entirely organic" },
+      { value: "Deepened", label: "engagement across reels and static posts" },
+      { value: "Elevated", label: "brand recall with tailored content" },
+    ],
+    insight:
+      "The page didn't just grow in numbers, it became a community that engages daily. That only happens when content decisions come from what the audience actually responds to, not what looks good in a content calendar.",
+  },
 ];
 
 function CaseStudiesPage() {
