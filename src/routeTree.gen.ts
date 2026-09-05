@@ -31,6 +31,7 @@ import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/servic
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
+import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -151,6 +152,12 @@ const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
     path: '/everyone-says-google-ads-is-dead',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsBoutiqueVsConglomeratePrAgencyRoute =
+  InsightsBoutiqueVsConglomeratePrAgencyRouteImport.update({
+    id: '/boutique-vs-conglomerate-pr-agency',
+    path: '/boutique-vs-conglomerate-pr-agency',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -161,6 +168,7 @@ export interface FileRoutesByFullPath {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -184,6 +192,7 @@ export interface FileRoutesByTo {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -209,6 +218,7 @@ export interface FileRoutesById {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -235,6 +245,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -258,6 +269,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -282,6 +294,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -477,15 +490,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/boutique-vs-conglomerate-pr-agency': {
+      id: '/insights/boutique-vs-conglomerate-pr-agency'
+      path: '/boutique-vs-conglomerate-pr-agency'
+      fullPath: '/insights/boutique-vs-conglomerate-pr-agency'
+      preLoaderRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRouteImport
+      parentRoute: typeof InsightsRoute
+    }
   }
 }
 
 interface InsightsRouteChildren {
+  InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 const InsightsRouteChildren: InsightsRouteChildren = {
+  InsightsBoutiqueVsConglomeratePrAgencyRoute:
+    InsightsBoutiqueVsConglomeratePrAgencyRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
   InsightsIndexRoute: InsightsIndexRoute,
