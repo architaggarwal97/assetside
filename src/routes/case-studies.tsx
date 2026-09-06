@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
       content:
-        "Eight brands, eight growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, and Maharashtra Jewellers.",
+        "Nine brands, nine growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, Maharashtra Jewellers, and Banjara Trail.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
@@ -246,6 +246,30 @@ const STUDIES: Study[] = [
     insight:
       "The page didn't just grow in numbers, it became a community that engages daily. That only happens when content decisions come from what the audience actually responds to, not what looks good in a content calendar.",
   },
+  {
+    slug: "banjara-trail",
+    brand: "Banjara Trail",
+    category: "Fashion · PR & Global Positioning",
+    icon: Film,
+    headlineStat: "Cannes",
+    headlineLabel: "international presence",
+    objective:
+      "Elevate a promising but still largely local fashion label onto the global stage, building the media credibility and strategic positioning needed to move from regional recognition toward international relevance.",
+    strategy: [
+      "Built a structured PR and visibility strategy layering domestic editorial credibility with international positioning opportunities",
+      "Secured association with high-visibility cultural moments, including Miss India platforms, to build a media narrative before pursuing international placement",
+      "Used that accumulated credibility to position the brand for presence at the Cannes Film Festival, turning a local success story into an internationally recognized one",
+    ],
+    results: [
+      { value: "Local → Global", label: "positioning arc" },
+      { value: "Miss India", label: "platform association secured" },
+      { value: "Cannes Film Festival", label: "international presence achieved" },
+      { value: "Media Narrative", label: "built before the international push, not after" },
+    ],
+    insight:
+      "International visibility isn't something you buy with one big placement, it's something you build toward, one credible association at a time, so that by the time the bigger stage arrives, the brand has already earned the right to be taken seriously there.",
+    relatedService: { slug: "pr", label: "PR & Brand Amplification" },
+  },
 ];
 
 function CaseStudiesPage() {
@@ -303,7 +327,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — eight brands, eight different growth
+          A closer look at the strategy behind the numbers — nine brands, nine different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
@@ -325,6 +349,8 @@ function PageHeader() {
                     ? "Bright Rose"
                     : s.slug === "maharashtra-jewellers-organic"
                     ? "Maharashtra Jewellers (Social)"
+                    : s.slug === "banjara-trail"
+                    ? "Banjara Trail"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
