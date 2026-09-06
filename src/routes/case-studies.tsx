@@ -246,6 +246,30 @@ const STUDIES: Study[] = [
     insight:
       "The page didn't just grow in numbers, it became a community that engages daily. That only happens when content decisions come from what the audience actually responds to, not what looks good in a content calendar.",
   },
+  {
+    slug: "banjara-trail",
+    brand: "Banjara Trail",
+    category: "Fashion · PR & Global Positioning",
+    icon: Film,
+    headlineStat: "Cannes",
+    headlineLabel: "international presence",
+    objective:
+      "Elevate a promising but still largely local fashion label onto the global stage, building the media credibility and strategic positioning needed to move from regional recognition toward international relevance.",
+    strategy: [
+      "Built a structured PR and visibility strategy layering domestic editorial credibility with international positioning opportunities",
+      "Secured association with high-visibility cultural moments, including Miss India platforms, to build a media narrative before pursuing international placement",
+      "Used that accumulated credibility to position the brand for presence at the Cannes Film Festival, turning a local success story into an internationally recognized one",
+    ],
+    results: [
+      { value: "Local → Global", label: "positioning arc" },
+      { value: "Miss India", label: "platform association secured" },
+      { value: "Cannes Film Festival", label: "international presence achieved" },
+      { value: "Media Narrative", label: "built before the international push, not after" },
+    ],
+    insight:
+      "International visibility isn't something you buy with one big placement, it's something you build toward, one credible association at a time, so that by the time the bigger stage arrives, the brand has already earned the right to be taken seriously there.",
+    relatedService: { slug: "pr", label: "PR & Brand Amplification" },
+  },
 ];
 
 function CaseStudiesPage() {
