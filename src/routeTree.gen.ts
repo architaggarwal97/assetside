@@ -32,6 +32,7 @@ import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/servic
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
+import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -158,6 +159,12 @@ const InsightsBoutiqueVsConglomeratePrAgencyRoute =
     path: '/boutique-vs-conglomerate-pr-agency',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsBeyondTheBuzzwordCraftsmanshipRoute =
+  InsightsBeyondTheBuzzwordCraftsmanshipRouteImport.update({
+    id: '/beyond-the-buzzword-craftsmanship',
+    path: '/beyond-the-buzzword-craftsmanship',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -168,6 +175,7 @@ export interface FileRoutesByFullPath {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -192,6 +200,7 @@ export interface FileRoutesByTo {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -218,6 +227,7 @@ export interface FileRoutesById {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -245,6 +255,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
@@ -269,6 +280,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
@@ -294,6 +306,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/services/brand-positioning-gtm'
@@ -497,16 +510,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/beyond-the-buzzword-craftsmanship': {
+      id: '/insights/beyond-the-buzzword-craftsmanship'
+      path: '/beyond-the-buzzword-craftsmanship'
+      fullPath: '/insights/beyond-the-buzzword-craftsmanship'
+      preLoaderRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRouteImport
+      parentRoute: typeof InsightsRoute
+    }
   }
 }
 
 interface InsightsRouteChildren {
+  InsightsBeyondTheBuzzwordCraftsmanshipRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
 const InsightsRouteChildren: InsightsRouteChildren = {
+  InsightsBeyondTheBuzzwordCraftsmanshipRoute:
+    InsightsBeyondTheBuzzwordCraftsmanshipRoute,
   InsightsBoutiqueVsConglomeratePrAgencyRoute:
     InsightsBoutiqueVsConglomeratePrAgencyRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
