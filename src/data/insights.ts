@@ -3,6 +3,7 @@ import phoneAsset from "@/assets/phone-texting.jpg.asset.json";
 import jewelleryAsset from "@/assets/jewellery-case.jpg.asset.json";
 import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
 import googleAdsImg from "@/assets/insights-google-ads.jpg";
+import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
@@ -138,6 +139,21 @@ export const ARTICLES: Article[] = [
       quote: "Standard PR is about being seen by everyone. Boutique PR is about being revered by the elite.",
     },
     articlePath: "/insights/boutique-vs-conglomerate-pr-agency",
+  },
+  {
+    slug: "beyond-the-buzzword-craftsmanship",
+    category: "Sustainability & Craft",
+    readTime: "6 min read",
+    datePublished: "2026-09-07",
+    title: "Beyond the Buzzword: How to Communicate True Local Craftsmanship Without Greenwashing",
+    excerpt:
+      "True luxury is inherently sustainable. The problem is proving it without sounding like every other brand's generic 'eco-friendly' tag.",
+    header: {
+      kind: "photo",
+      src: craftsmanshipImg,
+      alt: "Close-up of an artisan's hands doing intricate gold-thread embroidery on silk",
+    },
+    articlePath: "/insights/beyond-the-buzzword-craftsmanship",
   },
 ];
 
