@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, HandHeart, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
       content:
-        "Nine brands, nine growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, Maharashtra Jewellers, and Banjara Trail.",
+        "Ten brands, ten growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, Maharashtra Jewellers, Banjara Trail, and Ladli Foundation Trust.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
@@ -270,6 +270,31 @@ const STUDIES: Study[] = [
       "International visibility isn't something you buy with one big placement, it's something you build toward, one credible association at a time, so that by the time the bigger stage arrives, the brand has already earned the right to be taken seriously there.",
     relatedService: { slug: "pr", label: "PR & Brand Amplification" },
   },
+  {
+    slug: "ladli-foundation-trust",
+    brand: "Ladli Foundation Trust",
+    category: "NGO · Digital Fundraising",
+    icon: HandHeart,
+    headlineStat: "3.5x",
+    headlineLabel: "overseas donation growth",
+    objective:
+      "Establish and scale a global digital presence from scratch for an impact-driven NGO, growing donations, international volunteering, and awareness across India, the US, and Africa.",
+    strategy: [
+      "Built the complete digital ecosystem from the ground up across seven properties, including the main site, US-specific and Africa-specific platforms, and a global internship platform, with donation funnels and CRM integration",
+      "Used Reddit and blogging to drive organic, community-led traffic rather than relying solely on paid reach",
+      "Scaled NRI-focused fundraising specifically through Meta, Google, and WhatsApp",
+      "Launched a subscription-based donation model (₹11/month) to shift the economics from one-time gifts toward donor lifetime value and predictable funding",
+      "Built structured post-donation journeys to strengthen trust and repeat giving",
+    ],
+    results: [
+      { value: "3.5x", label: "overseas donation growth in 6 months" },
+      { value: "1.5x", label: "MoM internship/fellowship participation growth" },
+      { value: "12%", label: "MoM organic traffic growth" },
+      { value: "7 Properties", label: "built and launched across 3 countries" },
+    ],
+    insight:
+      "A 0.9 ROAS on new donor acquisition looks like a losing number in isolation. Paired with a subscription model built for donor lifetime value instead of one-time conversion, it wasn't the losing number, it was the honest starting point. The real fundraising asset was never the first donation, it was the second, third, and twentieth.",
+  },
 ];
 
 function CaseStudiesPage() {
@@ -327,7 +352,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — nine brands, nine different growth
+          A closer look at the strategy behind the numbers — ten brands, ten different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
@@ -351,6 +376,8 @@ function PageHeader() {
                     ? "Maharashtra Jewellers (Social)"
                     : s.slug === "banjara-trail"
                     ? "Banjara Trail"
+                    : s.slug === "ladli-foundation-trust"
+                    ? "Ladli Foundation"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
