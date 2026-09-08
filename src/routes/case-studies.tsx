@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, HandHeart, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, HandHeart, ShoppingBag, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
