@@ -21,7 +21,9 @@ export type Article = {
   datePublished: string;
   title: string;
   excerpt: string;
-  header: { kind: "photo"; src: string; alt: string } | { kind: "quote"; quote: string };
+  header:
+    | { kind: "photo"; src: string; alt: string }
+    | { kind: "quote"; quote: string; variant?: "gold" };
   contextLink?: ContextLink;
   /** When set, the card's "Read More" is an active link to the full article. */
   articlePath?: string;
