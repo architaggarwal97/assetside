@@ -30,6 +30,7 @@ import { Route as ServicesEventsRouteImport } from './routes/services/events'
 import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
+import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
 import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
@@ -147,6 +148,12 @@ const ServicesBrandPositioningGtmRoute =
     path: '/services/brand-positioning-gtm',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsMeasuringTrueRoiLuxuryPrRoute =
+  InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
+    id: '/measuring-true-roi-luxury-pr',
+    path: '/measuring-true-roi-luxury-pr',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
   InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
     id: '/everyone-says-google-ads-is-dead',
@@ -178,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -203,6 +211,7 @@ export interface FileRoutesByTo {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -230,6 +239,7 @@ export interface FileRoutesById {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -258,6 +268,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/measuring-true-roi-luxury-pr'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -283,6 +294,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/measuring-true-roi-luxury-pr'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -309,6 +321,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/measuring-true-roi-luxury-pr'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -496,6 +509,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/measuring-true-roi-luxury-pr': {
+      id: '/insights/measuring-true-roi-luxury-pr'
+      path: '/measuring-true-roi-luxury-pr'
+      fullPath: '/insights/measuring-true-roi-luxury-pr'
+      preLoaderRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/everyone-says-google-ads-is-dead': {
       id: '/insights/everyone-says-google-ads-is-dead'
       path: '/everyone-says-google-ads-is-dead'
@@ -524,6 +544,7 @@ interface InsightsRouteChildren {
   InsightsBeyondTheBuzzwordCraftsmanshipRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
@@ -534,6 +555,7 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsBoutiqueVsConglomeratePrAgencyRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
+  InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 
