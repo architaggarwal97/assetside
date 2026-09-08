@@ -295,6 +295,29 @@ const STUDIES: Study[] = [
     insight:
       "A 0.9 ROAS on new donor acquisition looks like a losing number in isolation. Paired with a subscription model built for donor lifetime value instead of one-time conversion, it wasn't the losing number, it was the honest starting point. The real fundraising asset was never the first donation, it was the second, third, and twentieth.",
   },
+  {
+    slug: "shasha-gaba",
+    brand: "Shasha Gaba",
+    category: "Fashion, Menswear · MBO Placement & Business Development",
+    icon: ShoppingBag,
+    headlineStat: "₹30L/mo",
+    headlineLabel: "menswear MBO placement value",
+    objective:
+      "Expand a fashion label's retail footprint into menswear specifically, securing placement in multi-brand outlets worth pursuing seriously, not just adding SKUs to an existing account.",
+    strategy: [
+      "Ran a sustained business development push over two years, identifying and pitching the right MBO partners for a menswear expansion rather than a generic multi-category pitch",
+      "Built the retail relationships and account management needed to sustain placement once secured, not just win the initial listing",
+    ],
+    results: [
+      { value: "₹30L/mo", label: "menswear MBO placement value secured" },
+      { value: "2 Years", label: "sustained BD push" },
+      { value: "Menswear", label: "category expansion, new for the brand" },
+      { value: "Retail Partners", label: "secured and actively managed" },
+    ],
+    insight:
+      "Category expansion into menswear wasn't a quick pitch, it was a two-year relationship-building exercise that had to prove the category before any retailer would commit real shelf space to it.",
+    relatedService: { slug: "mbo-placements", label: "MBO Placements" },
+  },
 ];
 
 function CaseStudiesPage() {
