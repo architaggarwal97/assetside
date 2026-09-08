@@ -21,7 +21,9 @@ export type Article = {
   datePublished: string;
   title: string;
   excerpt: string;
-  header: { kind: "photo"; src: string; alt: string } | { kind: "quote"; quote: string };
+  header:
+    | { kind: "photo"; src: string; alt: string }
+    | { kind: "quote"; quote: string; variant?: "gold" };
   contextLink?: ContextLink;
   /** When set, the card's "Read More" is an active link to the full article. */
   articlePath?: string;
@@ -154,6 +156,21 @@ export const ARTICLES: Article[] = [
       alt: "Close-up of an artisan's hands doing intricate gold-thread embroidery on silk",
     },
     articlePath: "/insights/beyond-the-buzzword-craftsmanship",
+  },
+  {
+    slug: "measuring-true-roi-luxury-pr",
+    category: "Performance Marketing",
+    readTime: "7 min read",
+    datePublished: "2026-09-08",
+    title: "The Comprehensive Guide to Measuring the True ROI of Luxury PR",
+    excerpt:
+      "Standard industry ROI metrics don't apply once you're creating art, not just inventory. Here's what to track instead.",
+    header: {
+      kind: "quote",
+      quote: "What does this look like on the balance sheet in ninety days?",
+      variant: "gold",
+    },
+    articlePath: "/insights/measuring-true-roi-luxury-pr",
   },
 ];
 

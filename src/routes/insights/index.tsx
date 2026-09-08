@@ -180,6 +180,19 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
         </div>
+      ) : article.header.variant === "gold" ? (
+        <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden border-b border-gold/25 bg-gold/10 px-7 py-8 text-center">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-5 top-2 font-display text-7xl leading-none text-gold/35"
+          >
+            “
+          </span>
+          <blockquote className="relative font-display text-lg italic leading-snug text-navy-deep md:text-xl">
+            {article.header.quote}
+            <span className="mx-auto mt-4 block h-px w-10 bg-gold" />
+          </blockquote>
+        </div>
       ) : (
         <div
           className="flex aspect-[16/10] w-full items-center border-b border-gold/25 px-7 py-8"
