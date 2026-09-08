@@ -2,7 +2,7 @@ import { breadcrumbScript } from "@/data/breadcrumbs";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, HandHeart, type LucideIcon } from "lucide-react";
+import { Store, MessageCircle, Gem, Warehouse, PawPrint, Ticket, Pin, Users, Film, HandHeart, ShoppingBag, type LucideIcon } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
       content:
-        "Ten brands, ten growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, Maharashtra Jewellers, Banjara Trail, and Ladli Foundation Trust.",
+        "Eleven brands, eleven growth problems, one consistent approach — inside the strategy behind Adyaaye, Monture, the Jewellery Vertical, Self Storage India, Fur Ball Story, Wedding Asia, Bright Rose, Maharashtra Jewellers, Banjara Trail, Ladli Foundation Trust, and Shasha Gaba.",
       },
       { property: "og:title", content: "Case Studies — Archit Aggarwal" },
       {
@@ -295,6 +295,29 @@ const STUDIES: Study[] = [
     insight:
       "A 0.9 ROAS on new donor acquisition looks like a losing number in isolation. Paired with a subscription model built for donor lifetime value instead of one-time conversion, it wasn't the losing number, it was the honest starting point. The real fundraising asset was never the first donation, it was the second, third, and twentieth.",
   },
+  {
+    slug: "shasha-gaba",
+    brand: "Shasha Gaba",
+    category: "Fashion, Menswear · MBO Placement & Business Development",
+    icon: ShoppingBag,
+    headlineStat: "₹30L/mo",
+    headlineLabel: "menswear MBO placement value",
+    objective:
+      "Expand a fashion label's retail footprint into menswear specifically, securing placement in multi-brand outlets worth pursuing seriously, not just adding SKUs to an existing account.",
+    strategy: [
+      "Ran a sustained business development push over two years, identifying and pitching the right MBO partners for a menswear expansion rather than a generic multi-category pitch",
+      "Built the retail relationships and account management needed to sustain placement once secured, not just win the initial listing",
+    ],
+    results: [
+      { value: "₹30L/mo", label: "menswear MBO placement value secured" },
+      { value: "2 Years", label: "sustained BD push" },
+      { value: "Menswear", label: "category expansion, new for the brand" },
+      { value: "Retail Partners", label: "secured and actively managed" },
+    ],
+    insight:
+      "Category expansion into menswear wasn't a quick pitch, it was a two-year relationship-building exercise that had to prove the category before any retailer would commit real shelf space to it.",
+    relatedService: { slug: "mbo-placements", label: "MBO Placements" },
+  },
 ];
 
 function CaseStudiesPage() {
@@ -352,7 +375,7 @@ function PageHeader() {
         </div>
         <h1 className="reveal mt-8 font-display text-5xl leading-[1.05] md:text-7xl">Case Studies</h1>
         <p className="reveal mt-8 max-w-2xl font-display text-xl italic text-cream/85 md:text-2xl">
-          A closer look at the strategy behind the numbers — ten brands, ten different growth
+          A closer look at the strategy behind the numbers — eleven brands, eleven different growth
           problems, one consistent approach.
         </p>
         <div className="reveal mt-16 gold-divider max-w-md" />
@@ -378,6 +401,8 @@ function PageHeader() {
                     ? "Banjara Trail"
                     : s.slug === "ladli-foundation-trust"
                     ? "Ladli Foundation"
+                    : s.slug === "shasha-gaba"
+                    ? "Shasha Gaba"
                     : s.brand.split(" ")[0]}
                 </span>
               </a>
