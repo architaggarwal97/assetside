@@ -173,5 +173,20 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/measuring-true-roi-luxury-pr",
   },
+  {
+    slug: "standard-vs-luxury-agencies",
+    category: "Brand Strategy",
+    readTime: "7 min read",
+    datePublished: "2026-09-09",
+    title: "Standard PR vs. Boutique & Luxury PR: What's the Difference",
+    excerpt:
+      "There isn't just a two-way split between standard and boutique. Here's the full three-tier breakdown, and why the top tier isn't defined by size.",
+    header: {
+      kind: "photo",
+      src: standardLuxuryImg,
+      alt: "Elegant, minimal office meeting space with warm natural light",
+    },
+    articlePath: "/insights/standard-vs-luxury-agencies",
+  },
 ];
 
