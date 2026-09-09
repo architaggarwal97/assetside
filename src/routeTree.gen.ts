@@ -30,6 +30,7 @@ import { Route as ServicesEventsRouteImport } from './routes/services/events'
 import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
+import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
@@ -148,6 +149,12 @@ const ServicesBrandPositioningGtmRoute =
     path: '/services/brand-positioning-gtm',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsStandardVsLuxuryAgenciesRoute =
+  InsightsStandardVsLuxuryAgenciesRouteImport.update({
+    id: '/standard-vs-luxury-agencies',
+    path: '/standard-vs-luxury-agencies',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsMeasuringTrueRoiLuxuryPrRoute =
   InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
     id: '/measuring-true-roi-luxury-pr',
@@ -186,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -212,6 +220,7 @@ export interface FileRoutesByTo {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -240,6 +249,7 @@ export interface FileRoutesById {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -269,6 +279,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -295,6 +306,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -322,6 +334,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -509,6 +522,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/standard-vs-luxury-agencies': {
+      id: '/insights/standard-vs-luxury-agencies'
+      path: '/standard-vs-luxury-agencies'
+      fullPath: '/insights/standard-vs-luxury-agencies'
+      preLoaderRoute: typeof InsightsStandardVsLuxuryAgenciesRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/measuring-true-roi-luxury-pr': {
       id: '/insights/measuring-true-roi-luxury-pr'
       path: '/measuring-true-roi-luxury-pr'
@@ -545,6 +565,7 @@ interface InsightsRouteChildren {
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
@@ -556,6 +577,7 @@ const InsightsRouteChildren: InsightsRouteChildren = {
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
+  InsightsStandardVsLuxuryAgenciesRoute: InsightsStandardVsLuxuryAgenciesRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 
