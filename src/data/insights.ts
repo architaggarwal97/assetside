@@ -5,6 +5,7 @@ import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
 import googleAdsImg from "@/assets/insights-google-ads.jpg";
 import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
+import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
