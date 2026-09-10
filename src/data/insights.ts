@@ -204,5 +204,19 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/how-luxury-pr-lowers-cac",
   },
+  {
+    slug: "firm-generated-content-authority",
+    category: "Brand Strategy",
+    readTime: "7 min read",
+    datePublished: "2026-09-10",
+    title: "How to Leverage Firm-Generated Content (FGC) to Command Brand Authority",
+    excerpt:
+      "User-generated content works for mass-market brands. For luxury, the content that builds real authority has to come from the brand itself.",
+    header: {
+      kind: "quote",
+      quote: "Your grid should be a digital concierge, not a catalog.",
+    },
+    articlePath: "/insights/firm-generated-content-authority",
+  },
 ];
 
