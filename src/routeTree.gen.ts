@@ -32,6 +32,7 @@ import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/servic
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
+import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
 import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
@@ -161,6 +162,12 @@ const InsightsMeasuringTrueRoiLuxuryPrRoute =
     path: '/measuring-true-roi-luxury-pr',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsHowLuxuryPrLowersCacRoute =
+  InsightsHowLuxuryPrLowersCacRouteImport.update({
+    id: '/how-luxury-pr-lowers-cac',
+    path: '/how-luxury-pr-lowers-cac',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
   InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
     id: '/everyone-says-google-ads-is-dead',
@@ -192,6 +199,7 @@ export interface FileRoutesByFullPath {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -219,6 +227,7 @@ export interface FileRoutesByTo {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -248,6 +257,7 @@ export interface FileRoutesById {
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
@@ -278,6 +288,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
@@ -305,6 +316,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
@@ -333,6 +345,7 @@ export interface FileRouteTypes {
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
+    | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
@@ -536,6 +549,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/how-luxury-pr-lowers-cac': {
+      id: '/insights/how-luxury-pr-lowers-cac'
+      path: '/how-luxury-pr-lowers-cac'
+      fullPath: '/insights/how-luxury-pr-lowers-cac'
+      preLoaderRoute: typeof InsightsHowLuxuryPrLowersCacRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/everyone-says-google-ads-is-dead': {
       id: '/insights/everyone-says-google-ads-is-dead'
       path: '/everyone-says-google-ads-is-dead'
@@ -564,6 +584,7 @@ interface InsightsRouteChildren {
   InsightsBeyondTheBuzzwordCraftsmanshipRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
+  InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
@@ -576,6 +597,7 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsBoutiqueVsConglomeratePrAgencyRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
+  InsightsHowLuxuryPrLowersCacRoute: InsightsHowLuxuryPrLowersCacRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
   InsightsStandardVsLuxuryAgenciesRoute: InsightsStandardVsLuxuryAgenciesRoute,
   InsightsIndexRoute: InsightsIndexRoute,

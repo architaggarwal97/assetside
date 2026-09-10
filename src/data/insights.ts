@@ -189,5 +189,20 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/standard-vs-luxury-agencies",
   },
+  {
+    slug: "how-luxury-pr-lowers-cac",
+    category: "Performance Marketing",
+    readTime: "6 min read",
+    datePublished: "2026-09-09",
+    title: "How Luxury PR Drives Down Customer Acquisition Costs",
+    excerpt:
+      "Executing performance marketing without brand prestige behind it is a race to the bottom. Here's how PR actually lowers your CAC.",
+    header: {
+      kind: "photo",
+      src: luxuryPrCacImg,
+      alt: "Close-up of a gold and diamond ring resting on cream linen fabric",
+    },
+    articlePath: "/insights/how-luxury-pr-lowers-cac",
+  },
 ];
 
