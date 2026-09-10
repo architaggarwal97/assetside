@@ -5,6 +5,7 @@ import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
 import googleAdsImg from "@/assets/insights-google-ads.jpg";
 import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
+import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
@@ -187,6 +188,21 @@ export const ARTICLES: Article[] = [
       alt: "Elegant, minimal office meeting space with warm natural light",
     },
     articlePath: "/insights/standard-vs-luxury-agencies",
+  },
+  {
+    slug: "how-luxury-pr-lowers-cac",
+    category: "Performance Marketing",
+    readTime: "6 min read",
+    datePublished: "2026-09-09",
+    title: "How Luxury PR Drives Down Customer Acquisition Costs",
+    excerpt:
+      "Executing performance marketing without brand prestige behind it is a race to the bottom. Here's how PR actually lowers your CAC.",
+    header: {
+      kind: "photo",
+      src: luxuryPrCacImg,
+      alt: "Close-up of a gold and diamond ring resting on cream linen fabric",
+    },
+    articlePath: "/insights/how-luxury-pr-lowers-cac",
   },
 ];
 
