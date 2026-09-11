@@ -6,6 +6,7 @@ import googleAdsImg from "@/assets/insights-google-ads.jpg";
 import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
 import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
+import privateEventsImg from "@/assets/insights-private-events.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
@@ -217,6 +218,21 @@ export const ARTICLES: Article[] = [
       quote: "Your grid should be a digital concierge, not a catalog.",
     },
     articlePath: "/insights/firm-generated-content-authority",
+  },
+  {
+    slug: "private-pr-events-luxury-brands",
+    category: "Brand Strategy",
+    readTime: "6 min read",
+    datePublished: "2026-09-11",
+    title: "The Architecture of Exclusivity: How to Master the Invite-Only, Private PR Event",
+    excerpt:
+      "True luxury doesn't beg for attendance, it extends a quiet, highly coveted invitation. Here's how to engineer one that actually works.",
+    header: {
+      kind: "photo",
+      src: privateEventsImg,
+      alt: "Elegant, intimate event space with candlelit tables before guests arrive",
+    },
+    articlePath: "/insights/private-pr-events-luxury-brands",
   },
 ];
 
