@@ -31,6 +31,7 @@ import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/servic
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
+import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
 import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
@@ -157,6 +158,12 @@ const InsightsStandardVsLuxuryAgenciesRoute =
     path: '/standard-vs-luxury-agencies',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsPrivatePrEventsLuxuryBrandsRoute =
+  InsightsPrivatePrEventsLuxuryBrandsRouteImport.update({
+    id: '/private-pr-events-luxury-brands',
+    path: '/private-pr-events-luxury-brands',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsMeasuringTrueRoiLuxuryPrRoute =
   InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
     id: '/measuring-true-roi-luxury-pr',
@@ -209,6 +216,7 @@ export interface FileRoutesByFullPath {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -238,6 +246,7 @@ export interface FileRoutesByTo {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -269,6 +278,7 @@ export interface FileRoutesById {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -301,6 +311,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/private-pr-events-luxury-brands'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -330,6 +341,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/private-pr-events-luxury-brands'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -360,6 +372,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/private-pr-events-luxury-brands'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -555,6 +568,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsStandardVsLuxuryAgenciesRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/private-pr-events-luxury-brands': {
+      id: '/insights/private-pr-events-luxury-brands'
+      path: '/private-pr-events-luxury-brands'
+      fullPath: '/insights/private-pr-events-luxury-brands'
+      preLoaderRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/measuring-true-roi-luxury-pr': {
       id: '/insights/measuring-true-roi-luxury-pr'
       path: '/measuring-true-roi-luxury-pr'
@@ -607,6 +627,7 @@ interface InsightsRouteChildren {
   InsightsFirmGeneratedContentAuthorityRoute: typeof InsightsFirmGeneratedContentAuthorityRoute
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  InsightsPrivatePrEventsLuxuryBrandsRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
@@ -622,6 +643,8 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsFirmGeneratedContentAuthorityRoute,
   InsightsHowLuxuryPrLowersCacRoute: InsightsHowLuxuryPrLowersCacRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
+  InsightsPrivatePrEventsLuxuryBrandsRoute:
+    InsightsPrivatePrEventsLuxuryBrandsRoute,
   InsightsStandardVsLuxuryAgenciesRoute: InsightsStandardVsLuxuryAgenciesRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
