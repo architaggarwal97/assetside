@@ -48,6 +48,11 @@ export function SiteFooter() {
             <Rss className="h-3.5 w-3.5" aria-hidden="true" />
             Atom
           </a>
+          <div
+            google-add-preferred-source-btn
+            data-theme="dark"
+            aria-label="Add Asset Side as a preferred source on Google News"
+          ></div>
           <a
             href="#top"
             aria-label="Back to top of page"
