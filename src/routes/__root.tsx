@@ -246,6 +246,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ],
         }),
       },
+      {
+        async: true,
+        src: "https://news.google.com/swg/js/v1/publisher.js",
+      },
     ],
   }),
   shellComponent: RootShell,
