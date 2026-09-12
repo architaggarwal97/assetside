@@ -235,5 +235,20 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/private-pr-events-luxury-brands",
   },
+  {
+    slug: "social-kpis-predict-revenue",
+    category: "Performance Marketing",
+    readTime: "6 min read",
+    datePublished: "2026-09-11",
+    title: "The Social KPIs That Actually Predict Revenue for Luxury Brands",
+    excerpt:
+      "Likes, Views, and Reach represent passive observation. Here are the four KPIs that actually predict high-ticket conversions.",
+    header: {
+      kind: "photo",
+      src: socialKpisImg,
+      alt: "Phone screen showing a clean, minimal social media analytics view",
+    },
+    articlePath: "/insights/social-kpis-predict-revenue",
+  },
 ];
 
