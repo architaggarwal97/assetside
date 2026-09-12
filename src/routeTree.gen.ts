@@ -31,6 +31,7 @@ import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/servic
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
+import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
 import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
@@ -158,6 +159,12 @@ const InsightsStandardVsLuxuryAgenciesRoute =
     path: '/standard-vs-luxury-agencies',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsSocialKpisPredictRevenueRoute =
+  InsightsSocialKpisPredictRevenueRouteImport.update({
+    id: '/social-kpis-predict-revenue',
+    path: '/social-kpis-predict-revenue',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsPrivatePrEventsLuxuryBrandsRoute =
   InsightsPrivatePrEventsLuxuryBrandsRouteImport.update({
     id: '/private-pr-events-luxury-brands',
@@ -217,6 +224,7 @@ export interface FileRoutesByFullPath {
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
+  '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -247,6 +255,7 @@ export interface FileRoutesByTo {
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
+  '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -279,6 +288,7 @@ export interface FileRoutesById {
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
+  '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
@@ -312,6 +322,7 @@ export interface FileRouteTypes {
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/private-pr-events-luxury-brands'
+    | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -342,6 +353,7 @@ export interface FileRouteTypes {
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/private-pr-events-luxury-brands'
+    | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -373,6 +385,7 @@ export interface FileRouteTypes {
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/private-pr-events-luxury-brands'
+    | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
@@ -568,6 +581,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsStandardVsLuxuryAgenciesRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/social-kpis-predict-revenue': {
+      id: '/insights/social-kpis-predict-revenue'
+      path: '/social-kpis-predict-revenue'
+      fullPath: '/insights/social-kpis-predict-revenue'
+      preLoaderRoute: typeof InsightsSocialKpisPredictRevenueRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/private-pr-events-luxury-brands': {
       id: '/insights/private-pr-events-luxury-brands'
       path: '/private-pr-events-luxury-brands'
@@ -628,6 +648,7 @@ interface InsightsRouteChildren {
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   InsightsPrivatePrEventsLuxuryBrandsRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRoute
+  InsightsSocialKpisPredictRevenueRoute: typeof InsightsSocialKpisPredictRevenueRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
@@ -645,6 +666,7 @@ const InsightsRouteChildren: InsightsRouteChildren = {
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
   InsightsPrivatePrEventsLuxuryBrandsRoute:
     InsightsPrivatePrEventsLuxuryBrandsRoute,
+  InsightsSocialKpisPredictRevenueRoute: InsightsSocialKpisPredictRevenueRoute,
   InsightsStandardVsLuxuryAgenciesRoute: InsightsStandardVsLuxuryAgenciesRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
