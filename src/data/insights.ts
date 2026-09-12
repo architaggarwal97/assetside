@@ -7,6 +7,7 @@ import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
 import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
 import privateEventsImg from "@/assets/insights-private-events.jpg";
+import socialKpisImg from "@/assets/insights-social-kpis.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
@@ -233,6 +234,21 @@ export const ARTICLES: Article[] = [
       alt: "Elegant, intimate event space with candlelit tables before guests arrive",
     },
     articlePath: "/insights/private-pr-events-luxury-brands",
+  },
+  {
+    slug: "social-kpis-predict-revenue",
+    category: "Performance Marketing",
+    readTime: "6 min read",
+    datePublished: "2026-09-11",
+    title: "The Social KPIs That Actually Predict Revenue for Luxury Brands",
+    excerpt:
+      "Likes, Views, and Reach represent passive observation. Here are the four KPIs that actually predict high-ticket conversions.",
+    header: {
+      kind: "photo",
+      src: socialKpisImg,
+      alt: "Phone screen showing a clean, minimal social media analytics view",
+    },
+    articlePath: "/insights/social-kpis-predict-revenue",
   },
 ];
 
