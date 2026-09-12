@@ -250,5 +250,20 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/social-kpis-predict-revenue",
   },
+  {
+    slug: "targeted-media-network-luxury-pr",
+    category: "Brand Strategy",
+    readTime: "7 min read",
+    datePublished: "2026-09-12",
+    title: "How to Build a Targeted Media Network Without Mass Wire Services",
+    excerpt:
+      "Your HNI consumer doesn't scour syndicated wire feeds to find their next bespoke piece. Here's how to build a media network that actually reaches them.",
+    header: {
+      kind: "quote",
+      quote: "True luxury doesn't shout. It speaks quietly, to the right rooms.",
+      variant: "gold",
+    },
+    articlePath: "/insights/targeted-media-network-luxury-pr",
+  },
 ];
 
