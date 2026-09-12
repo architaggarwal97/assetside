@@ -34,6 +34,7 @@ import { Route as InsightsTargetedMediaNetworkLuxuryPrRouteImport } from './rout
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
 import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
 import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
+import { Route as InsightsNgoFundraisingSubscriptionThinkingRouteImport } from './routes/insights/ngo-fundraising-subscription-thinking'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
 import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
@@ -178,6 +179,12 @@ const InsightsPrivatePrEventsLuxuryBrandsRoute =
     path: '/private-pr-events-luxury-brands',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsNgoFundraisingSubscriptionThinkingRoute =
+  InsightsNgoFundraisingSubscriptionThinkingRouteImport.update({
+    id: '/ngo-fundraising-subscription-thinking',
+    path: '/ngo-fundraising-subscription-thinking',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsMeasuringTrueRoiLuxuryPrRoute =
   InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
     id: '/measuring-true-roi-luxury-pr',
@@ -230,6 +237,7 @@ export interface FileRoutesByFullPath {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -262,6 +270,7 @@ export interface FileRoutesByTo {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -296,6 +305,7 @@ export interface FileRoutesById {
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -331,6 +341,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/ngo-fundraising-subscription-thinking'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -363,6 +374,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/ngo-fundraising-subscription-thinking'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -396,6 +408,7 @@ export interface FileRouteTypes {
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
     | '/insights/measuring-true-roi-luxury-pr'
+    | '/insights/ngo-fundraising-subscription-thinking'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -615,6 +628,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/ngo-fundraising-subscription-thinking': {
+      id: '/insights/ngo-fundraising-subscription-thinking'
+      path: '/ngo-fundraising-subscription-thinking'
+      fullPath: '/insights/ngo-fundraising-subscription-thinking'
+      preLoaderRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/measuring-true-roi-luxury-pr': {
       id: '/insights/measuring-true-roi-luxury-pr'
       path: '/measuring-true-roi-luxury-pr'
@@ -667,6 +687,7 @@ interface InsightsRouteChildren {
   InsightsFirmGeneratedContentAuthorityRoute: typeof InsightsFirmGeneratedContentAuthorityRoute
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
+  InsightsNgoFundraisingSubscriptionThinkingRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRoute
   InsightsPrivatePrEventsLuxuryBrandsRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   InsightsSocialKpisPredictRevenueRoute: typeof InsightsSocialKpisPredictRevenueRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -685,6 +706,8 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsFirmGeneratedContentAuthorityRoute,
   InsightsHowLuxuryPrLowersCacRoute: InsightsHowLuxuryPrLowersCacRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
+  InsightsNgoFundraisingSubscriptionThinkingRoute:
+    InsightsNgoFundraisingSubscriptionThinkingRoute,
   InsightsPrivatePrEventsLuxuryBrandsRoute:
     InsightsPrivatePrEventsLuxuryBrandsRoute,
   InsightsSocialKpisPredictRevenueRoute: InsightsSocialKpisPredictRevenueRoute,
