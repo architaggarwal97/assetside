@@ -7,6 +7,7 @@ import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
 import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
 import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
 import privateEventsImg from "@/assets/insights-private-events.jpg";
+import socialKpisImg from "@/assets/insights-social-kpis.jpg";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =
