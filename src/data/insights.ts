@@ -266,5 +266,20 @@ export const ARTICLES: Article[] = [
     },
     articlePath: "/insights/targeted-media-network-luxury-pr",
   },
+  {
+    slug: "ngo-fundraising-subscription-thinking",
+    category: "Growth Philosophy",
+    readTime: "6 min read",
+    datePublished: "2026-09-12",
+    title: "Why NGO Fundraising Needs Subscription Thinking, Not Just Donation Drives",
+    excerpt:
+      "A 0.9 ROAS on new donor acquisition looks like a losing number. Paired with the right model behind it, it's actually the honest starting point.",
+    header: {
+      kind: "photo",
+      src: ngoFundraisingImg,
+      alt: "Hands exchanging a small kraft gift box with a ribbon in warm light",
+    },
+    articlePath: "/insights/ngo-fundraising-subscription-thinking",
+  },
 ];
 
