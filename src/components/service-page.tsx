@@ -16,6 +16,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
     .map((slug) => SERVICE_BY_SLUG[slug])
     .filter((s): s is Service => Boolean(s) && s.slug !== service.slug);
   const faqs = SERVICE_FAQS[service.slug] ?? [];
+  const client = CLIENT_PROOF[service.slug];
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
