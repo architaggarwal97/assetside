@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ContactBlock } from "@/components/contact-block";
 import { SERVICES, SERVICE_BY_SLUG, RELATED_SERVICES, type Service } from "@/data/services";
 import { SERVICE_FAQS } from "@/data/service-schema";
+import { CLIENT_PROOF } from "@/data/client-proof";
 
 export function ServiceDetailPage({ service }: { service: Service }) {
   useReveal();
