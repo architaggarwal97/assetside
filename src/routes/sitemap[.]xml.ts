@@ -27,16 +27,35 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/services/campaign-brand-shoots",
         ];
 
+        const insightPaths = [
+          "/insights/measuring-true-roi-luxury-pr",
+          "/insights/how-luxury-pr-lowers-cac",
+          "/insights/standard-vs-luxury-agencies",
+          "/insights/boutique-vs-conglomerate-pr-agency",
+          "/insights/firm-generated-content-authority",
+          "/insights/private-pr-events-luxury-brands",
+          "/insights/targeted-media-network-luxury-pr",
+          "/insights/beyond-the-buzzword-craftsmanship",
+          "/insights/everyone-says-google-ads-is-dead",
+          "/insights/ngo-fundraising-subscription-thinking",
+          "/insights/social-kpis-predict-revenue",
+        ];
+
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "monthly", priority: "1.0" },
           { path: "/services", changefreq: "monthly", priority: "0.9" },
           { path: "/work", changefreq: "monthly", priority: "0.8" },
           { path: "/case-studies", changefreq: "monthly", priority: "0.8" },
-          { path: "/insights", changefreq: "monthly", priority: "0.6" },
+          { path: "/insights", changefreq: "weekly", priority: "0.6" },
           ...servicePaths.map((path) => ({
             path,
             changefreq: "monthly" as const,
             priority: "0.7",
+          })),
+          ...insightPaths.map((path) => ({
+            path,
+            changefreq: "yearly" as const,
+            priority: "0.6",
           })),
           { path: "/privacy-policy", changefreq: "yearly", priority: "0.2" },
         ];
