@@ -1,0 +1,69 @@
+# Asset Side — Full Content Reference for LLMs
+
+> Asset Side is the independent marketing consultancy of Archit Aggarwal, a growth and PR partner for luxury, couture, and premium D2C brands. The practice pairs performance marketing with brand prestige, working with a strictly limited client roster so every strategy is built from scratch. Core belief: executing performance marketing without a foundation of brand prestige is a race to the bottom; true luxury doesn't shout, it speaks quietly, confidently, and strictly to the right rooms.
+
+## About
+
+Archit Aggarwal founded Asset Side to give premium labels a single senior partner across paid media, PR, positioning, events, and retail expansion. The name reflects the philosophy: marketing should build brand equity (the asset side of the balance sheet), not just buy attention.
+
+Key positioning principles:
+- Creating art, not just inventory: luxury ROI metrics differ from mass-market metrics.
+- Affection over attention: saves, shares, DMs, and brand search volume outrank likes and reach.
+- Pricing power as the ultimate metric: a brand with cultural authority raises prices without pushback.
+- PR and performance marketing run on the same calendar and creative direction.
+
+## Services (11)
+
+1. Performance Marketing — full-funnel Google Ads and Meta Ads built around CAC and ROAS; audience segmentation, creative testing, attribution, conversion rate optimization. Portfolio ROAS improvements from 2.4x to 3.9x.
+2. Brand Positioning & GTM Strategy — brand audits, positioning workshops, go-to-market plans for new products, markets, or categories, including a 12-month India entry strategy for a US fragrance label.
+3. D2C & WhatsApp-First Commerce — click-to-WhatsApp campaigns, structured conversation flows, retargeting, and retention systems; 2.1x order volume growth for a western wear label.
+4. Growth & Lead Generation Systems — multi-channel lead generation, HubSpot/MS Dynamics CRM setup, Zapier automation, cost-per-SQL reduction; scaled one business from 30 to 900+ qualified leads per month.
+5. SEO & Website Optimization — technical audits (SEMRush, Ahrefs, Screaming Frog), Core Web Vitals, local SEO and Google Business Profile for multi-outlet businesses including Pizza Hut, Royal Enfield, and Kaya Skin Clinic.
+6. Marketing Analytics & Reporting — GA4 setup, Looker Studio and Power BI dashboards, cross-channel attribution reconciliation.
+7. PR — Tier-A editorial placements, celebrity and stylist association, founder features, inter-brand collaborations, planned alongside paid campaigns.
+8. Events — exhibition and event management, attendee and exhibitor lead generation, ticketing and check-in experience, post-event retargeting; raised net SQL rate from 25% to 54% for a wedding exhibition business.
+9. MBO Placements — multi-brand outlet strategy and outreach across Pernia's Pop-Up Shop, Tata CLiQ Luxury, Ensemble (domestic) and Aashni+Co (international), with ongoing partner management.
+10. Social Media Marketing — content calendars, platform-specific strategy, production, community management, influencer collaborations.
+11. Campaign & Brand Shoots — moodboards, creative direction, studio/model/vendor coordination, post-production oversight.
+
+## Case studies (11)
+
+- Adyaaye (jewellery): ROAS improved from 2.4x toward 3.9x through full-funnel paid media.
+- Monture (western wear): 2.1x order volume growth via WhatsApp-first commerce with stable AOV.
+- Jewellery vertical campaign: PR amplification timed to bridal and festive peaks; SQL rate 25% to 54%, cost per SQL cut 50%.
+- Ladli Foundation Trust (NGO): 3.5x overseas donation growth in 6 months, 7 web properties across 3 countries, subscription donation model (₹11/month), 12% MoM organic traffic growth.
+- Shasha Gaba (menswear): ₹30L/month MBO placement value secured over a 2-year sustained business development push into menswear.
+- Bright Rose, Maharashtra Jewellers, Banjara Trail, and four further engagements detailed at https://assetside.lovable.app/case-studies
+
+## Insights (long-form articles)
+
+Performance Marketing:
+- The Comprehensive Guide to Measuring the True ROI of Luxury PR — metrics of affection (saves, shares, DMs, time on site), retail expansion, pricing power.
+- How Luxury PR Drives Down Customer Acquisition Costs — PR creates demand that performance marketing captures; editorial placements, celebrity styling, and content lower blended CAC.
+- Everyone Says Google Ads Is Dead — a rebuttal and framework for paid search in premium categories.
+- Which Social KPIs Actually Predict Revenue — the metrics that correlate with revenue versus vanity metrics.
+
+Brand Strategy:
+- Standard PR vs. Boutique & Luxury PR — the three-tier agency breakdown and why luxury partners are defined by ecosystem and cultural authority, not size.
+- How to Leverage Firm-Generated Content (FGC) — six steps: grid as digital concierge, founder as authority, craftsmanship content, no-desperation copywriting, educational SEO content, metrics of affection.
+- The Architecture of Exclusivity: Private PR Events — five steps covering scarcity strategy, guest curation (70-80 people), venue barters, brand-produced content, and post-event MBO leverage.
+- How to Build a Targeted Media Network Without Mass Wire Services — seven steps to bespoke media relationships instead of syndicated wire distribution.
+- Beyond the Buzzword: Craftsmanship Without Greenwashing — six steps for authentic craftsmanship communication.
+- Boutique vs. Conglomerate PR Agency — trade-offs between scale agencies and specialist firms.
+
+Growth Philosophy:
+- Why NGO Fundraising Needs Subscription Thinking — donor lifetime value over one-time conversion; why a 0.9 ROAS on acquisition can be the honest starting point.
+
+## Contact
+
+- Founder: Archit Aggarwal
+- Phone / WhatsApp: +91 98188 85547
+- Email: archit@assetside.in
+- Based in New Delhi, India; engagements across India, the US, and internationally.
+
+## Machine-readable resources
+
+- Sitemap: https://assetside.lovable.app/sitemap.xml
+- RSS: https://assetside.lovable.app/rss.xml
+- Atom: https://assetside.lovable.app/atom.xml
+- Concise index: https://assetside.lovable.app/llms.txt
