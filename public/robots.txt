@@ -5,3 +5,7 @@ Sitemap: https://assetside.lovable.app/sitemap.xml
 
 # RSS feed
 # https://assetside.lovable.app/rss.xml
+
+# LLM content index
+# https://assetside.lovable.app/llms.txt
+# https://assetside.lovable.app/llms-full.txt
