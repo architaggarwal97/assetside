@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { ContactBlock } from "@/components/contact-block";
 import { SERVICES, SERVICE_BY_SLUG, RELATED_SERVICES, type Service } from "@/data/services";
 import { SERVICE_FAQS } from "@/data/service-schema";
+import { CLIENT_PROOF } from "@/data/client-proof";
 
 export function ServiceDetailPage({ service }: { service: Service }) {
   useReveal();
@@ -15,6 +16,7 @@ export function ServiceDetailPage({ service }: { service: Service }) {
     .map((slug) => SERVICE_BY_SLUG[slug])
     .filter((s): s is Service => Boolean(s) && s.slug !== service.slug);
   const faqs = SERVICE_FAQS[service.slug] ?? [];
+  const client = CLIENT_PROOF[service.slug];
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
@@ -109,6 +111,65 @@ export function ServiceDetailPage({ service }: { service: Service }) {
             </div>
           </div>
         </section>
+
+        {client && (
+          <section
+            id="client"
+            className="border-t border-gold/20 py-20 md:py-28"
+            style={{ background: "linear-gradient(180deg, #FBF8F1 0%, #F4EDE0 100%)" }}
+          >
+            <div className="mx-auto max-w-6xl px-6 md:px-10">
+              <div className="reveal text-[11px] uppercase tracking-[0.28em] text-gold">
+                A real client
+              </div>
+              <div className="mt-8 grid gap-12 md:grid-cols-12">
+                <div className="md:col-span-5">
+                  <h2 className="reveal font-display text-3xl leading-tight text-navy-deep md:text-4xl">
+                    {client.brand}
+                  </h2>
+                  <p className="reveal mt-4 text-xs uppercase tracking-[0.2em] text-charcoal-soft">
+                    {client.category}
+                  </p>
+                  <div className="reveal mt-10 gold-divider max-w-[9rem]" />
+                  <div className="reveal mt-8 font-display text-5xl text-navy-deep md:text-6xl">
+                    {client.stat}
+                  </div>
+                  <div className="reveal mt-3 text-[11px] uppercase tracking-[0.28em] text-gold">
+                    {client.statLabel}
+                  </div>
+                </div>
+                <div className="md:col-span-7">
+                  <p className="reveal text-base leading-relaxed text-charcoal md:text-lg">
+                    {client.outcome}
+                  </p>
+                  <div className="mt-10 grid grid-cols-1 gap-px bg-gold/25 sm:grid-cols-3">
+                    {client.results.map((r, i) => (
+                      <div
+                        key={i}
+                        data-reveal-index={String(i)}
+                        className="reveal bg-cream p-5 md:p-6"
+                      >
+                        <div className="font-display text-2xl text-navy-deep md:text-3xl">
+                          {r.value}
+                        </div>
+                        <div className="mt-2 text-[10px] uppercase tracking-[0.22em] text-charcoal-soft">
+                          {r.label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <Link
+                    to="/case-studies"
+                    hash={client.caseSlug}
+                    className="reveal mt-10 inline-block border-b border-gold pb-1 text-xs uppercase tracking-[0.22em] text-navy-deep transition-colors hover:text-gold"
+                  >
+                    Read the {client.brand} case study →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {faqs.length > 0 && (
           <section id="faq" className="border-t border-gold/20 bg-cream py-20 md:py-28">
