@@ -1,0 +1,51 @@
+# Asset Side
+
+> Asset Side is the independent marketing consultancy of Archit Aggarwal, a growth and PR partner for luxury, couture, and D2C brands. The practice combines performance marketing, brand positioning, PR, events, and retail placement into one senior-led engagement, working with a strictly limited client roster. Clients include labels across fashion, jewellery, western wear, menswear, and NGO fundraising, with placements on Pernia's Pop-Up Shop, Tata CLiQ Luxury, Ensemble, and Aashni+Co.
+
+## Core pages
+
+- [Home](https://assetside.lovable.app/): Overview of the practice, philosophy, and services
+- [Work](https://assetside.lovable.app/work): Selected engagements and outcomes
+- [Case Studies](https://assetside.lovable.app/case-studies): Eleven detailed client case studies with objectives, strategies, and measured results
+- [Insights](https://assetside.lovable.app/insights): Long-form essays on luxury marketing, PR, and growth philosophy
+- [Privacy Policy](https://assetside.lovable.app/privacy-policy)
+
+## Services
+
+- [Performance Marketing](https://assetside.lovable.app/services/performance-marketing): Full-funnel Google and Meta paid media built around CAC and ROAS
+- [Brand Positioning & GTM Strategy](https://assetside.lovable.app/services/brand-positioning-gtm): Audits, positioning, and go-to-market plans for luxury and D2C labels
+- [D2C & WhatsApp-First Commerce](https://assetside.lovable.app/services/d2c-whatsapp-commerce): Click-to-WhatsApp campaigns and conversation-led selling flows
+- [Growth & Lead Generation Systems](https://assetside.lovable.app/services/growth-lead-generation): Multi-channel lead generation, CRM setup, and marketing automation
+- [SEO & Website Optimization](https://assetside.lovable.app/services/seo-website-optimization): Technical SEO, Core Web Vitals, and local SEO for multi-outlet businesses
+- [Marketing Analytics & Reporting](https://assetside.lovable.app/services/marketing-analytics): GA4, Looker Studio and Power BI dashboards, recurring reporting
+- [PR](https://assetside.lovable.app/services/pr): Editorial placements, celebrity styling, and founder features run alongside paid campaigns
+- [Events](https://assetside.lovable.app/services/events): Exhibition and event management, ticketing, check-in, and post-event retargeting
+- [MBO Placements](https://assetside.lovable.app/services/mbo-placements): Multi-brand outlet placement across Indian and international luxury retailers
+- [Social Media Marketing](https://assetside.lovable.app/services/social-media-marketing): Content calendars, production, and community management
+- [Campaign & Brand Shoots](https://assetside.lovable.app/services/campaign-brand-shoots): Creative direction and full production management for campaign imagery
+
+## Insights
+
+- [The Comprehensive Guide to Measuring the True ROI of Luxury PR](https://assetside.lovable.app/insights/measuring-true-roi-luxury-pr)
+- [How Luxury PR Drives Down Customer Acquisition Costs](https://assetside.lovable.app/insights/how-luxury-pr-lowers-cac)
+- [Standard PR vs. Boutique & Luxury PR: What's the Difference](https://assetside.lovable.app/insights/standard-vs-luxury-agencies)
+- [How to Leverage Firm-Generated Content (FGC) to Command Brand Authority](https://assetside.lovable.app/insights/firm-generated-content-authority)
+- [The Architecture of Exclusivity: How to Master the Invite-Only, Private PR Event](https://assetside.lovable.app/insights/private-pr-events-luxury-brands)
+- [How to Build a Targeted Media Network Without Mass Wire Services](https://assetside.lovable.app/insights/targeted-media-network-luxury-pr)
+- [Beyond the Buzzword: How to Communicate True Local Craftsmanship Without Greenwashing](https://assetside.lovable.app/insights/beyond-the-buzzword-craftsmanship)
+- [Everyone Says Google Ads Is Dead](https://assetside.lovable.app/insights/everyone-says-google-ads-is-dead)
+- [Why NGO Fundraising Needs Subscription Thinking, Not Just Donation Drives](https://assetside.lovable.app/insights/ngo-fundraising-subscription-thinking)
+- [Which Social KPIs Actually Predict Revenue](https://assetside.lovable.app/insights/social-kpis-predict-revenue)
+
+## Feeds and machine-readable
+
+- [RSS feed](https://assetside.lovable.app/rss.xml)
+- [Atom feed](https://assetside.lovable.app/atom.xml)
+- [Sitemap](https://assetside.lovable.app/sitemap.xml)
+- [Full content for LLMs](https://assetside.lovable.app/llms-full.txt)
+
+## Contact
+
+- WhatsApp and call: +91 98188 85547
+- Email: archit@assetside.in
+- Location: New Delhi, India; serving clients globally
