@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as ErrorTestRouteImport } from './routes/error-test'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
@@ -65,6 +66,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const InsightsRoute = InsightsRouteImport.update({
   id: '/insights',
   path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErrorTestRoute = ErrorTestRouteImport.update({
+  id: '/error-test',
+  path: '/error-test',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
@@ -226,6 +232,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/error-test': typeof ErrorTestRoute
   '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
@@ -260,6 +267,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/error-test': typeof ErrorTestRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -294,6 +302,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/atom.xml': typeof AtomDotxmlRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/error-test': typeof ErrorTestRoute
   '/insights': typeof InsightsRouteWithChildren
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/rss.xml': typeof RssDotxmlRoute
@@ -330,6 +339,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atom.xml'
     | '/case-studies'
+    | '/error-test'
     | '/insights'
     | '/privacy-policy'
     | '/rss.xml'
@@ -364,6 +374,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atom.xml'
     | '/case-studies'
+    | '/error-test'
     | '/privacy-policy'
     | '/rss.xml'
     | '/sitemap.xml'
@@ -397,6 +408,7 @@ export interface FileRouteTypes {
     | '/'
     | '/atom.xml'
     | '/case-studies'
+    | '/error-test'
     | '/insights'
     | '/privacy-policy'
     | '/rss.xml'
@@ -432,6 +444,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtomDotxmlRoute: typeof AtomDotxmlRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  ErrorTestRoute: typeof ErrorTestRoute
   InsightsRoute: typeof InsightsRouteWithChildren
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
@@ -486,6 +499,13 @@ declare module '@tanstack/react-router' {
       path: '/insights'
       fullPath: '/insights'
       preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/error-test': {
+      id: '/error-test'
+      path: '/error-test'
+      fullPath: '/error-test'
+      preLoaderRoute: typeof ErrorTestRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies': {
@@ -725,6 +745,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtomDotxmlRoute: AtomDotxmlRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  ErrorTestRoute: ErrorTestRoute,
   InsightsRoute: InsightsRouteWithChildren,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RssDotxmlRoute: RssDotxmlRoute,
