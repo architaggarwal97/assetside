@@ -48,6 +48,7 @@ export const ARTICLES: Article[] = [
       src: phoneAsset.url,
       alt: "Close-up of hands typing a message on a smartphone",
     },
+    articlePath: "/insights/whatsapp-first-commerce-india",
     contextLink: {
       label: "D2C & WhatsApp-First Commerce",
       to: "/services/d2c-whatsapp-commerce",
