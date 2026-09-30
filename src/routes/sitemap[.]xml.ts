@@ -39,6 +39,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           "/insights/everyone-says-google-ads-is-dead",
           "/insights/ngo-fundraising-subscription-thinking",
           "/insights/social-kpis-predict-revenue",
+          "/insights/whatsapp-first-commerce-india",
         ];
 
         const entries: SitemapEntry[] = [
