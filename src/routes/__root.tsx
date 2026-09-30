@@ -9,6 +9,8 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
+import { SiteNav } from "@/components/site-nav";
+import { SiteFooter } from "@/components/site-footer";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -74,32 +76,43 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
+    <div
+      className="flex min-h-screen flex-col text-cream"
+      style={{ background: "linear-gradient(180deg, #0b2b1e 0%, #2F6B4F 100%)" }}
+    >
+      <SiteNav />
+      <main className="flex flex-1 items-center justify-center px-6 pt-32 pb-16">
+        <div className="max-w-2xl text-center">
+          <div className="mx-auto mb-8 flex items-center justify-center gap-4">
+            <span className="font-display text-sm italic text-gold">§</span>
+            <div className="h-px w-12 bg-gold" />
+          </div>
+          <h1 className="font-display text-4xl md:text-6xl">
+            Something went wrong on this end.
+          </h1>
+          <p className="mx-auto mt-6 max-w-md text-base text-cream/80 md:text-lg">
+            Try refreshing, or head back home, this one&apos;s on us, not you.
+          </p>
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+            <button
+              onClick={() => {
+                router.invalidate();
+                reset();
+              }}
+              className="inline-flex min-w-[140px] items-center justify-center border border-gold bg-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-navy-deep transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
+            >
+              Try Again
+            </button>
+            <Link
+              to="/"
+              className="inline-flex min-w-[140px] items-center justify-center border border-gold px-6 py-3 text-xs uppercase tracking-[0.2em] text-gold transition-all duration-300 hover:-translate-y-0.5 hover:bg-gold hover:text-navy-deep hover:shadow-[0_10px_24px_-12px_rgba(196,146,42,0.7)]"
+            >
+              Go Home
+            </Link>
+          </div>
         </div>
-      </div>
+      </main>
+      <SiteFooter />
     </div>
   );
 }
