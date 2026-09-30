@@ -30,6 +30,7 @@ import { Route as ServicesEventsRouteImport } from './routes/services/events'
 import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
 import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
 import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
+import { Route as InsightsWhatsappFirstCommerceIndiaRouteImport } from './routes/insights/whatsapp-first-commerce-india'
 import { Route as InsightsTargetedMediaNetworkLuxuryPrRouteImport } from './routes/insights/targeted-media-network-luxury-pr'
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
 import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
@@ -155,6 +156,12 @@ const ServicesBrandPositioningGtmRoute =
     path: '/services/brand-positioning-gtm',
     getParentRoute: () => rootRouteImport,
   } as any)
+const InsightsWhatsappFirstCommerceIndiaRoute =
+  InsightsWhatsappFirstCommerceIndiaRouteImport.update({
+    id: '/whatsapp-first-commerce-india',
+    path: '/whatsapp-first-commerce-india',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsTargetedMediaNetworkLuxuryPrRoute =
   InsightsTargetedMediaNetworkLuxuryPrRouteImport.update({
     id: '/targeted-media-network-luxury-pr',
@@ -242,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/insights/targeted-media-network-luxury-pr': typeof InsightsTargetedMediaNetworkLuxuryPrRoute
+  '/insights/whatsapp-first-commerce-india': typeof InsightsWhatsappFirstCommerceIndiaRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -275,6 +283,7 @@ export interface FileRoutesByTo {
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/insights/targeted-media-network-luxury-pr': typeof InsightsTargetedMediaNetworkLuxuryPrRoute
+  '/insights/whatsapp-first-commerce-india': typeof InsightsWhatsappFirstCommerceIndiaRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -310,6 +319,7 @@ export interface FileRoutesById {
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
   '/insights/targeted-media-network-luxury-pr': typeof InsightsTargetedMediaNetworkLuxuryPrRoute
+  '/insights/whatsapp-first-commerce-india': typeof InsightsWhatsappFirstCommerceIndiaRoute
   '/services/brand-positioning-gtm': typeof ServicesBrandPositioningGtmRoute
   '/services/campaign-brand-shoots': typeof ServicesCampaignBrandShootsRoute
   '/services/d2c-whatsapp-commerce': typeof ServicesD2cWhatsappCommerceRoute
@@ -346,6 +356,7 @@ export interface FileRouteTypes {
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/insights/targeted-media-network-luxury-pr'
+    | '/insights/whatsapp-first-commerce-india'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -379,6 +390,7 @@ export interface FileRouteTypes {
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/insights/targeted-media-network-luxury-pr'
+    | '/insights/whatsapp-first-commerce-india'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -413,6 +425,7 @@ export interface FileRouteTypes {
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
     | '/insights/targeted-media-network-luxury-pr'
+    | '/insights/whatsapp-first-commerce-india'
     | '/services/brand-positioning-gtm'
     | '/services/campaign-brand-shoots'
     | '/services/d2c-whatsapp-commerce'
@@ -600,6 +613,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights/whatsapp-first-commerce-india': {
+      id: '/insights/whatsapp-first-commerce-india'
+      path: '/whatsapp-first-commerce-india'
+      fullPath: '/insights/whatsapp-first-commerce-india'
+      preLoaderRoute: typeof InsightsWhatsappFirstCommerceIndiaRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/targeted-media-network-luxury-pr': {
       id: '/insights/targeted-media-network-luxury-pr'
       path: '/targeted-media-network-luxury-pr'
@@ -692,6 +712,7 @@ interface InsightsRouteChildren {
   InsightsSocialKpisPredictRevenueRoute: typeof InsightsSocialKpisPredictRevenueRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
   InsightsTargetedMediaNetworkLuxuryPrRoute: typeof InsightsTargetedMediaNetworkLuxuryPrRoute
+  InsightsWhatsappFirstCommerceIndiaRoute: typeof InsightsWhatsappFirstCommerceIndiaRoute
   InsightsIndexRoute: typeof InsightsIndexRoute
 }
 
@@ -714,6 +735,8 @@ const InsightsRouteChildren: InsightsRouteChildren = {
   InsightsStandardVsLuxuryAgenciesRoute: InsightsStandardVsLuxuryAgenciesRoute,
   InsightsTargetedMediaNetworkLuxuryPrRoute:
     InsightsTargetedMediaNetworkLuxuryPrRoute,
+  InsightsWhatsappFirstCommerceIndiaRoute:
+    InsightsWhatsappFirstCommerceIndiaRoute,
   InsightsIndexRoute: InsightsIndexRoute,
 }
 
