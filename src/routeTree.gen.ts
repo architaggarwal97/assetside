@@ -9,68 +9,43 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
-import { Route as CaseStudiesRouteImport } from './routes/case-studies'
-import { Route as InsightsRouteImport } from './routes/insights'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WorkRouteImport } from './routes/work'
-import { Route as InsightsIndexRouteImport } from './routes/insights/index'
-import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
-import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
-import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
-import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
-import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
-import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
-import { Route as InsightsNgoFundraisingSubscriptionThinkingRouteImport } from './routes/insights/ngo-fundraising-subscription-thinking'
-import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
-import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
-import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
-import { Route as InsightsTargetedMediaNetworkLuxuryPrRouteImport } from './routes/insights/targeted-media-network-luxury-pr'
-import { Route as InsightsWhatsappFirstCommerceIndiaRouteImport } from './routes/insights/whatsapp-first-commerce-india'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
-import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
-import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
-import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
-import { Route as ServicesEventsRouteImport } from './routes/services/events'
-import { Route as ServicesGrowthLeadGenerationRouteImport } from './routes/services/growth-lead-generation'
-import { Route as ServicesMarketingAnalyticsRouteImport } from './routes/services/marketing-analytics'
-import { Route as ServicesMboPlacementsRouteImport } from './routes/services/mbo-placements'
-import { Route as ServicesPerformanceMarketingRouteImport } from './routes/services/performance-marketing'
-import { Route as ServicesPrRouteImport } from './routes/services/pr'
-import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
+import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
+import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
+import { Route as ServicesPrRouteImport } from './routes/services/pr'
+import { Route as ServicesPerformanceMarketingRouteImport } from './routes/services/performance-marketing'
+import { Route as ServicesMboPlacementsRouteImport } from './routes/services/mbo-placements'
+import { Route as ServicesMarketingAnalyticsRouteImport } from './routes/services/marketing-analytics'
+import { Route as ServicesGrowthLeadGenerationRouteImport } from './routes/services/growth-lead-generation'
+import { Route as ServicesEventsRouteImport } from './routes/services/events'
+import { Route as ServicesD2cWhatsappCommerceRouteImport } from './routes/services/d2c-whatsapp-commerce'
+import { Route as ServicesCampaignBrandShootsRouteImport } from './routes/services/campaign-brand-shoots'
+import { Route as ServicesBrandPositioningGtmRouteImport } from './routes/services/brand-positioning-gtm'
+import { Route as InsightsWhatsappFirstCommerceIndiaRouteImport } from './routes/insights/whatsapp-first-commerce-india'
+import { Route as InsightsTargetedMediaNetworkLuxuryPrRouteImport } from './routes/insights/targeted-media-network-luxury-pr'
+import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
+import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
+import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
+import { Route as InsightsNgoFundraisingSubscriptionThinkingRouteImport } from './routes/insights/ngo-fundraising-subscription-thinking'
+import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
+import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
+import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
+import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
+import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
+import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AtomDotxmlRoute = AtomDotxmlRouteImport.update({
-  id: '/atom.xml',
-  path: '/atom.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CaseStudiesRoute = CaseStudiesRouteImport.update({
-  id: '/case-studies',
-  path: '/case-studies',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const InsightsRoute = InsightsRouteImport.update({
-  id: '/insights',
-  path: '/insights',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RssDotxmlRoute = RssDotxmlRouteImport.update({
-  id: '/rss.xml',
-  path: '/rss.xml',
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -78,9 +53,39 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WorkRoute = WorkRouteImport.update({
-  id: '/work',
-  path: '/work',
+const RssDotxmlRoute = RssDotxmlRouteImport.update({
+  id: '/rss.xml',
+  path: '/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesRoute = CaseStudiesRouteImport.update({
+  id: '/case-studies',
+  path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtomDotxmlRoute = AtomDotxmlRouteImport.update({
+  id: '/atom.xml',
+  path: '/atom.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
@@ -88,121 +93,21 @@ const InsightsIndexRoute = InsightsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => InsightsRoute,
 } as any)
-const InsightsBeyondTheBuzzwordCraftsmanshipRoute =
-  InsightsBeyondTheBuzzwordCraftsmanshipRouteImport.update({
-    id: '/beyond-the-buzzword-craftsmanship',
-    path: '/beyond-the-buzzword-craftsmanship',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsBoutiqueVsConglomeratePrAgencyRoute =
-  InsightsBoutiqueVsConglomeratePrAgencyRouteImport.update({
-    id: '/boutique-vs-conglomerate-pr-agency',
-    path: '/boutique-vs-conglomerate-pr-agency',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
-  InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
-    id: '/everyone-says-google-ads-is-dead',
-    path: '/everyone-says-google-ads-is-dead',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsFirmGeneratedContentAuthorityRoute =
-  InsightsFirmGeneratedContentAuthorityRouteImport.update({
-    id: '/firm-generated-content-authority',
-    path: '/firm-generated-content-authority',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsHowLuxuryPrLowersCacRoute =
-  InsightsHowLuxuryPrLowersCacRouteImport.update({
-    id: '/how-luxury-pr-lowers-cac',
-    path: '/how-luxury-pr-lowers-cac',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsMeasuringTrueRoiLuxuryPrRoute =
-  InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
-    id: '/measuring-true-roi-luxury-pr',
-    path: '/measuring-true-roi-luxury-pr',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsNgoFundraisingSubscriptionThinkingRoute =
-  InsightsNgoFundraisingSubscriptionThinkingRouteImport.update({
-    id: '/ngo-fundraising-subscription-thinking',
-    path: '/ngo-fundraising-subscription-thinking',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsPrivatePrEventsLuxuryBrandsRoute =
-  InsightsPrivatePrEventsLuxuryBrandsRouteImport.update({
-    id: '/private-pr-events-luxury-brands',
-    path: '/private-pr-events-luxury-brands',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsSocialKpisPredictRevenueRoute =
-  InsightsSocialKpisPredictRevenueRouteImport.update({
-    id: '/social-kpis-predict-revenue',
-    path: '/social-kpis-predict-revenue',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsStandardVsLuxuryAgenciesRoute =
-  InsightsStandardVsLuxuryAgenciesRouteImport.update({
-    id: '/standard-vs-luxury-agencies',
-    path: '/standard-vs-luxury-agencies',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsTargetedMediaNetworkLuxuryPrRoute =
-  InsightsTargetedMediaNetworkLuxuryPrRouteImport.update({
-    id: '/targeted-media-network-luxury-pr',
-    path: '/targeted-media-network-luxury-pr',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const InsightsWhatsappFirstCommerceIndiaRoute =
-  InsightsWhatsappFirstCommerceIndiaRouteImport.update({
-    id: '/whatsapp-first-commerce-india',
-    path: '/whatsapp-first-commerce-india',
-    getParentRoute: () => InsightsRoute,
-  } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesBrandPositioningGtmRoute =
-  ServicesBrandPositioningGtmRouteImport.update({
-    id: '/services/brand-positioning-gtm',
-    path: '/services/brand-positioning-gtm',
+const ServicesSocialMediaMarketingRoute =
+  ServicesSocialMediaMarketingRouteImport.update({
+    id: '/services/social-media-marketing',
+    path: '/services/social-media-marketing',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesCampaignBrandShootsRoute =
-  ServicesCampaignBrandShootsRouteImport.update({
-    id: '/services/campaign-brand-shoots',
-    path: '/services/campaign-brand-shoots',
+const ServicesSeoWebsiteOptimizationRoute =
+  ServicesSeoWebsiteOptimizationRouteImport.update({
+    id: '/services/seo-website-optimization',
+    path: '/services/seo-website-optimization',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesD2cWhatsappCommerceRoute =
-  ServicesD2cWhatsappCommerceRouteImport.update({
-    id: '/services/d2c-whatsapp-commerce',
-    path: '/services/d2c-whatsapp-commerce',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesEventsRoute = ServicesEventsRouteImport.update({
-  id: '/services/events',
-  path: '/services/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesGrowthLeadGenerationRoute =
-  ServicesGrowthLeadGenerationRouteImport.update({
-    id: '/services/growth-lead-generation',
-    path: '/services/growth-lead-generation',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesMarketingAnalyticsRoute =
-  ServicesMarketingAnalyticsRouteImport.update({
-    id: '/services/marketing-analytics',
-    path: '/services/marketing-analytics',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ServicesMboPlacementsRoute = ServicesMboPlacementsRouteImport.update({
-  id: '/services/mbo-placements',
-  path: '/services/mbo-placements',
+const ServicesPrRoute = ServicesPrRouteImport.update({
+  id: '/services/pr',
+  path: '/services/pr',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesPerformanceMarketingRoute =
@@ -211,22 +116,117 @@ const ServicesPerformanceMarketingRoute =
     path: '/services/performance-marketing',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesPrRoute = ServicesPrRouteImport.update({
-  id: '/services/pr',
-  path: '/services/pr',
+const ServicesMboPlacementsRoute = ServicesMboPlacementsRouteImport.update({
+  id: '/services/mbo-placements',
+  path: '/services/mbo-placements',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesSeoWebsiteOptimizationRoute =
-  ServicesSeoWebsiteOptimizationRouteImport.update({
-    id: '/services/seo-website-optimization',
-    path: '/services/seo-website-optimization',
+const ServicesMarketingAnalyticsRoute =
+  ServicesMarketingAnalyticsRouteImport.update({
+    id: '/services/marketing-analytics',
+    path: '/services/marketing-analytics',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ServicesSocialMediaMarketingRoute =
-  ServicesSocialMediaMarketingRouteImport.update({
-    id: '/services/social-media-marketing',
-    path: '/services/social-media-marketing',
+const ServicesGrowthLeadGenerationRoute =
+  ServicesGrowthLeadGenerationRouteImport.update({
+    id: '/services/growth-lead-generation',
+    path: '/services/growth-lead-generation',
     getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesEventsRoute = ServicesEventsRouteImport.update({
+  id: '/services/events',
+  path: '/services/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesD2cWhatsappCommerceRoute =
+  ServicesD2cWhatsappCommerceRouteImport.update({
+    id: '/services/d2c-whatsapp-commerce',
+    path: '/services/d2c-whatsapp-commerce',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesCampaignBrandShootsRoute =
+  ServicesCampaignBrandShootsRouteImport.update({
+    id: '/services/campaign-brand-shoots',
+    path: '/services/campaign-brand-shoots',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesBrandPositioningGtmRoute =
+  ServicesBrandPositioningGtmRouteImport.update({
+    id: '/services/brand-positioning-gtm',
+    path: '/services/brand-positioning-gtm',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const InsightsWhatsappFirstCommerceIndiaRoute =
+  InsightsWhatsappFirstCommerceIndiaRouteImport.update({
+    id: '/whatsapp-first-commerce-india',
+    path: '/whatsapp-first-commerce-india',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsTargetedMediaNetworkLuxuryPrRoute =
+  InsightsTargetedMediaNetworkLuxuryPrRouteImport.update({
+    id: '/targeted-media-network-luxury-pr',
+    path: '/targeted-media-network-luxury-pr',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsStandardVsLuxuryAgenciesRoute =
+  InsightsStandardVsLuxuryAgenciesRouteImport.update({
+    id: '/standard-vs-luxury-agencies',
+    path: '/standard-vs-luxury-agencies',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsSocialKpisPredictRevenueRoute =
+  InsightsSocialKpisPredictRevenueRouteImport.update({
+    id: '/social-kpis-predict-revenue',
+    path: '/social-kpis-predict-revenue',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsPrivatePrEventsLuxuryBrandsRoute =
+  InsightsPrivatePrEventsLuxuryBrandsRouteImport.update({
+    id: '/private-pr-events-luxury-brands',
+    path: '/private-pr-events-luxury-brands',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsNgoFundraisingSubscriptionThinkingRoute =
+  InsightsNgoFundraisingSubscriptionThinkingRouteImport.update({
+    id: '/ngo-fundraising-subscription-thinking',
+    path: '/ngo-fundraising-subscription-thinking',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsMeasuringTrueRoiLuxuryPrRoute =
+  InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
+    id: '/measuring-true-roi-luxury-pr',
+    path: '/measuring-true-roi-luxury-pr',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsHowLuxuryPrLowersCacRoute =
+  InsightsHowLuxuryPrLowersCacRouteImport.update({
+    id: '/how-luxury-pr-lowers-cac',
+    path: '/how-luxury-pr-lowers-cac',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsFirmGeneratedContentAuthorityRoute =
+  InsightsFirmGeneratedContentAuthorityRouteImport.update({
+    id: '/firm-generated-content-authority',
+    path: '/firm-generated-content-authority',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
+  InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
+    id: '/everyone-says-google-ads-is-dead',
+    path: '/everyone-says-google-ads-is-dead',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsBoutiqueVsConglomeratePrAgencyRoute =
+  InsightsBoutiqueVsConglomeratePrAgencyRouteImport.update({
+    id: '/boutique-vs-conglomerate-pr-agency',
+    path: '/boutique-vs-conglomerate-pr-agency',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsBeyondTheBuzzwordCraftsmanshipRoute =
+  InsightsBeyondTheBuzzwordCraftsmanshipRouteImport.update({
+    id: '/beyond-the-buzzword-craftsmanship',
+    path: '/beyond-the-buzzword-craftsmanship',
+    getParentRoute: () => InsightsRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -466,46 +466,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/atom.xml': {
-      id: '/atom.xml'
-      path: '/atom.xml'
-      fullPath: '/atom.xml'
-      preLoaderRoute: typeof AtomDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/case-studies': {
-      id: '/case-studies'
-      path: '/case-studies'
-      fullPath: '/case-studies'
-      preLoaderRoute: typeof CaseStudiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/insights': {
-      id: '/insights'
-      path: '/insights'
-      fullPath: '/insights'
-      preLoaderRoute: typeof InsightsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/rss.xml': {
-      id: '/rss.xml'
-      path: '/rss.xml'
-      fullPath: '/rss.xml'
-      preLoaderRoute: typeof RssDotxmlRouteImport
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -515,11 +480,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/work': {
-      id: '/work'
-      path: '/work'
-      fullPath: '/work'
-      preLoaderRoute: typeof WorkRouteImport
+    '/rss.xml': {
+      id: '/rss.xml'
+      path: '/rss.xml'
+      fullPath: '/rss.xml'
+      preLoaderRoute: typeof RssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies': {
+      id: '/case-studies'
+      path: '/case-studies'
+      fullPath: '/case-studies'
+      preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/atom.xml': {
+      id: '/atom.xml'
+      path: '/atom.xml'
+      fullPath: '/atom.xml'
+      preLoaderRoute: typeof AtomDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/': {
@@ -529,158 +536,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsIndexRouteImport
       parentRoute: typeof InsightsRoute
     }
-    '/insights/beyond-the-buzzword-craftsmanship': {
-      id: '/insights/beyond-the-buzzword-craftsmanship'
-      path: '/beyond-the-buzzword-craftsmanship'
-      fullPath: '/insights/beyond-the-buzzword-craftsmanship'
-      preLoaderRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/boutique-vs-conglomerate-pr-agency': {
-      id: '/insights/boutique-vs-conglomerate-pr-agency'
-      path: '/boutique-vs-conglomerate-pr-agency'
-      fullPath: '/insights/boutique-vs-conglomerate-pr-agency'
-      preLoaderRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/everyone-says-google-ads-is-dead': {
-      id: '/insights/everyone-says-google-ads-is-dead'
-      path: '/everyone-says-google-ads-is-dead'
-      fullPath: '/insights/everyone-says-google-ads-is-dead'
-      preLoaderRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/firm-generated-content-authority': {
-      id: '/insights/firm-generated-content-authority'
-      path: '/firm-generated-content-authority'
-      fullPath: '/insights/firm-generated-content-authority'
-      preLoaderRoute: typeof InsightsFirmGeneratedContentAuthorityRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/how-luxury-pr-lowers-cac': {
-      id: '/insights/how-luxury-pr-lowers-cac'
-      path: '/how-luxury-pr-lowers-cac'
-      fullPath: '/insights/how-luxury-pr-lowers-cac'
-      preLoaderRoute: typeof InsightsHowLuxuryPrLowersCacRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/measuring-true-roi-luxury-pr': {
-      id: '/insights/measuring-true-roi-luxury-pr'
-      path: '/measuring-true-roi-luxury-pr'
-      fullPath: '/insights/measuring-true-roi-luxury-pr'
-      preLoaderRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/ngo-fundraising-subscription-thinking': {
-      id: '/insights/ngo-fundraising-subscription-thinking'
-      path: '/ngo-fundraising-subscription-thinking'
-      fullPath: '/insights/ngo-fundraising-subscription-thinking'
-      preLoaderRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/private-pr-events-luxury-brands': {
-      id: '/insights/private-pr-events-luxury-brands'
-      path: '/private-pr-events-luxury-brands'
-      fullPath: '/insights/private-pr-events-luxury-brands'
-      preLoaderRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/social-kpis-predict-revenue': {
-      id: '/insights/social-kpis-predict-revenue'
-      path: '/social-kpis-predict-revenue'
-      fullPath: '/insights/social-kpis-predict-revenue'
-      preLoaderRoute: typeof InsightsSocialKpisPredictRevenueRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/standard-vs-luxury-agencies': {
-      id: '/insights/standard-vs-luxury-agencies'
-      path: '/standard-vs-luxury-agencies'
-      fullPath: '/insights/standard-vs-luxury-agencies'
-      preLoaderRoute: typeof InsightsStandardVsLuxuryAgenciesRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/targeted-media-network-luxury-pr': {
-      id: '/insights/targeted-media-network-luxury-pr'
-      path: '/targeted-media-network-luxury-pr'
-      fullPath: '/insights/targeted-media-network-luxury-pr'
-      preLoaderRoute: typeof InsightsTargetedMediaNetworkLuxuryPrRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/insights/whatsapp-first-commerce-india': {
-      id: '/insights/whatsapp-first-commerce-india'
-      path: '/whatsapp-first-commerce-india'
-      fullPath: '/insights/whatsapp-first-commerce-india'
-      preLoaderRoute: typeof InsightsWhatsappFirstCommerceIndiaRouteImport
-      parentRoute: typeof InsightsRoute
-    }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/brand-positioning-gtm': {
-      id: '/services/brand-positioning-gtm'
-      path: '/services/brand-positioning-gtm'
-      fullPath: '/services/brand-positioning-gtm'
-      preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/campaign-brand-shoots': {
-      id: '/services/campaign-brand-shoots'
-      path: '/services/campaign-brand-shoots'
-      fullPath: '/services/campaign-brand-shoots'
-      preLoaderRoute: typeof ServicesCampaignBrandShootsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/d2c-whatsapp-commerce': {
-      id: '/services/d2c-whatsapp-commerce'
-      path: '/services/d2c-whatsapp-commerce'
-      fullPath: '/services/d2c-whatsapp-commerce'
-      preLoaderRoute: typeof ServicesD2cWhatsappCommerceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/events': {
-      id: '/services/events'
-      path: '/services/events'
-      fullPath: '/services/events'
-      preLoaderRoute: typeof ServicesEventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/growth-lead-generation': {
-      id: '/services/growth-lead-generation'
-      path: '/services/growth-lead-generation'
-      fullPath: '/services/growth-lead-generation'
-      preLoaderRoute: typeof ServicesGrowthLeadGenerationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/marketing-analytics': {
-      id: '/services/marketing-analytics'
-      path: '/services/marketing-analytics'
-      fullPath: '/services/marketing-analytics'
-      preLoaderRoute: typeof ServicesMarketingAnalyticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/mbo-placements': {
-      id: '/services/mbo-placements'
-      path: '/services/mbo-placements'
-      fullPath: '/services/mbo-placements'
-      preLoaderRoute: typeof ServicesMboPlacementsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/performance-marketing': {
-      id: '/services/performance-marketing'
-      path: '/services/performance-marketing'
-      fullPath: '/services/performance-marketing'
-      preLoaderRoute: typeof ServicesPerformanceMarketingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services/pr': {
-      id: '/services/pr'
-      path: '/services/pr'
-      fullPath: '/services/pr'
-      preLoaderRoute: typeof ServicesPrRouteImport
+    '/services/social-media-marketing': {
+      id: '/services/social-media-marketing'
+      path: '/services/social-media-marketing'
+      fullPath: '/services/social-media-marketing'
+      preLoaderRoute: typeof ServicesSocialMediaMarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/seo-website-optimization': {
@@ -690,12 +550,152 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSeoWebsiteOptimizationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/social-media-marketing': {
-      id: '/services/social-media-marketing'
-      path: '/services/social-media-marketing'
-      fullPath: '/services/social-media-marketing'
-      preLoaderRoute: typeof ServicesSocialMediaMarketingRouteImport
+    '/services/pr': {
+      id: '/services/pr'
+      path: '/services/pr'
+      fullPath: '/services/pr'
+      preLoaderRoute: typeof ServicesPrRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/services/performance-marketing': {
+      id: '/services/performance-marketing'
+      path: '/services/performance-marketing'
+      fullPath: '/services/performance-marketing'
+      preLoaderRoute: typeof ServicesPerformanceMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/mbo-placements': {
+      id: '/services/mbo-placements'
+      path: '/services/mbo-placements'
+      fullPath: '/services/mbo-placements'
+      preLoaderRoute: typeof ServicesMboPlacementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/marketing-analytics': {
+      id: '/services/marketing-analytics'
+      path: '/services/marketing-analytics'
+      fullPath: '/services/marketing-analytics'
+      preLoaderRoute: typeof ServicesMarketingAnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/growth-lead-generation': {
+      id: '/services/growth-lead-generation'
+      path: '/services/growth-lead-generation'
+      fullPath: '/services/growth-lead-generation'
+      preLoaderRoute: typeof ServicesGrowthLeadGenerationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/events': {
+      id: '/services/events'
+      path: '/services/events'
+      fullPath: '/services/events'
+      preLoaderRoute: typeof ServicesEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/d2c-whatsapp-commerce': {
+      id: '/services/d2c-whatsapp-commerce'
+      path: '/services/d2c-whatsapp-commerce'
+      fullPath: '/services/d2c-whatsapp-commerce'
+      preLoaderRoute: typeof ServicesD2cWhatsappCommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/campaign-brand-shoots': {
+      id: '/services/campaign-brand-shoots'
+      path: '/services/campaign-brand-shoots'
+      fullPath: '/services/campaign-brand-shoots'
+      preLoaderRoute: typeof ServicesCampaignBrandShootsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/brand-positioning-gtm': {
+      id: '/services/brand-positioning-gtm'
+      path: '/services/brand-positioning-gtm'
+      fullPath: '/services/brand-positioning-gtm'
+      preLoaderRoute: typeof ServicesBrandPositioningGtmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/whatsapp-first-commerce-india': {
+      id: '/insights/whatsapp-first-commerce-india'
+      path: '/whatsapp-first-commerce-india'
+      fullPath: '/insights/whatsapp-first-commerce-india'
+      preLoaderRoute: typeof InsightsWhatsappFirstCommerceIndiaRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/targeted-media-network-luxury-pr': {
+      id: '/insights/targeted-media-network-luxury-pr'
+      path: '/targeted-media-network-luxury-pr'
+      fullPath: '/insights/targeted-media-network-luxury-pr'
+      preLoaderRoute: typeof InsightsTargetedMediaNetworkLuxuryPrRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/standard-vs-luxury-agencies': {
+      id: '/insights/standard-vs-luxury-agencies'
+      path: '/standard-vs-luxury-agencies'
+      fullPath: '/insights/standard-vs-luxury-agencies'
+      preLoaderRoute: typeof InsightsStandardVsLuxuryAgenciesRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/social-kpis-predict-revenue': {
+      id: '/insights/social-kpis-predict-revenue'
+      path: '/social-kpis-predict-revenue'
+      fullPath: '/insights/social-kpis-predict-revenue'
+      preLoaderRoute: typeof InsightsSocialKpisPredictRevenueRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/private-pr-events-luxury-brands': {
+      id: '/insights/private-pr-events-luxury-brands'
+      path: '/private-pr-events-luxury-brands'
+      fullPath: '/insights/private-pr-events-luxury-brands'
+      preLoaderRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/ngo-fundraising-subscription-thinking': {
+      id: '/insights/ngo-fundraising-subscription-thinking'
+      path: '/ngo-fundraising-subscription-thinking'
+      fullPath: '/insights/ngo-fundraising-subscription-thinking'
+      preLoaderRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/measuring-true-roi-luxury-pr': {
+      id: '/insights/measuring-true-roi-luxury-pr'
+      path: '/measuring-true-roi-luxury-pr'
+      fullPath: '/insights/measuring-true-roi-luxury-pr'
+      preLoaderRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/how-luxury-pr-lowers-cac': {
+      id: '/insights/how-luxury-pr-lowers-cac'
+      path: '/how-luxury-pr-lowers-cac'
+      fullPath: '/insights/how-luxury-pr-lowers-cac'
+      preLoaderRoute: typeof InsightsHowLuxuryPrLowersCacRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/firm-generated-content-authority': {
+      id: '/insights/firm-generated-content-authority'
+      path: '/firm-generated-content-authority'
+      fullPath: '/insights/firm-generated-content-authority'
+      preLoaderRoute: typeof InsightsFirmGeneratedContentAuthorityRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/everyone-says-google-ads-is-dead': {
+      id: '/insights/everyone-says-google-ads-is-dead'
+      path: '/everyone-says-google-ads-is-dead'
+      fullPath: '/insights/everyone-says-google-ads-is-dead'
+      preLoaderRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/boutique-vs-conglomerate-pr-agency': {
+      id: '/insights/boutique-vs-conglomerate-pr-agency'
+      path: '/boutique-vs-conglomerate-pr-agency'
+      fullPath: '/insights/boutique-vs-conglomerate-pr-agency'
+      preLoaderRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/beyond-the-buzzword-craftsmanship': {
+      id: '/insights/beyond-the-buzzword-craftsmanship'
+      path: '/beyond-the-buzzword-craftsmanship'
+      fullPath: '/insights/beyond-the-buzzword-craftsmanship'
+      preLoaderRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRouteImport
+      parentRoute: typeof InsightsRoute
     }
   }
 }
