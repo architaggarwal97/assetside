@@ -260,10 +260,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ],
         }),
       },
-      {
-        async: true,
-        src: "https://news.google.com/swg/js/v1/publisher.js",
-      },
     ],
   }),
   shellComponent: RootShell,
@@ -288,6 +284,17 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  // Load Google Preferred Sources after hydration (async) so its injected iframe
+  // doesn't cause a hydration mismatch and a full client re-render.
+  useEffect(() => {
+    if (document.querySelector('script[data-swg]')) return;
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://news.google.com/swg/js/v1/publisher.js";
+    s.dataset.swg = "1";
+    document.head.appendChild(s);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
