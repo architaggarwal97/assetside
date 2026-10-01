@@ -120,7 +120,7 @@ function InsightsPage() {
           <div className="mx-auto max-w-6xl px-6 md:px-10">
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {ARTICLES.map((a, i) => (
-                <ArticleCard key={a.slug} article={a} index={i} />
+                <ArticleCard key={a.slug} article={a} index={i} eager={i < 2} />
               ))}
             </div>
           </div>
@@ -163,7 +163,7 @@ function PageHeader() {
   );
 }
 
-function ArticleCard({ article, index }: { article: Article; index: number }) {
+function ArticleCard({ article, index, eager = false }: { article: Article; index: number; eager?: boolean }) {
   return (
     <article
       className="reveal group flex h-full flex-col border border-gold/25 bg-cream transition-all duration-300 hover:-translate-y-1 hover:border-gold/60 hover:shadow-[0_18px_40px_-28px_rgba(11,43,30,0.6)]"
@@ -176,7 +176,7 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
             alt={article.header.alt}
             width={1200}
             height={800}
-            loading="lazy"
+            loading={eager ? "eager" : "lazy"}
             decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
