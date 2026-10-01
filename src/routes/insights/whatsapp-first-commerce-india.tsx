@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
 import { ContactBlock } from "@/components/contact-block";
-import phoneAsset from "@/assets/phone-texting.jpg.asset.json";
+import phoneAsset from "@/assets/phone-texting.webp.asset.json";
 
 const TITLE = "Why WhatsApp-First Commerce Is Winning in Indian D2C";
 const DESCRIPTION =
@@ -96,6 +96,7 @@ function ArticlePage() {
               width={1200}
               height={800}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>

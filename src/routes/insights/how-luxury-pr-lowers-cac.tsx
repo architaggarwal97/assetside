@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
 import { ContactBlock } from "@/components/contact-block";
-import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
+import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.webp";
 
 const TITLE = "How Luxury PR Lowers CAC for Premium Brands";
 const DESCRIPTION =
@@ -96,6 +96,7 @@ function ArticlePage() {
               width={1536}
               height={768}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>

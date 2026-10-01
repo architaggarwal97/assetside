@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
 import { ContactBlock } from "@/components/contact-block";
-import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
+import craftsmanshipImg from "@/assets/insights-craftsmanship.webp";
 
 const TITLE = "How to Communicate True Craftsmanship Without Greenwashing";
 const DESCRIPTION =
@@ -143,6 +143,7 @@ function ArticlePage() {
               width={1200}
               height={800}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
