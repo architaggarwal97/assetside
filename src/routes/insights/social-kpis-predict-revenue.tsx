@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
 import { ContactBlock } from "@/components/contact-block";
-import socialKpisImg from "@/assets/insights-social-kpis.jpg";
+import socialKpisImg from "@/assets/insights-social-kpis.webp";
 
 const TITLE = "The Social KPIs That Predict Revenue for Luxury Brands";
 const DESCRIPTION =
@@ -93,9 +93,10 @@ function ArticlePage() {
             <img
               src={socialKpisImg}
               alt="Phone screen showing a clean, minimal social media analytics view"
-              width={1536}
-              height={768}
+              width={1200}
+              height={800}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>

@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
-import headerImg from "@/assets/insights-google-ads.jpg";
+import headerImg from "@/assets/insights-google-ads.webp";
 
 const TITLE = "Everyone Says Google Ads Is Dead";
 const DESCRIPTION =
@@ -93,6 +93,8 @@ function ArticlePage() {
               alt="Person reviewing analytics and ad performance data on a laptop screen"
               width={1200}
               height={800}
+              loading="lazy"
+              decoding="async"
               className="aspect-[16/10] w-full object-cover"
             />
           </div>

@@ -177,6 +177,7 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
             width={1200}
             height={800}
             loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
           />
         </div>

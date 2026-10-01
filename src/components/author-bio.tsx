@@ -19,6 +19,7 @@ export function AuthorBio() {
             width={96}
             height={96}
             loading="lazy"
+            decoding="async"
             className="h-24 w-24 rounded-full border border-gold/50 object-cover"
           />
         </div>

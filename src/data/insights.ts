@@ -1,14 +1,14 @@
 import type { ServicePath } from "@/data/services";
-import phoneAsset from "@/assets/phone-texting.jpg.asset.json";
-import jewelleryAsset from "@/assets/jewellery-case.jpg.asset.json";
-import boutiqueAsset from "@/assets/boutique-storefront.jpg.asset.json";
-import googleAdsImg from "@/assets/insights-google-ads.jpg";
-import craftsmanshipImg from "@/assets/insights-craftsmanship.jpg";
-import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
-import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.jpg";
-import privateEventsImg from "@/assets/insights-private-events.jpg";
-import socialKpisImg from "@/assets/insights-social-kpis.jpg";
-import ngoFundraisingImg from "@/assets/insights-ngo-fundraising.jpg";
+import phoneAsset from "@/assets/phone-texting.webp.asset.json";
+import jewelleryAsset from "@/assets/jewellery-case.webp.asset.json";
+import boutiqueAsset from "@/assets/boutique-storefront.webp.asset.json";
+import googleAdsImg from "@/assets/insights-google-ads.webp";
+import craftsmanshipImg from "@/assets/insights-craftsmanship.webp";
+import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.webp";
+import luxuryPrCacImg from "@/assets/insights-luxury-pr-cac.webp";
+import privateEventsImg from "@/assets/insights-private-events.webp";
+import socialKpisImg from "@/assets/insights-social-kpis.webp";
+import ngoFundraisingImg from "@/assets/insights-ngo-fundraising.webp";
 
 export const INSIGHTS_TITLE = "Insights | Asset Side — Growth & Brand Notes";
 export const INSIGHTS_DESCRIPTION =

@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AuthorBio } from "@/components/author-bio";
 import { ContactBlock } from "@/components/contact-block";
-import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.jpg";
+import standardLuxuryImg from "@/assets/insights-standard-luxury-agencies.webp";
 
 const TITLE = "Standard PR vs Boutique & Luxury PR: What's the Difference";
 const DESCRIPTION =
@@ -96,6 +96,7 @@ function ArticlePage() {
               width={1200}
               height={800}
               loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
           </div>
