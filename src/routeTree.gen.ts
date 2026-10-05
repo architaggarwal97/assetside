@@ -19,6 +19,7 @@ import { Route as AtomDotxmlRouteImport } from './routes/atom[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
+import { Route as AmpIndexRouteImport } from './routes/amp/index'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
 import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
 import { Route as ServicesPrRouteImport } from './routes/services/pr'
@@ -42,6 +43,7 @@ import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './rou
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
 import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
+import { Route as AmpSplatRouteImport } from './routes/amp/$'
 
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
@@ -92,6 +94,11 @@ const InsightsIndexRoute = InsightsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => InsightsRoute,
+} as any)
+const AmpIndexRoute = AmpIndexRouteImport.update({
+  id: '/amp/',
+  path: '/amp/',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSocialMediaMarketingRoute =
   ServicesSocialMediaMarketingRouteImport.update({
@@ -228,6 +235,11 @@ const InsightsBeyondTheBuzzwordCraftsmanshipRoute =
     path: '/beyond-the-buzzword-craftsmanship',
     getParentRoute: () => InsightsRoute,
   } as any)
+const AmpSplatRoute = AmpSplatRouteImport.update({
+  id: '/amp/$',
+  path: '/amp/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -238,6 +250,7 @@ export interface FileRoutesByFullPath {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
@@ -261,6 +274,7 @@ export interface FileRoutesByFullPath {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/amp/': typeof AmpIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -272,6 +286,7 @@ export interface FileRoutesByTo {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
@@ -295,6 +310,7 @@ export interface FileRoutesByTo {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/amp': typeof AmpIndexRoute
   '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
 }
@@ -308,6 +324,7 @@ export interface FileRoutesById {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
@@ -331,6 +348,7 @@ export interface FileRoutesById {
   '/services/pr': typeof ServicesPrRoute
   '/services/seo-website-optimization': typeof ServicesSeoWebsiteOptimizationRoute
   '/services/social-media-marketing': typeof ServicesSocialMediaMarketingRoute
+  '/amp/': typeof AmpIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
@@ -345,6 +363,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
@@ -368,6 +387,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/amp/'
     | '/insights/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
@@ -379,6 +399,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
@@ -402,6 +423,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/amp'
     | '/insights'
     | '/services'
   id:
@@ -414,6 +436,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/everyone-says-google-ads-is-dead'
@@ -437,6 +460,7 @@ export interface FileRouteTypes {
     | '/services/pr'
     | '/services/seo-website-optimization'
     | '/services/social-media-marketing'
+    | '/amp/'
     | '/insights/'
     | '/services/'
   fileRoutesById: FileRoutesById
@@ -450,6 +474,7 @@ export interface RootRouteChildren {
   RssDotxmlRoute: typeof RssDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
+  AmpSplatRoute: typeof AmpSplatRoute
   ServicesBrandPositioningGtmRoute: typeof ServicesBrandPositioningGtmRoute
   ServicesCampaignBrandShootsRoute: typeof ServicesCampaignBrandShootsRoute
   ServicesD2cWhatsappCommerceRoute: typeof ServicesD2cWhatsappCommerceRoute
@@ -461,6 +486,7 @@ export interface RootRouteChildren {
   ServicesPrRoute: typeof ServicesPrRoute
   ServicesSeoWebsiteOptimizationRoute: typeof ServicesSeoWebsiteOptimizationRoute
   ServicesSocialMediaMarketingRoute: typeof ServicesSocialMediaMarketingRoute
+  AmpIndexRoute: typeof AmpIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
@@ -535,6 +561,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/insights/'
       preLoaderRoute: typeof InsightsIndexRouteImport
       parentRoute: typeof InsightsRoute
+    }
+    '/amp/': {
+      id: '/amp/'
+      path: '/amp'
+      fullPath: '/amp/'
+      preLoaderRoute: typeof AmpIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/services/social-media-marketing': {
       id: '/services/social-media-marketing'
@@ -697,6 +730,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/amp/$': {
+      id: '/amp/$'
+      path: '/amp/$'
+      fullPath: '/amp/$'
+      preLoaderRoute: typeof AmpSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -753,6 +793,7 @@ const rootRouteChildren: RootRouteChildren = {
   RssDotxmlRoute: RssDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
+  AmpSplatRoute: AmpSplatRoute,
   ServicesBrandPositioningGtmRoute: ServicesBrandPositioningGtmRoute,
   ServicesCampaignBrandShootsRoute: ServicesCampaignBrandShootsRoute,
   ServicesD2cWhatsappCommerceRoute: ServicesD2cWhatsappCommerceRoute,
@@ -764,6 +805,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesPrRoute: ServicesPrRoute,
   ServicesSeoWebsiteOptimizationRoute: ServicesSeoWebsiteOptimizationRoute,
   ServicesSocialMediaMarketingRoute: ServicesSocialMediaMarketingRoute,
+  AmpIndexRoute: AmpIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
