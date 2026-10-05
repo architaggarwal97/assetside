@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture rules
+- AMP: `/amp/*` server routes server-render the canonical page and convert it with `src/lib/amp.server.ts`; root head adds `rel=amphtml`. Why: one source of content, AMP never drifts from the real pages.
