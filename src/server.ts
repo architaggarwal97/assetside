@@ -49,7 +49,7 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await addAmpLink(request, await normalizeCatastrophicSsrResponse(response));
+      return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
@@ -60,15 +60,3 @@ export default {
   },
 };
 
-// Point every canonical HTML page at its AMP version (/amp/...).
-async function addAmpLink(request: Request, response: Response): Promise<Response> {
-  if (request.method !== "GET" || response.status !== 200) return response;
-  if (!(response.headers.get("content-type") ?? "").includes("text/html")) return response;
-  const path = new URL(request.url).pathname;
-  if (path.startsWith("/amp")) return response;
-  const amp = `https://assetside.lovable.app${path === "/" ? "/amp" : `/amp${path}`}`;
-  const html = (await response.text()).replace("</head>", `<link rel="amphtml" href="${amp}"/></head>`);
-  const headers = new Headers(response.headers);
-  headers.delete("content-length");
-  return new Response(html, { status: response.status, headers });
-}
