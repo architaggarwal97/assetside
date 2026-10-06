@@ -1,76 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { SITE_PAGES, canonicalUrl } from "@/data/site-pages";
 
-const BASE_URL = "https://assetside.lovable.app";
-
-interface SitemapEntry {
-  path: string;
-  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
-  priority?: string;
-}
-
+// Canonical pages only. AMP copies (/amp/...) are discovered through each page's
+// rel="amphtml" link, per Google's guidance, so they are intentionally not listed.
+// noindex pages (e.g. /privacy-policy) are excluded.
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const servicePaths = [
-          "/services/performance-marketing",
-          "/services/brand-positioning-gtm",
-          "/services/d2c-whatsapp-commerce",
-          "/services/growth-lead-generation",
-          "/services/seo-website-optimization",
-          "/services/marketing-analytics",
-          "/services/pr",
-          "/services/events",
-          "/services/mbo-placements",
-          "/services/social-media-marketing",
-          "/services/campaign-brand-shoots",
-        ];
-
-        const insightPaths = [
-          "/insights/measuring-true-roi-luxury-pr",
-          "/insights/how-luxury-pr-lowers-cac",
-          "/insights/standard-vs-luxury-agencies",
-          "/insights/boutique-vs-conglomerate-pr-agency",
-          "/insights/firm-generated-content-authority",
-          "/insights/private-pr-events-luxury-brands",
-          "/insights/targeted-media-network-luxury-pr",
-          "/insights/beyond-the-buzzword-craftsmanship",
-          "/insights/everyone-says-google-ads-is-dead",
-          "/insights/ngo-fundraising-subscription-thinking",
-          "/insights/social-kpis-predict-revenue",
-          "/insights/whatsapp-first-commerce-india",
-        ];
-
-        const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "monthly", priority: "1.0" },
-          { path: "/services", changefreq: "monthly", priority: "0.9" },
-          { path: "/work", changefreq: "monthly", priority: "0.8" },
-          { path: "/case-studies", changefreq: "monthly", priority: "0.8" },
-          { path: "/insights", changefreq: "weekly", priority: "0.6" },
-          ...servicePaths.map((path) => ({
-            path,
-            changefreq: "monthly" as const,
-            priority: "0.7",
-          })),
-          ...insightPaths.map((path) => ({
-            path,
-            changefreq: "yearly" as const,
-            priority: "0.6",
-          })),
-          { path: "/privacy-policy", changefreq: "yearly", priority: "0.2" },
-        ];
-
-        const urls = entries.map((e) =>
+        const urls = SITE_PAGES.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
-            e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
-            e.priority ? `    <priority>${e.priority}</priority>` : null,
+            `    <loc>${canonicalUrl(e.path)}</loc>`,
+            `    <changefreq>${e.changefreq}</changefreq>`,
+            `    <priority>${e.priority}</priority>`,
             `  </url>`,
-          ]
-            .filter(Boolean)
-            .join("\n"),
+          ].join("\n"),
         );
 
         const xml = [
