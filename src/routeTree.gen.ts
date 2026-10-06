@@ -44,6 +44,7 @@ import { Route as ServicesPerformanceMarketingRouteImport } from './routes/servi
 import { Route as ServicesPrRouteImport } from './routes/services/pr'
 import { Route as ServicesSeoWebsiteOptimizationRouteImport } from './routes/services/seo-website-optimization'
 import { Route as ServicesSocialMediaMarketingRouteImport } from './routes/services/social-media-marketing'
+import { Route as ApiPublicAmpCompareRouteImport } from './routes/api/public/amp-compare'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -240,6 +241,11 @@ const ServicesSocialMediaMarketingRoute =
     path: '/services/social-media-marketing',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiPublicAmpCompareRoute = ApiPublicAmpCompareRouteImport.update({
+  id: '/api/public/amp-compare',
+  path: '/api/public/amp-compare',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -277,6 +283,7 @@ export interface FileRoutesByFullPath {
   '/amp/': typeof AmpIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/amp-compare': typeof ApiPublicAmpCompareRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -313,6 +320,7 @@ export interface FileRoutesByTo {
   '/amp': typeof AmpIndexRoute
   '/insights': typeof InsightsIndexRoute
   '/services': typeof ServicesIndexRoute
+  '/api/public/amp-compare': typeof ApiPublicAmpCompareRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -351,6 +359,7 @@ export interface FileRoutesById {
   '/amp/': typeof AmpIndexRoute
   '/insights/': typeof InsightsIndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/api/public/amp-compare': typeof ApiPublicAmpCompareRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -390,6 +399,7 @@ export interface FileRouteTypes {
     | '/amp/'
     | '/insights/'
     | '/services/'
+    | '/api/public/amp-compare'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -426,6 +436,7 @@ export interface FileRouteTypes {
     | '/amp'
     | '/insights'
     | '/services'
+    | '/api/public/amp-compare'
   id:
     | '__root__'
     | '/'
@@ -463,6 +474,7 @@ export interface FileRouteTypes {
     | '/amp/'
     | '/insights/'
     | '/services/'
+    | '/api/public/amp-compare'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -488,6 +500,7 @@ export interface RootRouteChildren {
   ServicesSocialMediaMarketingRoute: typeof ServicesSocialMediaMarketingRoute
   AmpIndexRoute: typeof AmpIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
+  ApiPublicAmpCompareRoute: typeof ApiPublicAmpCompareRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -737,6 +750,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSocialMediaMarketingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/amp-compare': {
+      id: '/api/public/amp-compare'
+      path: '/api/public/amp-compare'
+      fullPath: '/api/public/amp-compare'
+      preLoaderRoute: typeof ApiPublicAmpCompareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -807,6 +827,7 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesSocialMediaMarketingRoute: ServicesSocialMediaMarketingRoute,
   AmpIndexRoute: AmpIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
+  ApiPublicAmpCompareRoute: ApiPublicAmpCompareRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
