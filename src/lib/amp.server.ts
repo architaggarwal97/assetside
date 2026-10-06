@@ -103,16 +103,30 @@ export function toAmp(html: string, path: string) {
 
 type Entry = { fetch: (r: Request, env?: unknown, ctx?: unknown) => Promise<Response> | Response };
 
-/** Server-render the canonical page for `path` and convert it to AMP. */
-export async function renderAmp(request: Request, path: string) {
+/** Server-render the canonical page for `path`; null when it isn't a 200 HTML page. */
+export async function renderPageHtml(request: Request, path: string) {
   const mod = await import("@tanstack/react-start/server-entry");
   const entry = ((mod as { default?: Entry }).default ?? mod) as Entry;
   const url = new URL(path, request.url);
   const res = await entry.fetch(new Request(url, { headers: { accept: "text/html" } }));
-  if (res.status !== 200 || !(res.headers.get("content-type") ?? "").includes("text/html")) {
-    return new Response("Not found", { status: 404 });
-  }
-  return new Response(toAmp(await res.text(), path), {
+  if (res.status !== 200 || !(res.headers.get("content-type") ?? "").includes("text/html")) return null;
+  return res.text();
+}
+
+/** Readable body text of an HTML page (no nav, footer, scripts). */
+export function pageText(html: string) {
+  const doc = parse(html, { comment: false });
+  const body = doc.querySelector("body") ?? doc;
+  body.querySelectorAll("script, style, noscript, header, footer, nav, svg").forEach((n) => n.remove());
+  body.querySelectorAll("p, h1, h2, h3, h4, li, blockquote, div, br").forEach((n) => n.insertAdjacentHTML("afterend", "\n"));
+  return body.text.replace(/[ \t]+/g, " ").replace(/\n\s*\n+/g, "\n").trim();
+}
+
+/** Server-render the canonical page for `path` and convert it to AMP. */
+export async function renderAmp(request: Request, path: string) {
+  const html = await renderPageHtml(request, path);
+  if (!html) return new Response("Not found", { status: 404 });
+  return new Response(toAmp(html, path), {
     headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=300" },
   });
 }
