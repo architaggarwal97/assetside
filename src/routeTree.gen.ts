@@ -17,6 +17,7 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as AdminAmpRouteImport } from './routes/admin.amp'
 import { Route as AmpIndexRouteImport } from './routes/amp/index'
 import { Route as AmpSplatRouteImport } from './routes/amp/$'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
@@ -84,6 +85,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAmpRoute = AdminAmpRouteImport.update({
+  id: '/admin/amp',
+  path: '/admin/amp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AmpIndexRoute = AmpIndexRouteImport.update({
@@ -256,6 +262,7 @@ export interface FileRoutesByFullPath {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
@@ -293,6 +300,7 @@ export interface FileRoutesByTo {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
@@ -332,6 +340,7 @@ export interface FileRoutesById {
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
+  '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
@@ -372,6 +381,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/amp'
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
@@ -409,6 +419,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/amp'
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
@@ -447,6 +458,7 @@ export interface FileRouteTypes {
     | '/rss.xml'
     | '/sitemap.xml'
     | '/work'
+    | '/admin/amp'
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
@@ -486,6 +498,7 @@ export interface RootRouteChildren {
   RssDotxmlRoute: typeof RssDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
+  AdminAmpRoute: typeof AdminAmpRoute
   AmpSplatRoute: typeof AmpSplatRoute
   ServicesBrandPositioningGtmRoute: typeof ServicesBrandPositioningGtmRoute
   ServicesCampaignBrandShootsRoute: typeof ServicesCampaignBrandShootsRoute
@@ -559,6 +572,13 @@ declare module '@tanstack/react-router' {
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/amp': {
+      id: '/admin/amp'
+      path: '/admin/amp'
+      fullPath: '/admin/amp'
+      preLoaderRoute: typeof AdminAmpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/amp/': {
@@ -813,6 +833,7 @@ const rootRouteChildren: RootRouteChildren = {
   RssDotxmlRoute: RssDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
+  AdminAmpRoute: AdminAmpRoute,
   AmpSplatRoute: AmpSplatRoute,
   ServicesBrandPositioningGtmRoute: ServicesBrandPositioningGtmRoute,
   ServicesCampaignBrandShootsRoute: ServicesCampaignBrandShootsRoute,
