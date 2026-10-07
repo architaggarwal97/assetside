@@ -11,3 +11,5 @@
 
 ## Architecture rules
 - AMP: `/amp/*` server routes server-render the canonical page and convert it with `src/lib/amp.server.ts`; root head adds `rel=amphtml`. Why: one source of content, AMP never drifts from the real pages.
+- Indexable pages list lives in `src/data/site-pages.ts`; sitemap, AMP check and AMP dashboard read it. Why: one list keeps them in sync. Sitemap lists canonical pages only (AMP found via rel=amphtml, noindex pages excluded).
+- AMP tools at `/admin/amp` are intentionally public (user choice), noindex and blocked in robots.txt.
