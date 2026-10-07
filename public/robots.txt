@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
 
 Sitemap: https://assetside.lovable.app/sitemap.xml
 
