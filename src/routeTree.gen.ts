@@ -23,11 +23,15 @@ import { Route as AmpSplatRouteImport } from './routes/amp/$'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
+import { Route as InsightsCostOfVanityMetricsRouteImport } from './routes/insights/cost-of-vanity-metrics'
+import { Route as InsightsDhandaFirstFrameworkRouteImport } from './routes/insights/dhanda-first-framework'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
+import { Route as InsightsJewelleryWalkInCampaignsRouteImport } from './routes/insights/jewellery-walk-in-campaigns'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsNgoFundraisingSubscriptionThinkingRouteImport } from './routes/insights/ngo-fundraising-subscription-thinking'
+import { Route as InsightsPerformanceMarketingNeedsPrRouteImport } from './routes/insights/performance-marketing-needs-pr'
 import { Route as InsightsPrivatePrEventsLuxuryBrandsRouteImport } from './routes/insights/private-pr-events-luxury-brands'
 import { Route as InsightsSocialKpisPredictRevenueRouteImport } from './routes/insights/social-kpis-predict-revenue'
 import { Route as InsightsStandardVsLuxuryAgenciesRouteImport } from './routes/insights/standard-vs-luxury-agencies'
@@ -119,6 +123,18 @@ const InsightsBoutiqueVsConglomeratePrAgencyRoute =
     path: '/boutique-vs-conglomerate-pr-agency',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsCostOfVanityMetricsRoute =
+  InsightsCostOfVanityMetricsRouteImport.update({
+    id: '/cost-of-vanity-metrics',
+    path: '/cost-of-vanity-metrics',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsDhandaFirstFrameworkRoute =
+  InsightsDhandaFirstFrameworkRouteImport.update({
+    id: '/dhanda-first-framework',
+    path: '/dhanda-first-framework',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
   InsightsEveryoneSaysGoogleAdsIsDeadRouteImport.update({
     id: '/everyone-says-google-ads-is-dead',
@@ -137,6 +153,12 @@ const InsightsHowLuxuryPrLowersCacRoute =
     path: '/how-luxury-pr-lowers-cac',
     getParentRoute: () => InsightsRoute,
   } as any)
+const InsightsJewelleryWalkInCampaignsRoute =
+  InsightsJewelleryWalkInCampaignsRouteImport.update({
+    id: '/jewellery-walk-in-campaigns',
+    path: '/jewellery-walk-in-campaigns',
+    getParentRoute: () => InsightsRoute,
+  } as any)
 const InsightsMeasuringTrueRoiLuxuryPrRoute =
   InsightsMeasuringTrueRoiLuxuryPrRouteImport.update({
     id: '/measuring-true-roi-luxury-pr',
@@ -147,6 +169,12 @@ const InsightsNgoFundraisingSubscriptionThinkingRoute =
   InsightsNgoFundraisingSubscriptionThinkingRouteImport.update({
     id: '/ngo-fundraising-subscription-thinking',
     path: '/ngo-fundraising-subscription-thinking',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsPerformanceMarketingNeedsPrRoute =
+  InsightsPerformanceMarketingNeedsPrRouteImport.update({
+    id: '/performance-marketing-needs-pr',
+    path: '/performance-marketing-needs-pr',
     getParentRoute: () => InsightsRoute,
   } as any)
 const InsightsPrivatePrEventsLuxuryBrandsRoute =
@@ -266,11 +294,15 @@ export interface FileRoutesByFullPath {
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
+  '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
+  '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
+  '/insights/performance-marketing-needs-pr': typeof InsightsPerformanceMarketingNeedsPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -304,11 +336,15 @@ export interface FileRoutesByTo {
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
+  '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
+  '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
+  '/insights/performance-marketing-needs-pr': typeof InsightsPerformanceMarketingNeedsPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -344,11 +380,15 @@ export interface FileRoutesById {
   '/amp/$': typeof AmpSplatRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
+  '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
+  '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
+  '/insights/performance-marketing-needs-pr': typeof InsightsPerformanceMarketingNeedsPrRoute
   '/insights/private-pr-events-luxury-brands': typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   '/insights/social-kpis-predict-revenue': typeof InsightsSocialKpisPredictRevenueRoute
   '/insights/standard-vs-luxury-agencies': typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -385,11 +425,15 @@ export interface FileRouteTypes {
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
+    | '/insights/cost-of-vanity-metrics'
+    | '/insights/dhanda-first-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
+    | '/insights/performance-marketing-needs-pr'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -423,11 +467,15 @@ export interface FileRouteTypes {
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
+    | '/insights/cost-of-vanity-metrics'
+    | '/insights/dhanda-first-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
+    | '/insights/performance-marketing-needs-pr'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -462,11 +510,15 @@ export interface FileRouteTypes {
     | '/amp/$'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
+    | '/insights/cost-of-vanity-metrics'
+    | '/insights/dhanda-first-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
+    | '/insights/performance-marketing-needs-pr'
     | '/insights/private-pr-events-luxury-brands'
     | '/insights/social-kpis-predict-revenue'
     | '/insights/standard-vs-luxury-agencies'
@@ -616,6 +668,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/cost-of-vanity-metrics': {
+      id: '/insights/cost-of-vanity-metrics'
+      path: '/cost-of-vanity-metrics'
+      fullPath: '/insights/cost-of-vanity-metrics'
+      preLoaderRoute: typeof InsightsCostOfVanityMetricsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/dhanda-first-framework': {
+      id: '/insights/dhanda-first-framework'
+      path: '/dhanda-first-framework'
+      fullPath: '/insights/dhanda-first-framework'
+      preLoaderRoute: typeof InsightsDhandaFirstFrameworkRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/everyone-says-google-ads-is-dead': {
       id: '/insights/everyone-says-google-ads-is-dead'
       path: '/everyone-says-google-ads-is-dead'
@@ -637,6 +703,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsHowLuxuryPrLowersCacRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/jewellery-walk-in-campaigns': {
+      id: '/insights/jewellery-walk-in-campaigns'
+      path: '/jewellery-walk-in-campaigns'
+      fullPath: '/insights/jewellery-walk-in-campaigns'
+      preLoaderRoute: typeof InsightsJewelleryWalkInCampaignsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/measuring-true-roi-luxury-pr': {
       id: '/insights/measuring-true-roi-luxury-pr'
       path: '/measuring-true-roi-luxury-pr'
@@ -649,6 +722,13 @@ declare module '@tanstack/react-router' {
       path: '/ngo-fundraising-subscription-thinking'
       fullPath: '/insights/ngo-fundraising-subscription-thinking'
       preLoaderRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/performance-marketing-needs-pr': {
+      id: '/insights/performance-marketing-needs-pr'
+      path: '/performance-marketing-needs-pr'
+      fullPath: '/insights/performance-marketing-needs-pr'
+      preLoaderRoute: typeof InsightsPerformanceMarketingNeedsPrRouteImport
       parentRoute: typeof InsightsRoute
     }
     '/insights/private-pr-events-luxury-brands': {
@@ -783,11 +863,15 @@ declare module '@tanstack/react-router' {
 interface InsightsRouteChildren {
   InsightsBeyondTheBuzzwordCraftsmanshipRoute: typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
+  InsightsCostOfVanityMetricsRoute: typeof InsightsCostOfVanityMetricsRoute
+  InsightsDhandaFirstFrameworkRoute: typeof InsightsDhandaFirstFrameworkRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsFirmGeneratedContentAuthorityRoute: typeof InsightsFirmGeneratedContentAuthorityRoute
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
+  InsightsJewelleryWalkInCampaignsRoute: typeof InsightsJewelleryWalkInCampaignsRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   InsightsNgoFundraisingSubscriptionThinkingRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRoute
+  InsightsPerformanceMarketingNeedsPrRoute: typeof InsightsPerformanceMarketingNeedsPrRoute
   InsightsPrivatePrEventsLuxuryBrandsRoute: typeof InsightsPrivatePrEventsLuxuryBrandsRoute
   InsightsSocialKpisPredictRevenueRoute: typeof InsightsSocialKpisPredictRevenueRoute
   InsightsStandardVsLuxuryAgenciesRoute: typeof InsightsStandardVsLuxuryAgenciesRoute
@@ -801,14 +885,19 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsBeyondTheBuzzwordCraftsmanshipRoute,
   InsightsBoutiqueVsConglomeratePrAgencyRoute:
     InsightsBoutiqueVsConglomeratePrAgencyRoute,
+  InsightsCostOfVanityMetricsRoute: InsightsCostOfVanityMetricsRoute,
+  InsightsDhandaFirstFrameworkRoute: InsightsDhandaFirstFrameworkRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
   InsightsFirmGeneratedContentAuthorityRoute:
     InsightsFirmGeneratedContentAuthorityRoute,
   InsightsHowLuxuryPrLowersCacRoute: InsightsHowLuxuryPrLowersCacRoute,
+  InsightsJewelleryWalkInCampaignsRoute: InsightsJewelleryWalkInCampaignsRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
   InsightsNgoFundraisingSubscriptionThinkingRoute:
     InsightsNgoFundraisingSubscriptionThinkingRoute,
+  InsightsPerformanceMarketingNeedsPrRoute:
+    InsightsPerformanceMarketingNeedsPrRoute,
   InsightsPrivatePrEventsLuxuryBrandsRoute:
     InsightsPrivatePrEventsLuxuryBrandsRoute,
   InsightsSocialKpisPredictRevenueRoute: InsightsSocialKpisPredictRevenueRoute,
