@@ -58,7 +58,8 @@ export const ARTICLES: Article[] = [
     slug: "dhanda-first-framework",
     category: "Growth Philosophy",
     readTime: "5 min read",
-    datePublished: "2026-03-04",
+    datePublished: "2026-10-08",
+    articlePath: "/insights/dhanda-first-framework",
     title: "Dhanda-First: A Framework for Marketing That Pays for Itself",
     excerpt:
       "Every rupee of marketing spend should show up somewhere on the balance sheet, as an asset, not a liability. This is the filter I run every campaign through before it gets a budget.",
@@ -71,7 +72,8 @@ export const ARTICLES: Article[] = [
     slug: "jewellery-walk-in-campaigns",
     category: "Retail & Jewellery",
     readTime: "6 min read",
-    datePublished: "2026-04-15",
+    datePublished: "2026-10-08",
+    articlePath: "/insights/jewellery-walk-in-campaigns",
     title: "What Jewellery Brands Get Wrong About Store Walk-in Campaigns",
     excerpt:
       "Running three competing jewellery brands through the same bridal season taught me the one thing most retail campaigns get backwards: audience separation isn't a nice-to-have, it's the entire strategy.",
@@ -90,7 +92,8 @@ export const ARTICLES: Article[] = [
     slug: "cost-of-vanity-metrics",
     category: "Performance Marketing",
     readTime: "5 min read",
-    datePublished: "2026-05-20",
+    datePublished: "2026-10-08",
+    articlePath: "/insights/cost-of-vanity-metrics",
     title: "The Real Cost of Chasing Vanity Metrics in Luxury Marketing",
     excerpt:
       "Reach and impressions look great in a slide deck. They don't pay rent. Here's how to tell the difference between a number that means something and a number that just looks like it does.",
@@ -109,7 +112,8 @@ export const ARTICLES: Article[] = [
     slug: "performance-marketing-needs-pr",
     category: "Brand Strategy",
     readTime: "4 min read",
-    datePublished: "2026-06-09",
+    datePublished: "2026-10-08",
+    articlePath: "/insights/performance-marketing-needs-pr",
     title: "Why Performance Marketing Needs PR Sitting Right Next to It",
     excerpt:
       "An ad works harder when it's not the only place a customer sees the brand. The campaigns that scaled cleanest were always the ones running alongside a parallel PR push, not after one.",
