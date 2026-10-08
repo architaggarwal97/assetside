@@ -21,6 +21,10 @@
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
 }
 
+@utility editorial-hero {
+  background: linear-gradient(160deg, var(--color-navy-deep) 0%, #1d4a36 55%, var(--color-navy) 100%);
+}
+
 @utility hairline {
   height: 1px;
   background-color: color-mix(in oklab, var(--color-gold) 45%, transparent);
