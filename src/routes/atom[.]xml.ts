@@ -32,7 +32,7 @@ export const Route = createFileRoute("/atom.xml")({
         const updated = sorted[0]?.datePublished ?? new Date().toISOString().slice(0, 10);
 
         const entries = sorted.map((a) => {
-          const link = `${INSIGHTS_URL}#${a.slug}`;
+          const link = a.articlePath ? `${BASE_URL}${a.articlePath}` : `${INSIGHTS_URL}#${a.slug}`;
           const image =
             a.header.kind === "photo"
               ? a.header.src.startsWith("http")

@@ -55,7 +55,7 @@ function ArticlePage() {
       </section>
       <main className="bg-cream py-20 md:py-28">
         <article className="mx-auto max-w-3xl px-6 md:px-10">
-          <div className="reveal overflow-hidden border border-gold/25"><img src={articleImage.url} alt="Interior of a contemporary fashion boutique with curated clothing rails" width={1200} height={800} loading="lazy" decoding="async" className="h-full w-full object-cover" /></div>
+          <div className="reveal overflow-hidden border border-gold/25"><img src={articleImage.url} alt="Interior of a contemporary fashion boutique with curated clothing rails" width={1200} height={801} loading="lazy" decoding="async" className="h-full w-full object-cover" /></div>
           <div className="prose-asset mt-14 space-y-8 text-base leading-relaxed md:text-lg">
             <p className="reveal">The most expensive number in a marketing report is not always the cost per click. Sometimes it is the impressive number that persuades everyone to keep funding the wrong thing. Reach goes up. The team celebrates. The store still has the same empty appointment slots.</p>
 <p className="reveal">Luxury makes this harder to spot because admiration is easy to mistake for buying intent. A beautiful campaign can attract an audience that enjoys looking at the product without being ready, able or likely to purchase it. That attention is not worthless. It just has a different job from an enquiry.</p>
