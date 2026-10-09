@@ -30,7 +30,7 @@ export const Route = createFileRoute("/rss.xml")({
         );
 
         const items = sorted.map((a) => {
-          const link = `${INSIGHTS_URL}#${a.slug}`;
+          const link = a.articlePath ? `${BASE_URL}${a.articlePath}` : `${INSIGHTS_URL}#${a.slug}`;
           const image =
             a.header.kind === "photo"
               ? a.header.src.startsWith("http")
