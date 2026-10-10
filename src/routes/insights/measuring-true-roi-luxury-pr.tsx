@@ -162,8 +162,8 @@ function ArticlePage() {
             </p>
             <p className="reveal text-sm">
               <Link
-                to="/case-studies"
-                hash="adyaaye"
+                to="/case-studies/$slug"
+                params={{ slug: "adyaaye" }}
                 className="text-gold underline-offset-4 transition-colors hover:underline"
               >
                 See how this played out in the Adyaaye case study →

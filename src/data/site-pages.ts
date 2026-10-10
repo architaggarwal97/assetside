@@ -42,6 +42,15 @@ const insights: [string, string][] = [
   ["whatsapp-first-commerce-india", "WhatsApp-First Commerce"],
 ];
 
+const caseStudies: [string, string][] = [
+  ["adyaaye", "Adyaaye"],
+  ["monture", "Monture"],
+  ["jewellery-vertical", "Jewellery Vertical"],
+  ["self-storage-india", "Self Storage India"],
+  ["banjara-trail", "Banjara Trail"],
+  ["ladli-foundation-trust", "Ladli Foundation Trust"],
+];
+
 export const SITE_PAGES: SitePage[] = [
   { path: "/", label: "Home", changefreq: "monthly", priority: "1.0" },
   { path: "/services", label: "Services", changefreq: "monthly", priority: "0.9" },
@@ -52,6 +61,12 @@ export const SITE_PAGES: SitePage[] = [
     path: `/services/${slug}`,
     label: `Service: ${label}`,
     changefreq: "monthly" as const,
+    priority: "0.7",
+  })),
+  ...caseStudies.map(([slug, label]) => ({
+    path: `/case-studies/${slug}`,
+    label: `Case Study: ${label}`,
+    changefreq: "yearly" as const,
     priority: "0.7",
   })),
   ...insights.map(([slug, label]) => ({

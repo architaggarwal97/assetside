@@ -113,8 +113,8 @@ function ArticlePage() {
             </p>
             <p className="reveal text-sm">
               <Link
-                to="/case-studies"
-                hash="ladli-foundation-trust"
+                to="/case-studies/$slug"
+                params={{ slug: "ladli-foundation-trust" }}
                 className="text-gold underline-offset-4 transition-colors hover:underline"
               >
                 See the Ladli Foundation Trust case study →

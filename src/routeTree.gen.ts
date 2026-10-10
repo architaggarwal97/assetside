@@ -20,6 +20,7 @@ import { Route as WorkRouteImport } from './routes/work'
 import { Route as AdminAmpRouteImport } from './routes/admin.amp'
 import { Route as AmpIndexRouteImport } from './routes/amp/index'
 import { Route as AmpSplatRouteImport } from './routes/amp/$'
+import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies_.$slug'
 import { Route as InsightsIndexRouteImport } from './routes/insights/index'
 import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './routes/insights/beyond-the-buzzword-craftsmanship'
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
@@ -104,6 +105,11 @@ const AmpIndexRoute = AmpIndexRouteImport.update({
 const AmpSplatRoute = AmpSplatRouteImport.update({
   id: '/amp/$',
   path: '/amp/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
+  id: '/case-studies_/$slug',
+  path: '/case-studies/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InsightsIndexRoute = InsightsIndexRouteImport.update({
@@ -292,6 +298,7 @@ export interface FileRoutesByFullPath {
   '/work': typeof WorkRoute
   '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
@@ -334,6 +341,7 @@ export interface FileRoutesByTo {
   '/work': typeof WorkRoute
   '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
+  '/case-studies/$slug': typeof CaseStudiesSlugRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
@@ -378,6 +386,7 @@ export interface FileRoutesById {
   '/work': typeof WorkRoute
   '/admin/amp': typeof AdminAmpRoute
   '/amp/$': typeof AmpSplatRoute
+  '/case-studies_/$slug': typeof CaseStudiesSlugRoute
   '/insights/beyond-the-buzzword-craftsmanship': typeof InsightsBeyondTheBuzzwordCraftsmanshipRoute
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
@@ -423,6 +432,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/admin/amp'
     | '/amp/$'
+    | '/case-studies/$slug'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
@@ -465,6 +475,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/admin/amp'
     | '/amp/$'
+    | '/case-studies/$slug'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
@@ -508,6 +519,7 @@ export interface FileRouteTypes {
     | '/work'
     | '/admin/amp'
     | '/amp/$'
+    | '/case-studies_/$slug'
     | '/insights/beyond-the-buzzword-craftsmanship'
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
@@ -552,6 +564,7 @@ export interface RootRouteChildren {
   WorkRoute: typeof WorkRoute
   AdminAmpRoute: typeof AdminAmpRoute
   AmpSplatRoute: typeof AmpSplatRoute
+  CaseStudiesSlugRoute: typeof CaseStudiesSlugRoute
   ServicesBrandPositioningGtmRoute: typeof ServicesBrandPositioningGtmRoute
   ServicesCampaignBrandShootsRoute: typeof ServicesCampaignBrandShootsRoute
   ServicesD2cWhatsappCommerceRoute: typeof ServicesD2cWhatsappCommerceRoute
@@ -645,6 +658,13 @@ declare module '@tanstack/react-router' {
       path: '/amp/$'
       fullPath: '/amp/$'
       preLoaderRoute: typeof AmpSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/case-studies_/$slug': {
+      id: '/case-studies_/$slug'
+      path: '/case-studies/$slug'
+      fullPath: '/case-studies/$slug'
+      preLoaderRoute: typeof CaseStudiesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/insights/': {
@@ -924,6 +944,7 @@ const rootRouteChildren: RootRouteChildren = {
   WorkRoute: WorkRoute,
   AdminAmpRoute: AdminAmpRoute,
   AmpSplatRoute: AmpSplatRoute,
+  CaseStudiesSlugRoute: CaseStudiesSlugRoute,
   ServicesBrandPositioningGtmRoute: ServicesBrandPositioningGtmRoute,
   ServicesCampaignBrandShootsRoute: ServicesCampaignBrandShootsRoute,
   ServicesD2cWhatsappCommerceRoute: ServicesD2cWhatsappCommerceRoute,

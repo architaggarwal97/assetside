@@ -174,8 +174,8 @@ function ArticlePage() {
             </p>
             <p className="reveal text-sm">
               <Link
-                to="/case-studies"
-                hash="self-storage-india"
+                to="/case-studies/$slug"
+                params={{ slug: "self-storage-india" }}
                 className="text-gold underline-offset-4 transition-colors hover:underline"
               >
                 Read the full Self Storage India case study →
