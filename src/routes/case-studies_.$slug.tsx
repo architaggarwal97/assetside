@@ -166,7 +166,7 @@ function CaseStudyPage() {
           </div>
         </article>
       </main>
-      <ContactBlock heading="Let's talk about your " accent="next quarter." />
+      <ContactBlock heading="Let's talk about your " accent="next quarter." intro="Selective engagements. Direct line, no gatekeepers." />
       <SiteFooter />
     </div>
   );

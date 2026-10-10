@@ -218,6 +218,18 @@ function StudySection({ study, dark, mirrored }: { study: Study; dark: boolean; 
         “{study.insight}”
       </blockquote>
 
+      {CASE_STUDY_PAGES[study.slug] && (
+        <div className="reveal mt-10 text-xs uppercase tracking-[0.2em]">
+          <Link
+            to="/case-studies/$slug"
+            params={{ slug: study.slug }}
+            className="text-gold underline-offset-4 transition-colors hover:underline"
+          >
+            Read the full {study.brand.split(":")[0]} case study →
+          </Link>
+        </div>
+      )}
+
       {study.relatedService && (
         <div className="reveal mt-10 text-xs uppercase tracking-[0.2em]">
           <span className={labelColor}>Related service: </span>
