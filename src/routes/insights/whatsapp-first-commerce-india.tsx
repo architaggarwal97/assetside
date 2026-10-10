@@ -141,8 +141,8 @@ function ArticlePage() {
             <p className="reveal text-sm">
               The full breakdown of this label's funnel lives in the{" "}
               <Link
-                to="/case-studies"
-                hash="monture"
+                to="/case-studies/$slug"
+                params={{ slug: "monture" }}
                 className="text-gold underline-offset-4 transition-colors hover:underline"
               >
                 Monture case study →
