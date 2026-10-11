@@ -24,7 +24,7 @@ const services: [string, string][] = [
 ];
 
 const insights: [string, string][] = [
-  ["dhanda-first-framework", "Dhanda-First Marketing Framework"],
+  ["dhanda-first-marketing-framework", "Dhanda-First Marketing Framework"],
   ["jewellery-walk-in-campaigns", "Jewellery Store Walk-in Campaigns"],
   ["cost-of-vanity-metrics", "The Cost of Vanity Metrics"],
   ["performance-marketing-needs-pr", "Why Performance Marketing Needs PR"],

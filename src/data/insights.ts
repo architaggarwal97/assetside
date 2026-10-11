@@ -59,7 +59,7 @@ export const ARTICLES: Article[] = [
     category: "Growth Philosophy",
     readTime: "5 min read",
     datePublished: "2026-10-08",
-    articlePath: "/insights/dhanda-first-framework",
+    articlePath: "/insights/dhanda-first-marketing-framework",
     title: "Dhanda-First: A Framework for Marketing That Pays for Itself",
     excerpt:
       "Every rupee of marketing spend should show up somewhere on the balance sheet, as an asset, not a liability. This is the filter I run every campaign through before it gets a budget.",
