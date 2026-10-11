@@ -26,6 +26,7 @@ import { Route as InsightsBeyondTheBuzzwordCraftsmanshipRouteImport } from './ro
 import { Route as InsightsBoutiqueVsConglomeratePrAgencyRouteImport } from './routes/insights/boutique-vs-conglomerate-pr-agency'
 import { Route as InsightsCostOfVanityMetricsRouteImport } from './routes/insights/cost-of-vanity-metrics'
 import { Route as InsightsDhandaFirstFrameworkRouteImport } from './routes/insights/dhanda-first-framework'
+import { Route as InsightsDhandaFirstMarketingFrameworkRouteImport } from './routes/insights/dhanda-first-marketing-framework'
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
@@ -139,6 +140,12 @@ const InsightsDhandaFirstFrameworkRoute =
   InsightsDhandaFirstFrameworkRouteImport.update({
     id: '/dhanda-first-framework',
     path: '/dhanda-first-framework',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsDhandaFirstMarketingFrameworkRoute =
+  InsightsDhandaFirstMarketingFrameworkRouteImport.update({
+    id: '/dhanda-first-marketing-framework',
+    path: '/dhanda-first-marketing-framework',
     getParentRoute: () => InsightsRoute,
   } as any)
 const InsightsEveryoneSaysGoogleAdsIsDeadRoute =
@@ -303,6 +310,7 @@ export interface FileRoutesByFullPath {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
   '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
+  '/insights/dhanda-first-marketing-framework': typeof InsightsDhandaFirstMarketingFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
@@ -346,6 +354,7 @@ export interface FileRoutesByTo {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
   '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
+  '/insights/dhanda-first-marketing-framework': typeof InsightsDhandaFirstMarketingFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
@@ -391,6 +400,7 @@ export interface FileRoutesById {
   '/insights/boutique-vs-conglomerate-pr-agency': typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   '/insights/cost-of-vanity-metrics': typeof InsightsCostOfVanityMetricsRoute
   '/insights/dhanda-first-framework': typeof InsightsDhandaFirstFrameworkRoute
+  '/insights/dhanda-first-marketing-framework': typeof InsightsDhandaFirstMarketingFrameworkRoute
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
@@ -437,6 +447,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
     | '/insights/dhanda-first-framework'
+    | '/insights/dhanda-first-marketing-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
@@ -480,6 +491,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
     | '/insights/dhanda-first-framework'
+    | '/insights/dhanda-first-marketing-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
@@ -524,6 +536,7 @@ export interface FileRouteTypes {
     | '/insights/boutique-vs-conglomerate-pr-agency'
     | '/insights/cost-of-vanity-metrics'
     | '/insights/dhanda-first-framework'
+    | '/insights/dhanda-first-marketing-framework'
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
@@ -700,6 +713,13 @@ declare module '@tanstack/react-router' {
       path: '/dhanda-first-framework'
       fullPath: '/insights/dhanda-first-framework'
       preLoaderRoute: typeof InsightsDhandaFirstFrameworkRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/dhanda-first-marketing-framework': {
+      id: '/insights/dhanda-first-marketing-framework'
+      path: '/dhanda-first-marketing-framework'
+      fullPath: '/insights/dhanda-first-marketing-framework'
+      preLoaderRoute: typeof InsightsDhandaFirstMarketingFrameworkRouteImport
       parentRoute: typeof InsightsRoute
     }
     '/insights/everyone-says-google-ads-is-dead': {
@@ -885,6 +905,7 @@ interface InsightsRouteChildren {
   InsightsBoutiqueVsConglomeratePrAgencyRoute: typeof InsightsBoutiqueVsConglomeratePrAgencyRoute
   InsightsCostOfVanityMetricsRoute: typeof InsightsCostOfVanityMetricsRoute
   InsightsDhandaFirstFrameworkRoute: typeof InsightsDhandaFirstFrameworkRoute
+  InsightsDhandaFirstMarketingFrameworkRoute: typeof InsightsDhandaFirstMarketingFrameworkRoute
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsFirmGeneratedContentAuthorityRoute: typeof InsightsFirmGeneratedContentAuthorityRoute
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
@@ -907,6 +928,8 @@ const InsightsRouteChildren: InsightsRouteChildren = {
     InsightsBoutiqueVsConglomeratePrAgencyRoute,
   InsightsCostOfVanityMetricsRoute: InsightsCostOfVanityMetricsRoute,
   InsightsDhandaFirstFrameworkRoute: InsightsDhandaFirstFrameworkRoute,
+  InsightsDhandaFirstMarketingFrameworkRoute:
+    InsightsDhandaFirstMarketingFrameworkRoute,
   InsightsEveryoneSaysGoogleAdsIsDeadRoute:
     InsightsEveryoneSaysGoogleAdsIsDeadRoute,
   InsightsFirmGeneratedContentAuthorityRoute:
