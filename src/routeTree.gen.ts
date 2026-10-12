@@ -30,6 +30,7 @@ import { Route as InsightsDhandaFirstMarketingFrameworkRouteImport } from './rou
 import { Route as InsightsEveryoneSaysGoogleAdsIsDeadRouteImport } from './routes/insights/everyone-says-google-ads-is-dead'
 import { Route as InsightsFirmGeneratedContentAuthorityRouteImport } from './routes/insights/firm-generated-content-authority'
 import { Route as InsightsHowLuxuryPrLowersCacRouteImport } from './routes/insights/how-luxury-pr-lowers-cac'
+import { Route as InsightsJewelleryStoreWalkInCampaignsRouteImport } from './routes/insights/jewellery-store-walk-in-campaigns'
 import { Route as InsightsJewelleryWalkInCampaignsRouteImport } from './routes/insights/jewellery-walk-in-campaigns'
 import { Route as InsightsMeasuringTrueRoiLuxuryPrRouteImport } from './routes/insights/measuring-true-roi-luxury-pr'
 import { Route as InsightsNgoFundraisingSubscriptionThinkingRouteImport } from './routes/insights/ngo-fundraising-subscription-thinking'
@@ -164,6 +165,12 @@ const InsightsHowLuxuryPrLowersCacRoute =
   InsightsHowLuxuryPrLowersCacRouteImport.update({
     id: '/how-luxury-pr-lowers-cac',
     path: '/how-luxury-pr-lowers-cac',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsJewelleryStoreWalkInCampaignsRoute =
+  InsightsJewelleryStoreWalkInCampaignsRouteImport.update({
+    id: '/jewellery-store-walk-in-campaigns',
+    path: '/jewellery-store-walk-in-campaigns',
     getParentRoute: () => InsightsRoute,
   } as any)
 const InsightsJewelleryWalkInCampaignsRoute =
@@ -314,6 +321,7 @@ export interface FileRoutesByFullPath {
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-store-walk-in-campaigns': typeof InsightsJewelleryStoreWalkInCampaignsRoute
   '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
@@ -358,6 +366,7 @@ export interface FileRoutesByTo {
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-store-walk-in-campaigns': typeof InsightsJewelleryStoreWalkInCampaignsRoute
   '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
@@ -404,6 +413,7 @@ export interface FileRoutesById {
   '/insights/everyone-says-google-ads-is-dead': typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   '/insights/firm-generated-content-authority': typeof InsightsFirmGeneratedContentAuthorityRoute
   '/insights/how-luxury-pr-lowers-cac': typeof InsightsHowLuxuryPrLowersCacRoute
+  '/insights/jewellery-store-walk-in-campaigns': typeof InsightsJewelleryStoreWalkInCampaignsRoute
   '/insights/jewellery-walk-in-campaigns': typeof InsightsJewelleryWalkInCampaignsRoute
   '/insights/measuring-true-roi-luxury-pr': typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   '/insights/ngo-fundraising-subscription-thinking': typeof InsightsNgoFundraisingSubscriptionThinkingRoute
@@ -451,6 +461,7 @@ export interface FileRouteTypes {
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-store-walk-in-campaigns'
     | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
@@ -495,6 +506,7 @@ export interface FileRouteTypes {
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-store-walk-in-campaigns'
     | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
@@ -540,6 +552,7 @@ export interface FileRouteTypes {
     | '/insights/everyone-says-google-ads-is-dead'
     | '/insights/firm-generated-content-authority'
     | '/insights/how-luxury-pr-lowers-cac'
+    | '/insights/jewellery-store-walk-in-campaigns'
     | '/insights/jewellery-walk-in-campaigns'
     | '/insights/measuring-true-roi-luxury-pr'
     | '/insights/ngo-fundraising-subscription-thinking'
@@ -743,6 +756,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InsightsHowLuxuryPrLowersCacRouteImport
       parentRoute: typeof InsightsRoute
     }
+    '/insights/jewellery-store-walk-in-campaigns': {
+      id: '/insights/jewellery-store-walk-in-campaigns'
+      path: '/jewellery-store-walk-in-campaigns'
+      fullPath: '/insights/jewellery-store-walk-in-campaigns'
+      preLoaderRoute: typeof InsightsJewelleryStoreWalkInCampaignsRouteImport
+      parentRoute: typeof InsightsRoute
+    }
     '/insights/jewellery-walk-in-campaigns': {
       id: '/insights/jewellery-walk-in-campaigns'
       path: '/jewellery-walk-in-campaigns'
@@ -909,6 +929,7 @@ interface InsightsRouteChildren {
   InsightsEveryoneSaysGoogleAdsIsDeadRoute: typeof InsightsEveryoneSaysGoogleAdsIsDeadRoute
   InsightsFirmGeneratedContentAuthorityRoute: typeof InsightsFirmGeneratedContentAuthorityRoute
   InsightsHowLuxuryPrLowersCacRoute: typeof InsightsHowLuxuryPrLowersCacRoute
+  InsightsJewelleryStoreWalkInCampaignsRoute: typeof InsightsJewelleryStoreWalkInCampaignsRoute
   InsightsJewelleryWalkInCampaignsRoute: typeof InsightsJewelleryWalkInCampaignsRoute
   InsightsMeasuringTrueRoiLuxuryPrRoute: typeof InsightsMeasuringTrueRoiLuxuryPrRoute
   InsightsNgoFundraisingSubscriptionThinkingRoute: typeof InsightsNgoFundraisingSubscriptionThinkingRoute
@@ -935,6 +956,8 @@ const InsightsRouteChildren: InsightsRouteChildren = {
   InsightsFirmGeneratedContentAuthorityRoute:
     InsightsFirmGeneratedContentAuthorityRoute,
   InsightsHowLuxuryPrLowersCacRoute: InsightsHowLuxuryPrLowersCacRoute,
+  InsightsJewelleryStoreWalkInCampaignsRoute:
+    InsightsJewelleryStoreWalkInCampaignsRoute,
   InsightsJewelleryWalkInCampaignsRoute: InsightsJewelleryWalkInCampaignsRoute,
   InsightsMeasuringTrueRoiLuxuryPrRoute: InsightsMeasuringTrueRoiLuxuryPrRoute,
   InsightsNgoFundraisingSubscriptionThinkingRoute:
