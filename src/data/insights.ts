@@ -73,7 +73,7 @@ export const ARTICLES: Article[] = [
     category: "Retail & Jewellery",
     readTime: "6 min read",
     datePublished: "2026-10-08",
-    articlePath: "/insights/jewellery-walk-in-campaigns",
+    articlePath: "/insights/jewellery-store-walk-in-campaigns",
     title: "What Jewellery Brands Get Wrong About Store Walk-in Campaigns",
     excerpt:
       "Running three competing jewellery brands through the same bridal season taught me the one thing most retail campaigns get backwards: audience separation isn't a nice-to-have, it's the entire strategy.",
