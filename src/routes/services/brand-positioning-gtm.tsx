@@ -9,5 +9,10 @@ export const Route = createFileRoute("/services/brand-positioning-gtm")({
 });
 
 function BrandPositioningGtmPage() {
-  return <ServiceDetailPage service={SERVICE_BY_SLUG["brand-positioning-gtm"]!} />;
+  const service = SERVICE_BY_SLUG["brand-positioning-gtm"];
+  if (!service) return null;
+  return <ServiceDetailPage service={service} relatedReadingSlugs={[
+    "dhanda-first-framework",
+    "beyond-the-buzzword-craftsmanship",
+  ]} />;
 }

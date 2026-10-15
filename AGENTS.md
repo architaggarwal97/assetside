@@ -16,3 +16,4 @@
 - AMP tools at `/admin/amp` are intentionally public (user choice), noindex and blocked in robots.txt.
 
 - Case studies: summaries live in `src/data/case-studies.ts`; full client pages are one dynamic route (`case-studies_.$slug.tsx`) driven by `src/data/case-study-pages.ts`, and must be added to `site-pages.ts`. Why: one data source keeps the listing and full pages consistent.
+- Article cross-links resolve titles and paths from shared Insights data; service routes pass ordered article slugs to the shared detail page. Why: reading lists reuse canonical article information without duplicating service layouts.

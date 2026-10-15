@@ -8,6 +8,15 @@ import { useReveal } from "@/hooks/use-reveal";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { SERVICE_BY_SLUG } from "@/data/services";
+import { ARTICLES } from "@/data/insights";
+
+const STUDY_READING: Record<string, string> = {
+  "self-storage-india": "everyone-says-google-ads-is-dead",
+  monture: "whatsapp-first-commerce",
+  "jewellery-vertical": "jewellery-walk-in-campaigns",
+  "ladli-foundation-trust": "ngo-fundraising-subscription-thinking",
+  adyaaye: "cost-of-vanity-metrics",
+};
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
@@ -138,6 +147,7 @@ function StudySection({ study, dark, mirrored }: { study: Study; dark: boolean; 
   const softColor = dark ? "text-cream/75" : "text-charcoal-soft";
   const cellBorder = dark ? "border-cream/15" : "border-gold/20";
   const Icon = study.icon;
+  const reading = ARTICLES.find((article) => article.slug === STUDY_READING[study.slug]);
 
   const identity = (
     <div className="space-y-10">
@@ -240,6 +250,17 @@ function StudySection({ study, dark, mirrored }: { study: Study; dark: boolean; 
             {study.relatedService.label} →
           </Link>
         </div>
+      )}
+      {reading?.articlePath && (
+        <p className="reveal mt-6 text-sm leading-relaxed">
+          <span className={labelColor}>Read more: </span>
+          <Link
+            to={reading.articlePath}
+            className="text-gold underline-offset-4 transition-colors hover:underline"
+          >
+            {reading.title} →
+          </Link>
+        </p>
       )}
     </div>
   );
