@@ -6,8 +6,12 @@ import { ContactBlock } from "@/components/contact-block";
 import { SERVICES, SERVICE_BY_SLUG, RELATED_SERVICES, type Service } from "@/data/services";
 import { SERVICE_FAQS } from "@/data/service-schema";
 import { CLIENT_PROOF } from "@/data/client-proof";
+import { ARTICLES } from "@/data/insights";
 
-export function ServiceDetailPage({ service }: { service: Service }) {
+export function ServiceDetailPage({ service, relatedReadingSlugs = [] }: {
+  service: Service;
+  relatedReadingSlugs?: string[];
+}) {
   useReveal();
 
   const index = SERVICES.findIndex((s) => s.slug === service.slug);
@@ -17,6 +21,10 @@ export function ServiceDetailPage({ service }: { service: Service }) {
     .filter((s): s is Service => Boolean(s) && s.slug !== service.slug);
   const faqs = SERVICE_FAQS[service.slug] ?? [];
   const client = CLIENT_PROOF[service.slug];
+  const reading = relatedReadingSlugs.flatMap((slug) => {
+    const article = ARTICLES.find((item) => item.slug === slug);
+    return article?.articlePath ? [article] : [];
+  });
 
   return (
     <div className="min-h-screen bg-cream text-charcoal font-sans antialiased">
@@ -225,6 +233,23 @@ export function ServiceDetailPage({ service }: { service: Service }) {
                   </Link>
                 ))}
               </div>
+            </div>
+          )}
+          {reading.length > 0 && (
+            <div className="reveal mx-auto mb-10 max-w-6xl px-6 text-sm leading-relaxed md:px-10">
+              <h2 className="text-sm font-normal text-cream/80">Related reading:</h2>
+              <ul className="mt-3 space-y-2">
+                {reading.map((article) => (
+                  <li key={article.slug}>
+                    <Link
+                      to={article.articlePath}
+                      className="text-gold underline-offset-4 transition-colors hover:underline"
+                    >
+                      {article.title} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 md:flex-row md:items-center md:justify-between md:px-10">

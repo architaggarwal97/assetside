@@ -9,5 +9,10 @@ export const Route = createFileRoute("/services/performance-marketing")({
 });
 
 function PerformanceMarketingPage() {
-  return <ServiceDetailPage service={SERVICE_BY_SLUG["performance-marketing"]!} />;
+  const service = SERVICE_BY_SLUG["performance-marketing"];
+  if (!service) return null;
+  return <ServiceDetailPage service={service} relatedReadingSlugs={[
+    "everyone-says-google-ads-is-dead",
+    "how-luxury-pr-lowers-cac",
+  ]} />;
 }

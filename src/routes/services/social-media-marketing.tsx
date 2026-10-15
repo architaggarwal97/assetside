@@ -9,5 +9,10 @@ export const Route = createFileRoute("/services/social-media-marketing")({
 });
 
 function SocialMediaMarketingPage() {
-  return <ServiceDetailPage service={SERVICE_BY_SLUG["social-media-marketing"]!} />;
+  const service = SERVICE_BY_SLUG["social-media-marketing"];
+  if (!service) return null;
+  return <ServiceDetailPage service={service} relatedReadingSlugs={[
+    "firm-generated-content-authority",
+    "social-kpis-predict-revenue",
+  ]} />;
 }

@@ -9,5 +9,11 @@ export const Route = createFileRoute("/services/pr")({
 });
 
 function PrPage() {
-  return <ServiceDetailPage service={SERVICE_BY_SLUG["pr"]!} />;
+  const service = SERVICE_BY_SLUG["pr"];
+  if (!service) return null;
+  return <ServiceDetailPage service={service} relatedReadingSlugs={[
+    "boutique-vs-conglomerate-pr-agency",
+    "targeted-media-network-luxury-pr",
+    "private-pr-events-luxury-brands",
+  ]} />;
 }

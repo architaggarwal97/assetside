@@ -213,6 +213,14 @@ function About() {
                 "At heart, I'm Dhanda-first (business-first). I'm not here to be a line on the liability side of your balance sheet. I'd rather be the asset, the ROI you can point to."
               </p>
             </blockquote>
+            <p className="text-sm">
+              <Link
+                to="/insights"
+                className="text-gold underline-offset-4 transition-colors hover:underline"
+              >
+                More on how this plays out →
+              </Link>
+            </p>
             <div className="hairline mt-10" />
             <div className="grid grid-cols-3 gap-6 pt-6 text-center">
               {[
